@@ -12,7 +12,7 @@ A coding agent should search for good existing UI patterns first, choose compone
 
 ## Status
 
-The Phase 0 repository foundation is implemented. Product features begin with the canonical registry in Phase 1; retrieval, CLI, MCP, and application behavior are not implemented yet.
+The repository foundation and Phase 1 canonical registry are implemented. The registry validates and loads local snapshots and bundles 20 reviewed component records across five sources. Retrieval, CLI, MCP, and application behavior are not implemented yet.
 
 ## Local development
 
@@ -88,7 +88,7 @@ packages/
   shared/           Shared types and utilities
 skills/
   tessera/          Agent skill instructions
-registries/         Curated source metadata for initial libraries
+registries/         Source review notes for the bundled canonical metadata
 docs/               Product and engineering documentation
 examples/           End-to-end usage examples
 ```

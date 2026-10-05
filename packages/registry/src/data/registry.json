@@ -1,0 +1,747 @@
+{
+  "schemaVersion": 1,
+  "components": [
+    {
+      "schemaVersion": 1,
+      "id": "aceternity/background-lines",
+      "source": "aceternity",
+      "slug": "background-lines",
+      "name": "Background Lines",
+      "category": "background",
+      "secondaryCategories": ["hero"],
+      "frameworks": ["react"],
+      "compatibility": {},
+      "visual": {
+        "aesthetics": ["flowing"],
+        "tags": ["svg", "lines", "waves"],
+        "motion": "unknown",
+        "density": "unknown",
+        "radius": "unknown",
+        "surface": ["unknown"]
+      },
+      "dependencies": [],
+      "dependencyStatus": "unknown",
+      "installation": {
+        "kind": "command",
+        "command": "npx shadcn@latest add @aceternity/background-lines",
+        "instructions": "Review the upstream installation prerequisites and adapt the demo to your design system."
+      },
+      "links": {
+        "docs": "https://ui.aceternity.com/components/background-lines"
+      },
+      "license": {
+        "status": "unknown",
+        "notes": "No component-scoped license evidence was verified during this metadata review."
+      },
+      "provenance": {
+        "adapter": "manual",
+        "retrievedAt": "2026-10-05T12:31:21Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "id": "aceternity/spotlight",
+      "source": "aceternity",
+      "slug": "spotlight",
+      "name": "Spotlight",
+      "category": "background",
+      "secondaryCategories": ["hero"],
+      "frameworks": ["react"],
+      "compatibility": {},
+      "visual": {
+        "aesthetics": ["atmospheric"],
+        "tags": ["spotlight", "highlight"],
+        "motion": "unknown",
+        "density": "unknown",
+        "radius": "unknown",
+        "surface": ["unknown"]
+      },
+      "dependencies": [],
+      "dependencyStatus": "unknown",
+      "installation": {
+        "kind": "command",
+        "command": "npx shadcn@latest add @aceternity/spotlight",
+        "instructions": "Review the upstream installation prerequisites and adapt the demo to your design system."
+      },
+      "links": {
+        "docs": "https://ui.aceternity.com/components/spotlight"
+      },
+      "license": {
+        "status": "unknown",
+        "notes": "No component-scoped license evidence was verified during this metadata review."
+      },
+      "provenance": {
+        "adapter": "manual",
+        "retrievedAt": "2026-10-05T12:31:21Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "id": "aceternity/terminal",
+      "source": "aceternity",
+      "slug": "terminal",
+      "name": "Terminal",
+      "category": "terminal",
+      "secondaryCategories": ["card"],
+      "frameworks": ["react"],
+      "compatibility": {},
+      "visual": {
+        "aesthetics": ["technical"],
+        "tags": ["cli", "code", "typewriter"],
+        "motion": "unknown",
+        "density": "unknown",
+        "radius": "unknown",
+        "surface": ["unknown"]
+      },
+      "dependencies": [],
+      "dependencyStatus": "unknown",
+      "installation": {
+        "kind": "command",
+        "command": "npx shadcn@latest add @aceternity/terminal",
+        "instructions": "Review the upstream installation prerequisites and adapt the demo to your design system. The upstream documentation additionally requires public/sounds/sound.ogg for sound; this registry does not include that asset."
+      },
+      "links": {
+        "docs": "https://ui.aceternity.com/components/terminal"
+      },
+      "license": {
+        "status": "unknown",
+        "notes": "No component-scoped license evidence was verified during this metadata review."
+      },
+      "provenance": {
+        "adapter": "manual",
+        "retrievedAt": "2026-10-05T12:31:21Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "id": "aceternity/text-generate-effect",
+      "source": "aceternity",
+      "slug": "text-generate-effect",
+      "name": "Text Generate Effect",
+      "category": "animation",
+      "secondaryCategories": ["hero"],
+      "frameworks": ["react"],
+      "compatibility": {},
+      "visual": {
+        "aesthetics": ["expressive"],
+        "tags": ["text", "reveal"],
+        "motion": "unknown",
+        "density": "unknown",
+        "radius": "unknown",
+        "surface": ["unknown"]
+      },
+      "dependencies": [],
+      "dependencyStatus": "unknown",
+      "installation": {
+        "kind": "command",
+        "command": "npx shadcn@latest add @aceternity/text-generate-effect",
+        "instructions": "Review the upstream installation prerequisites and adapt the demo to your design system."
+      },
+      "links": {
+        "docs": "https://ui.aceternity.com/components/text-generate-effect"
+      },
+      "license": {
+        "status": "unknown",
+        "notes": "No component-scoped license evidence was verified during this metadata review."
+      },
+      "provenance": {
+        "adapter": "manual",
+        "retrievedAt": "2026-10-05T12:31:21Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "id": "beautifului/code-block",
+      "source": "beautifului",
+      "slug": "code-block",
+      "name": "Code Block",
+      "category": "other",
+      "secondaryCategories": [],
+      "frameworks": ["other"],
+      "compatibility": {},
+      "visual": {
+        "aesthetics": [],
+        "tags": ["code", "diff", "line-numbers"],
+        "motion": "unknown",
+        "density": "unknown",
+        "radius": "unknown",
+        "surface": ["unknown"]
+      },
+      "dependencies": [],
+      "dependencyStatus": "unknown",
+      "installation": {
+        "kind": "manual",
+        "instructions": "Review the upstream documentation at https://www.beautifului.dev/#code-block for installation and prerequisites before making changes."
+      },
+      "links": {
+        "docs": "https://www.beautifului.dev/#code-block"
+      },
+      "license": {
+        "status": "known",
+        "identifier": "MIT",
+        "source": "https://www.beautifului.dev/license",
+        "notes": "The official site links this MIT license for Beautiful UI. Preserve the upstream notice when using substantial portions of software."
+      },
+      "provenance": {
+        "adapter": "manual",
+        "retrievedAt": "2026-10-05T12:31:21Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "id": "beautifului/prompt-bar",
+      "source": "beautifului",
+      "slug": "prompt-bar",
+      "name": "Prompt Bar",
+      "category": "form",
+      "secondaryCategories": [],
+      "frameworks": ["other"],
+      "compatibility": {},
+      "visual": {
+        "aesthetics": [],
+        "tags": ["composer", "commands", "sources"],
+        "motion": "unknown",
+        "density": "unknown",
+        "radius": "unknown",
+        "surface": ["unknown"]
+      },
+      "dependencies": [],
+      "dependencyStatus": "unknown",
+      "installation": {
+        "kind": "manual",
+        "instructions": "Review the upstream documentation at https://www.beautifului.dev/#prompt-bar for installation and prerequisites before making changes."
+      },
+      "links": {
+        "docs": "https://www.beautifului.dev/#prompt-bar"
+      },
+      "license": {
+        "status": "known",
+        "identifier": "MIT",
+        "source": "https://www.beautifului.dev/license",
+        "notes": "The official site links this MIT license for Beautiful UI. Preserve the upstream notice when using substantial portions of software."
+      },
+      "provenance": {
+        "adapter": "manual",
+        "retrievedAt": "2026-10-05T12:31:21Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "id": "beautifului/records-table",
+      "source": "beautifului",
+      "slug": "records-table",
+      "name": "Records Table",
+      "category": "table",
+      "secondaryCategories": [],
+      "frameworks": ["other"],
+      "compatibility": {},
+      "visual": {
+        "aesthetics": [],
+        "tags": ["records", "data"],
+        "motion": "unknown",
+        "density": "unknown",
+        "radius": "unknown",
+        "surface": ["unknown"]
+      },
+      "dependencies": [],
+      "dependencyStatus": "unknown",
+      "installation": {
+        "kind": "manual",
+        "instructions": "Review the upstream documentation at https://www.beautifului.dev/#records-table for installation and prerequisites before making changes."
+      },
+      "links": {
+        "docs": "https://www.beautifului.dev/#records-table"
+      },
+      "license": {
+        "status": "known",
+        "identifier": "MIT",
+        "source": "https://www.beautifului.dev/license",
+        "notes": "The official site links this MIT license for Beautiful UI. Preserve the upstream notice when using substantial portions of software."
+      },
+      "provenance": {
+        "adapter": "manual",
+        "retrievedAt": "2026-10-05T12:31:21Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "id": "beautifului/search",
+      "source": "beautifului",
+      "slug": "search",
+      "name": "Search",
+      "category": "command-menu",
+      "secondaryCategories": [],
+      "frameworks": ["other"],
+      "compatibility": {},
+      "visual": {
+        "aesthetics": [],
+        "tags": ["search", "filter", "empty-state"],
+        "motion": "unknown",
+        "density": "unknown",
+        "radius": "unknown",
+        "surface": ["unknown"]
+      },
+      "dependencies": [],
+      "dependencyStatus": "unknown",
+      "installation": {
+        "kind": "manual",
+        "instructions": "Review the upstream documentation at https://www.beautifului.dev/#search for installation and prerequisites before making changes."
+      },
+      "links": {
+        "docs": "https://www.beautifului.dev/#search"
+      },
+      "license": {
+        "status": "known",
+        "identifier": "MIT",
+        "source": "https://www.beautifului.dev/license",
+        "notes": "The official site links this MIT license for Beautiful UI. Preserve the upstream notice when using substantial portions of software."
+      },
+      "provenance": {
+        "adapter": "manual",
+        "retrievedAt": "2026-10-05T12:31:21Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "id": "beui/button",
+      "source": "beui",
+      "slug": "button",
+      "name": "Button",
+      "category": "other",
+      "secondaryCategories": [],
+      "frameworks": ["react"],
+      "compatibility": {},
+      "visual": {
+        "aesthetics": ["expressive"],
+        "tags": ["button", "press-feedback"],
+        "motion": "unknown",
+        "density": "unknown",
+        "radius": "unknown",
+        "surface": ["unknown"]
+      },
+      "dependencies": [],
+      "dependencyStatus": "unknown",
+      "installation": {
+        "kind": "command",
+        "command": "bunx --bun shadcn add @beui/button",
+        "instructions": "Review the component page and the shared theme setup at https://beui.dev/ before installing; individual components can require additional dependencies."
+      },
+      "links": {
+        "docs": "https://beui.dev/components/motion/button"
+      },
+      "license": {
+        "status": "known",
+        "identifier": "MIT",
+        "source": "https://beui.dev/",
+        "notes": "The official public-library section and FAQ explicitly state MIT licensing, including commercial use. BeUI Pro has a separate paid license; these entries are public components."
+      },
+      "provenance": {
+        "adapter": "manual",
+        "retrievedAt": "2026-10-05T12:31:21Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "id": "beui/command-palette",
+      "source": "beui",
+      "slug": "command-palette",
+      "name": "Command Palette",
+      "category": "command-menu",
+      "secondaryCategories": [],
+      "frameworks": ["react"],
+      "compatibility": {},
+      "visual": {
+        "aesthetics": ["expressive"],
+        "tags": ["search", "commands", "keyboard"],
+        "motion": "unknown",
+        "density": "unknown",
+        "radius": "unknown",
+        "surface": ["unknown"]
+      },
+      "dependencies": [],
+      "dependencyStatus": "unknown",
+      "installation": {
+        "kind": "manual",
+        "instructions": "Review the component page and the shared theme setup at https://beui.dev/ before installing; individual components can require additional dependencies."
+      },
+      "links": {
+        "docs": "https://beui.dev/components/blocks/command-palette"
+      },
+      "license": {
+        "status": "known",
+        "identifier": "MIT",
+        "source": "https://beui.dev/",
+        "notes": "The official public-library section and FAQ explicitly state MIT licensing, including commercial use. BeUI Pro has a separate paid license; these entries are public components."
+      },
+      "provenance": {
+        "adapter": "manual",
+        "retrievedAt": "2026-10-05T12:31:21Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "id": "beui/dock",
+      "source": "beui",
+      "slug": "dock",
+      "name": "Dock",
+      "category": "navigation",
+      "secondaryCategories": [],
+      "frameworks": ["react"],
+      "compatibility": {},
+      "visual": {
+        "aesthetics": ["expressive"],
+        "tags": ["dock", "actions"],
+        "motion": "unknown",
+        "density": "unknown",
+        "radius": "unknown",
+        "surface": ["unknown"]
+      },
+      "dependencies": [],
+      "dependencyStatus": "unknown",
+      "installation": {
+        "kind": "manual",
+        "instructions": "Review the component page and the shared theme setup at https://beui.dev/ before installing; individual components can require additional dependencies."
+      },
+      "links": {
+        "docs": "https://beui.dev/components/motion/dock"
+      },
+      "license": {
+        "status": "known",
+        "identifier": "MIT",
+        "source": "https://beui.dev/",
+        "notes": "The official public-library section and FAQ explicitly state MIT licensing, including commercial use. BeUI Pro has a separate paid license; these entries are public components."
+      },
+      "provenance": {
+        "adapter": "manual",
+        "retrievedAt": "2026-10-05T12:31:21Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "id": "beui/tabs",
+      "source": "beui",
+      "slug": "tabs",
+      "name": "Tabs",
+      "category": "navigation",
+      "secondaryCategories": [],
+      "frameworks": ["react"],
+      "compatibility": {},
+      "visual": {
+        "aesthetics": ["expressive"],
+        "tags": ["tabs", "indicator"],
+        "motion": "unknown",
+        "density": "unknown",
+        "radius": "unknown",
+        "surface": ["unknown"]
+      },
+      "dependencies": [],
+      "dependencyStatus": "unknown",
+      "installation": {
+        "kind": "manual",
+        "instructions": "Review the component page and the shared theme setup at https://beui.dev/ before installing; individual components can require additional dependencies."
+      },
+      "links": {
+        "docs": "https://beui.dev/components/motion/tabs"
+      },
+      "license": {
+        "status": "known",
+        "identifier": "MIT",
+        "source": "https://beui.dev/",
+        "notes": "The official public-library section and FAQ explicitly state MIT licensing, including commercial use. BeUI Pro has a separate paid license; these entries are public components."
+      },
+      "provenance": {
+        "adapter": "manual",
+        "retrievedAt": "2026-10-05T12:31:21Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "id": "efferd/hero-1",
+      "source": "efferd",
+      "slug": "hero-1",
+      "name": "Hero 1",
+      "category": "hero",
+      "secondaryCategories": [],
+      "frameworks": ["react"],
+      "compatibility": {},
+      "visual": {
+        "aesthetics": ["minimal"],
+        "tags": ["centered", "announcement", "radial-gradient"],
+        "motion": "unknown",
+        "density": "unknown",
+        "radius": "unknown",
+        "surface": ["unknown"]
+      },
+      "dependencies": [],
+      "dependencyStatus": "unknown",
+      "installation": {
+        "kind": "command",
+        "command": "bunx --bun shadcn add @efferd/hero-1",
+        "instructions": "Review https://efferd.com/blocks/hero#hero-1 and https://efferd.com/docs. Configure the @efferd registry namespace in components.json and select the appropriate style before installing. Free availability does not establish redistribution rights."
+      },
+      "links": {
+        "docs": "https://efferd.com/blocks/hero#hero-1"
+      },
+      "license": {
+        "status": "unknown",
+        "notes": "No component-scoped license evidence was verified during this metadata review."
+      },
+      "provenance": {
+        "adapter": "manual",
+        "retrievedAt": "2026-10-05T12:31:21Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "id": "efferd/hero-2",
+      "source": "efferd",
+      "slug": "hero-2",
+      "name": "Hero 2",
+      "category": "hero",
+      "secondaryCategories": [],
+      "frameworks": ["react"],
+      "compatibility": {},
+      "visual": {
+        "aesthetics": ["minimal"],
+        "tags": ["borders", "gradient-text"],
+        "motion": "unknown",
+        "density": "unknown",
+        "radius": "unknown",
+        "surface": ["unknown"]
+      },
+      "dependencies": [],
+      "dependencyStatus": "unknown",
+      "installation": {
+        "kind": "manual",
+        "instructions": "Review https://efferd.com/blocks/hero#hero-2 and https://efferd.com/docs. Configure the @efferd registry namespace in components.json and select the appropriate style before installing. Free availability does not establish redistribution rights."
+      },
+      "links": {
+        "docs": "https://efferd.com/blocks/hero#hero-2"
+      },
+      "license": {
+        "status": "unknown",
+        "notes": "No component-scoped license evidence was verified during this metadata review."
+      },
+      "provenance": {
+        "adapter": "manual",
+        "retrievedAt": "2026-10-05T12:31:21Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "id": "efferd/hero-3",
+      "source": "efferd",
+      "slug": "hero-3",
+      "name": "Hero 3",
+      "category": "hero",
+      "secondaryCategories": [],
+      "frameworks": ["react"],
+      "compatibility": {},
+      "visual": {
+        "aesthetics": ["minimal"],
+        "tags": ["left-aligned", "dashboard-preview"],
+        "motion": "unknown",
+        "density": "unknown",
+        "radius": "unknown",
+        "surface": ["unknown"]
+      },
+      "dependencies": [],
+      "dependencyStatus": "unknown",
+      "installation": {
+        "kind": "manual",
+        "instructions": "Review https://efferd.com/blocks/hero#hero-3 and https://efferd.com/docs. Configure the @efferd registry namespace in components.json and select the appropriate style before installing. Free availability does not establish redistribution rights."
+      },
+      "links": {
+        "docs": "https://efferd.com/blocks/hero#hero-3"
+      },
+      "license": {
+        "status": "unknown",
+        "notes": "No component-scoped license evidence was verified during this metadata review."
+      },
+      "provenance": {
+        "adapter": "manual",
+        "retrievedAt": "2026-10-05T12:31:21Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "id": "efferd/pricing-1",
+      "source": "efferd",
+      "slug": "pricing-1",
+      "name": "Pricing 1",
+      "category": "pricing",
+      "secondaryCategories": ["card"],
+      "frameworks": ["react"],
+      "compatibility": {},
+      "visual": {
+        "aesthetics": ["minimal"],
+        "tags": ["monthly", "yearly", "discount"],
+        "motion": "unknown",
+        "density": "unknown",
+        "radius": "unknown",
+        "surface": ["unknown"]
+      },
+      "dependencies": [],
+      "dependencyStatus": "unknown",
+      "installation": {
+        "kind": "manual",
+        "instructions": "Review https://efferd.com/blocks/pricing#pricing-1 and https://efferd.com/docs. Configure the @efferd registry namespace in components.json and select the appropriate style before installing. Free availability does not establish redistribution rights."
+      },
+      "links": {
+        "docs": "https://efferd.com/blocks/pricing#pricing-1"
+      },
+      "license": {
+        "status": "unknown",
+        "notes": "No component-scoped license evidence was verified during this metadata review."
+      },
+      "provenance": {
+        "adapter": "manual",
+        "retrievedAt": "2026-10-05T12:31:21Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "id": "heroui/card",
+      "source": "heroui",
+      "slug": "card",
+      "name": "Card",
+      "category": "card",
+      "secondaryCategories": [],
+      "frameworks": ["react"],
+      "compatibility": {},
+      "visual": {
+        "aesthetics": [],
+        "tags": ["container", "content"],
+        "motion": "unknown",
+        "density": "unknown",
+        "radius": "unknown",
+        "surface": ["unknown"]
+      },
+      "dependencies": [],
+      "dependencyStatus": "unknown",
+      "installation": {
+        "kind": "manual",
+        "instructions": "Review the upstream documentation at https://heroui.com/en/docs/react/components/card for installation and prerequisites before making changes."
+      },
+      "links": {
+        "docs": "https://heroui.com/en/docs/react/components/card"
+      },
+      "license": {
+        "status": "unknown",
+        "notes": "No component-scoped license evidence was verified during this metadata review."
+      },
+      "provenance": {
+        "adapter": "manual",
+        "retrievedAt": "2026-10-05T12:31:21Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "id": "heroui/input",
+      "source": "heroui",
+      "slug": "input",
+      "name": "Input",
+      "category": "form",
+      "secondaryCategories": [],
+      "frameworks": ["react"],
+      "compatibility": {},
+      "visual": {
+        "aesthetics": [],
+        "tags": ["input", "text"],
+        "motion": "unknown",
+        "density": "unknown",
+        "radius": "unknown",
+        "surface": ["unknown"]
+      },
+      "dependencies": [],
+      "dependencyStatus": "unknown",
+      "installation": {
+        "kind": "manual",
+        "instructions": "Review the upstream documentation at https://heroui.com/en/docs/react/components/input for installation and prerequisites before making changes."
+      },
+      "links": {
+        "docs": "https://heroui.com/en/docs/react/components/input"
+      },
+      "license": {
+        "status": "unknown",
+        "notes": "No component-scoped license evidence was verified during this metadata review."
+      },
+      "provenance": {
+        "adapter": "manual",
+        "retrievedAt": "2026-10-05T12:31:21Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "id": "heroui/table",
+      "source": "heroui",
+      "slug": "table",
+      "name": "Table",
+      "category": "table",
+      "secondaryCategories": [],
+      "frameworks": ["react"],
+      "compatibility": {},
+      "visual": {
+        "aesthetics": [],
+        "tags": ["data", "rows"],
+        "motion": "unknown",
+        "density": "unknown",
+        "radius": "unknown",
+        "surface": ["unknown"]
+      },
+      "dependencies": [],
+      "dependencyStatus": "unknown",
+      "installation": {
+        "kind": "manual",
+        "instructions": "Review the upstream documentation at https://heroui.com/en/docs/react/components/table for installation and prerequisites before making changes."
+      },
+      "links": {
+        "docs": "https://heroui.com/en/docs/react/components/table"
+      },
+      "license": {
+        "status": "unknown",
+        "notes": "No component-scoped license evidence was verified during this metadata review."
+      },
+      "provenance": {
+        "adapter": "manual",
+        "retrievedAt": "2026-10-05T12:31:21Z"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "id": "heroui/tabs",
+      "source": "heroui",
+      "slug": "tabs",
+      "name": "Tabs",
+      "category": "navigation",
+      "secondaryCategories": [],
+      "frameworks": ["react"],
+      "compatibility": {},
+      "visual": {
+        "aesthetics": [],
+        "tags": ["tabs", "panels"],
+        "motion": "unknown",
+        "density": "unknown",
+        "radius": "unknown",
+        "surface": ["unknown"]
+      },
+      "dependencies": [],
+      "dependencyStatus": "unknown",
+      "installation": {
+        "kind": "manual",
+        "instructions": "Review the upstream documentation at https://heroui.com/en/docs/react/components/tabs for installation and prerequisites before making changes."
+      },
+      "links": {
+        "docs": "https://heroui.com/en/docs/react/components/tabs"
+      },
+      "license": {
+        "status": "unknown",
+        "notes": "No component-scoped license evidence was verified during this metadata review."
+      },
+      "provenance": {
+        "adapter": "manual",
+        "retrievedAt": "2026-10-05T12:31:21Z"
+      }
+    }
+  ]
+}
