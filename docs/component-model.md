@@ -24,68 +24,70 @@ export type ComponentCategory =
   | "terminal"
   | "animation"
   | "pattern"
-  | "other"
+  | "other";
 
 export interface TesseraComponent {
-  schemaVersion: 1
+  schemaVersion: 1;
 
-  id: string
-  source: string
-  slug: string
-  name: string
-  description?: string
+  id: string;
+  source: string;
+  slug: string;
+  name: string;
+  description?: string;
 
-  category: ComponentCategory
-  secondaryCategories: ComponentCategory[]
+  category: ComponentCategory;
+  secondaryCategories: ComponentCategory[];
 
-  frameworks: Array<"react" | "vue" | "svelte" | "html" | "other">
+  frameworks: Array<"react" | "vue" | "svelte" | "html" | "other">;
 
   compatibility: {
-    nextjs?: boolean
-    clientComponent?: boolean
-    typescript?: boolean
-  }
+    nextjs?: boolean;
+    clientComponent?: boolean;
+    typescript?: boolean;
+  };
 
   visual: {
-    aesthetics: string[]
-    tags: string[]
-    motion: "none" | "low" | "medium" | "high" | "unknown"
-    density: "compact" | "normal" | "spacious" | "unknown"
-    radius: "none" | "small" | "medium" | "large" | "mixed" | "unknown"
-    surface: Array<"flat" | "glass" | "elevated" | "outlined" | "gradient" | "unknown">
-  }
+    aesthetics: string[];
+    tags: string[];
+    motion: "none" | "low" | "medium" | "high" | "unknown";
+    density: "compact" | "normal" | "spacious" | "unknown";
+    radius: "none" | "small" | "medium" | "large" | "mixed" | "unknown";
+    surface: Array<
+      "flat" | "glass" | "elevated" | "outlined" | "gradient" | "unknown"
+    >;
+  };
 
   dependencies: Array<{
-    name: string
-    kind: "runtime" | "dev" | "peer" | "unknown"
-    required: boolean
-  }>
+    name: string;
+    kind: "runtime" | "dev" | "peer" | "unknown";
+    required: boolean;
+  }>;
 
   installation: {
-    kind: "command" | "copy" | "package" | "manual" | "unknown"
-    command?: string
-    instructions?: string
-  }
+    kind: "command" | "copy" | "package" | "manual" | "unknown";
+    command?: string;
+    instructions?: string;
+  };
 
   links: {
-    homepage?: string
-    docs?: string
-    preview?: string
-    source?: string
-  }
+    homepage?: string;
+    docs?: string;
+    preview?: string;
+    source?: string;
+  };
 
   license: {
-    status: "known" | "unknown"
-    identifier?: string
-    source?: string
-    notes?: string
-  }
+    status: "known" | "unknown";
+    identifier?: string;
+    source?: string;
+    notes?: string;
+  };
 
   provenance: {
-    adapter: string
-    retrievedAt?: string
-    sourceVersion?: string
-  }
+    adapter: string;
+    retrievedAt?: string;
+    sourceVersion?: string;
+  };
 }
 ```
 

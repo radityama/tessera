@@ -28,17 +28,17 @@
 
 ## File responsibilities
 
-| Files | Responsibility |
-| --- | --- |
-| `package.json`, `pnpm-workspace.yaml`, `pnpm-lock.yaml` | Tool versions, scripts, workspace membership, reproducible dependencies |
-| `tsconfig.base.json`, workspace `tsconfig.json` files | Strict ESM builds and declarations |
-| `turbo.json` | Dependency ordering and cache invalidation |
-| `eslint.config.mjs`, `tooling/import-boundaries.mjs` | Lint defaults and package import policy |
-| `prettier.config.mjs`, `.prettierignore` | Formatting policy |
-| `vitest.config.mjs`, `tests/import-boundaries.test.mjs` | Node tests and meaningful boundary verification |
-| Eight workspace manifests and `src/index.ts` files | Empty public modules and executable development/check scripts |
-| `.github/workflows/ci.yml` | Fresh-checkout installation and checks |
-| `README.md`, `CONTRIBUTING.md`, `docs/testing.md`, eight workspace READMEs | Setup, tooling status, and verification guidance |
+| Files                                                                      | Responsibility                                                          |
+| -------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `package.json`, `pnpm-workspace.yaml`, `pnpm-lock.yaml`                    | Tool versions, scripts, workspace membership, reproducible dependencies |
+| `tsconfig.base.json`, workspace `tsconfig.json` files                      | Strict ESM builds and declarations                                      |
+| `turbo.json`                                                               | Dependency ordering and cache invalidation                              |
+| `eslint.config.mjs`, `tooling/import-boundaries.mjs`                       | Lint defaults and package import policy                                 |
+| `prettier.config.mjs`, `.prettierignore`                                   | Formatting policy                                                       |
+| `vitest.config.mjs`, `tests/import-boundaries.test.mjs`                    | Node tests and meaningful boundary verification                         |
+| Eight workspace manifests and `src/index.ts` files                         | Empty public modules and executable development/check scripts           |
+| `.github/workflows/ci.yml`                                                 | Fresh-checkout installation and checks                                  |
+| `README.md`, `CONTRIBUTING.md`, `docs/testing.md`, eight workspace READMEs | Setup, tooling status, and verification guidance                        |
 
 ## Task 1: Buildable workspaces and tested architecture checks
 
@@ -66,9 +66,9 @@ Set the spec status to `Status: written specification approved in conversation o
     "format:check": "prettier --check ."
   },
   "devDependencies": {
-    "@eslint/js": "9.39.5",
+    "@eslint/js": "10.0.1",
     "@types/node": "24.19.1",
-    "eslint": "9.39.5",
+    "eslint": "10.12.0",
     "globals": "17.13.0",
     "prettier": "3.9.9",
     "turbo": "2.11.7",
@@ -154,8 +154,14 @@ for (const [directory, name] of workspaces) {
     include: ["src/**/*.ts"],
     exclude: ["dist", "node_modules"],
   };
-  await writeFile(`${directory}/package.json`, `${JSON.stringify(manifest, null, 2)}\n`);
-  await writeFile(`${directory}/tsconfig.json`, `${JSON.stringify(config, null, 2)}\n`);
+  await writeFile(
+    `${directory}/package.json`,
+    `${JSON.stringify(manifest, null, 2)}\n`,
+  );
+  await writeFile(
+    `${directory}/tsconfig.json`,
+    `${JSON.stringify(config, null, 2)}\n`,
+  );
   await writeFile(`${directory}/src/index.ts`, "export {};\n");
 }
 ```
@@ -169,13 +175,23 @@ Use this `turbo.json`:
 ```json
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["tsconfig.base.json", "eslint.config.mjs", "tooling/**", "vitest.config.mjs", "prettier.config.mjs", "pnpm-lock.yaml"],
+  "globalDependencies": [
+    "tsconfig.base.json",
+    "eslint.config.mjs",
+    "tooling/**",
+    "vitest.config.mjs",
+    "prettier.config.mjs",
+    "pnpm-lock.yaml"
+  ],
   "tasks": {
-    "build": { "dependsOn": ["^build"], "outputs": ["dist/**", ".next/**", "!.next/cache/**"] },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+    },
     "dev": { "cache": false, "persistent": true },
     "lint": {},
     "typecheck": { "dependsOn": ["^build"] },
-    "test": { "dependsOn": ["^build"], "outputs": ["coverage/**"] }
+    "test": { "dependsOn": ["^build"] }
   }
 }
 ```
@@ -183,7 +199,12 @@ Use this `turbo.json`:
 Use this `prettier.config.mjs`:
 
 ```js
-export default { semi: true, singleQuote: false, trailingComma: "all", proseWrap: "preserve" };
+export default {
+  semi: true,
+  singleQuote: false,
+  trailingComma: "all",
+  proseWrap: "preserve",
+};
 ```
 
 Use this `.prettierignore`:
@@ -208,7 +229,13 @@ Use this `vitest.config.mjs`:
 import { defineConfig } from "vitest/config";
 export default defineConfig({
   root: process.cwd(),
-  test: { environment: "node", include: ["tests/**/*.test.{ts,tsx,js,mjs}", "src/**/*.test.{ts,tsx,js,mjs}"] },
+  test: {
+    environment: "node",
+    include: [
+      "tests/**/*.test.{ts,tsx,js,mjs}",
+      "src/**/*.test.{ts,tsx,js,mjs}",
+    ],
+  },
 });
 ```
 
@@ -219,19 +246,84 @@ import { ESLint } from "eslint";
 import { describe, expect, it } from "vitest";
 const eslint = new ESLint();
 const cases = [
-  ["core can consume registry", "packages/core/src/index.ts", 'import "@tessera/registry";', 0],
-  ["adapters can consume registry", "packages/adapters/src/index.ts", 'import "@tessera/registry";', 0],
-  ["shared cannot consume registry", "packages/shared/src/index.ts", 'import "@tessera/registry";', 1],
-  ["core cannot consume adapters", "packages/core/src/index.ts", 'import "@tessera/adapters";', 1],
-  ["core cannot consume CLI", "packages/core/src/index.ts", 'import "@tessera/cli";', 1],
-  ["private package paths are rejected", "packages/core/src/index.ts", 'import "@tessera/registry/src/index.js";', 1],
-  ["relative package escapes are rejected", "packages/core/src/index.ts", 'import "../../registry/src/index.js";', 1],
-  ["dynamic imports obey boundaries", "packages/core/src/index.ts", 'await import("@tessera/cli");', 1],
-  ["require obeys boundaries", "packages/core/src/index.ts", 'require("@tessera/cli");', 1],
-  ["file URLs cannot bypass exports", "packages/core/src/index.ts", 'import "file:///tmp/registry/index.js";', 1],
-  ["local relative imports remain allowed", "packages/core/src/index.ts", 'import "./utils.js";', 0],
-  ["contract tests can consume CLI exports", "packages/core/src/contract.test.ts", 'import "@tessera/cli";', 0],
-  ["contract tests still cannot bypass exports", "packages/core/src/contract.test.ts", 'import "../../cli/src/index.js";', 1],
+  [
+    "core can consume registry",
+    "packages/core/src/index.ts",
+    'import "@tessera/registry";',
+    0,
+  ],
+  [
+    "adapters can consume registry",
+    "packages/adapters/src/index.ts",
+    'import "@tessera/registry";',
+    0,
+  ],
+  [
+    "shared cannot consume registry",
+    "packages/shared/src/index.ts",
+    'import "@tessera/registry";',
+    1,
+  ],
+  [
+    "core cannot consume adapters",
+    "packages/core/src/index.ts",
+    'import "@tessera/adapters";',
+    1,
+  ],
+  [
+    "core cannot consume CLI",
+    "packages/core/src/index.ts",
+    'import "@tessera/cli";',
+    1,
+  ],
+  [
+    "private package paths are rejected",
+    "packages/core/src/index.ts",
+    'import "@tessera/registry/src/index.js";',
+    1,
+  ],
+  [
+    "relative package escapes are rejected",
+    "packages/core/src/index.ts",
+    'import "../../registry/src/index.js";',
+    1,
+  ],
+  [
+    "dynamic imports obey boundaries",
+    "packages/core/src/index.ts",
+    'await import("@tessera/cli");',
+    1,
+  ],
+  [
+    "require obeys boundaries",
+    "packages/core/src/index.ts",
+    'require("@tessera/cli");',
+    1,
+  ],
+  [
+    "file URLs cannot bypass exports",
+    "packages/core/src/index.ts",
+    'import "file:///tmp/registry/index.js";',
+    1,
+  ],
+  [
+    "local relative imports remain allowed",
+    "packages/core/src/index.ts",
+    'import "./utils.js";',
+    0,
+  ],
+  [
+    "contract tests can consume CLI exports",
+    "packages/core/src/contract.test.ts",
+    'import "@tessera/cli";',
+    0,
+  ],
+  [
+    "contract tests still cannot bypass exports",
+    "packages/core/src/contract.test.ts",
+    'import "../../cli/src/index.js";',
+    1,
+  ],
 ];
 describe("workspace import boundaries", () => {
   it.each(cases)("%s", async (_name, filePath, code, expectedErrors) => {
@@ -257,7 +349,10 @@ export const importBoundaries = {
   meta: {
     type: "problem",
     schema: [{ type: "array", items: { type: "string" }, uniqueItems: true }],
-    messages: { forbidden: "Import '{{specifier}}' violates workspace boundaries. Use an allowed package's public export." },
+    messages: {
+      forbidden:
+        "Import '{{specifier}}' violates workspace boundaries. Use an allowed package's public export.",
+    },
   },
   create(context) {
     const filename = context.filename;
@@ -276,17 +371,34 @@ export const importBoundaries = {
       } else if (specifier.startsWith(".") || isAbsolute(specifier)) {
         const target = resolve(dirname(filename), specifier);
         const within = relative(workspaceRoot, target);
-        forbidden = within === ".." || within.startsWith(`..${sep}`) || isAbsolute(within);
+        forbidden =
+          within === ".." ||
+          within.startsWith(`..${sep}`) ||
+          isAbsolute(within);
       }
-      if (forbidden) context.report({ node: source, messageId: "forbidden", data: { specifier } });
+      if (forbidden)
+        context.report({
+          node: source,
+          messageId: "forbidden",
+          data: { specifier },
+        });
     }
     return {
-      ImportDeclaration(node) { check(node.source); },
-      ExportNamedDeclaration(node) { check(node.source); },
-      ExportAllDeclaration(node) { check(node.source); },
-      ImportExpression(node) { check(node.source); },
+      ImportDeclaration(node) {
+        check(node.source);
+      },
+      ExportNamedDeclaration(node) {
+        check(node.source);
+      },
+      ExportAllDeclaration(node) {
+        check(node.source);
+      },
+      ImportExpression(node) {
+        check(node.source);
+      },
       CallExpression(node) {
-        if (node.callee.type === "Identifier" && node.callee.name === "require") check(node.arguments[0]);
+        if (node.callee.type === "Identifier" && node.callee.name === "require")
+          check(node.arguments[0]);
       },
     };
   },
@@ -311,21 +423,40 @@ const workspaces = {
   "apps/web": ["core", "shared"],
   "apps/docs": [],
 };
-const allExports = Object.keys(workspaces).map((path) => `@tessera/${path.split("/").at(-1)}`);
+const allExports = Object.keys(workspaces).map(
+  (path) => `@tessera/${path.split("/").at(-1)}`,
+);
 const plugin = { rules: { "import-boundaries": importBoundaries } };
 const boundaries = Object.entries(workspaces).flatMap(([path, allowed]) => [
   {
     files: [`${path}/**/*.{js,mjs,ts,tsx}`],
     plugins: { tessera: plugin },
-    rules: { "tessera/import-boundaries": ["error", allowed.map((name) => `@tessera/${name}`)] },
+    rules: {
+      "tessera/import-boundaries": [
+        "error",
+        allowed.map((name) => `@tessera/${name}`),
+      ],
+    },
   },
   {
-    files: [`${path}/**/*.test.{js,mjs,ts,tsx}`, `${path}/tests/**/*.{js,mjs,ts,tsx}`],
+    files: [
+      `${path}/**/*.test.{js,mjs,ts,tsx}`,
+      `${path}/tests/**/*.{js,mjs,ts,tsx}`,
+    ],
     rules: { "tessera/import-boundaries": ["error", allExports] },
   },
 ]);
 export default defineConfig(
-  { ignores: ["**/node_modules/**", "**/dist/**", "**/.turbo/**", "**/.next/**", "**/coverage/**", ".superpowers/**"] },
+  {
+    ignores: [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/.turbo/**",
+      "**/.next/**",
+      "**/coverage/**",
+      ".superpowers/**",
+    ],
+  },
   {
     files: ["**/*.{js,mjs,ts,tsx}"],
     extends: [js.configs.recommended, tseslint.configs.recommended],

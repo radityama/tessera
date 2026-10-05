@@ -31,8 +31,8 @@ Conceptually:
 
 ```ts
 interface RegistryAdapter<Input> {
-  id: string
-  parse(input: Input): TesseraComponent[]
+  id: string;
+  parse(input: Input): TesseraComponent[];
 }
 ```
 

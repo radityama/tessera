@@ -2,7 +2,7 @@
 
 Date: 2026-10-05
 
-Status: design approved in conversation; written specification awaiting review.
+Status: written specification approved in conversation on 2026-10-05.
 
 ## Purpose and scope
 
@@ -40,16 +40,16 @@ work; distribution metadata is addressed during Phase 9.
 
 Production imports follow the direction in `docs/architecture.md`:
 
-| Package | Allowed internal dependencies |
-| --- | --- |
-| `@tessera/shared` | None |
-| `@tessera/registry` | shared |
-| `@tessera/adapters` | registry, shared |
-| `@tessera/core` | registry, shared |
-| `@tessera/cli` | core, shared |
-| `@tessera/mcp` | core, shared |
-| `@tessera/web` | core, shared |
-| `@tessera/docs` | None |
+| Package             | Allowed internal dependencies |
+| ------------------- | ----------------------------- |
+| `@tessera/shared`   | None                          |
+| `@tessera/registry` | shared                        |
+| `@tessera/adapters` | registry, shared              |
+| `@tessera/core`     | registry, shared              |
+| `@tessera/cli`      | core, shared                  |
+| `@tessera/mcp`      | core, shared                  |
+| `@tessera/web`      | core, shared                  |
+| `@tessera/docs`     | None                          |
 
 Declare dependencies only when consumed and use `workspace:*` for internal
 dependencies. Use package exports for public interfaces rather than relative

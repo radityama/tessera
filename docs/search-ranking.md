@@ -21,14 +21,14 @@ Do not use an LLM inside the ranking loop.
 
 Use this baseline:
 
-| Dimension | Weight |
-| --- | ---: |
-| Query / visual relevance | 35% |
-| Stack compatibility | 20% |
-| Dependency cost | 15% |
-| Adaptability | 15% |
-| Accessibility metadata | 10% |
-| License confidence | 5% |
+| Dimension                | Weight |
+| ------------------------ | -----: |
+| Query / visual relevance |    35% |
+| Stack compatibility      |    20% |
+| Dependency cost          |    15% |
+| Adaptability             |    15% |
+| Accessibility metadata   |    10% |
+| License confidence       |     5% |
 
 The exact implementation can subdivide these dimensions, but changes must be documented and tested.
 

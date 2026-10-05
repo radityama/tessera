@@ -74,28 +74,35 @@ Do not:
 ## Architecture boundaries
 
 ### `packages/registry`
+
 Owns canonical schemas, validation, persistence format, and registry loading.
 
 ### `packages/adapters`
+
 Owns source-specific normalization logic.
 
 Adapters must output the canonical registry schema and must not leak provider-specific shapes downstream.
 
 ### `packages/core`
+
 Owns query normalization, filtering, ranking, score explanations, and retrieval orchestration.
 
 It must not depend on MCP or CLI presentation code.
 
 ### `packages/mcp`
+
 Thin protocol adapter over `packages/core`.
 
 ### `packages/cli`
+
 Thin human-facing adapter over `packages/core`.
 
 ### `skills/tessera`
+
 Instructional policy for coding agents. No runtime dependency on the skill should be required for the core library.
 
 ### `apps/web`
+
 Browse/search experience. It consumes the same core APIs and registry data as the CLI/MCP.
 
 ## API design rules

@@ -1,0 +1,9 @@
+node_modules/
+.pnpm-store/
+.turbo/
+.superpowers/
+**/dist/
+**/coverage/
+**/.next/
+pnpm-lock.yaml
+FILE_STRUCTURE.txt
