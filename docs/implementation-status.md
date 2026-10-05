@@ -5,7 +5,7 @@ Work follows `TASKS.md` in order. Each implementation phase must pass formatting
 | Phase                    | Status                    | Review                                               |
 | ------------------------ | ------------------------- | ---------------------------------------------------- |
 | 0: repository foundation | Complete, checks passing  | [PR #1](https://github.com/radityama/tessera/pull/1) |
-| 1: canonical registry    | Complete, review approved | Phase PR pending                                     |
+| 1: canonical registry    | Complete, review approved | [PR #2](https://github.com/radityama/tessera/pull/2) |
 | 2: source adapters       | Next                      |                                                      |
 | 3: retrieval and ranking | Pending                   |                                                      |
 | 4: CLI                   | Pending                   |                                                      |
