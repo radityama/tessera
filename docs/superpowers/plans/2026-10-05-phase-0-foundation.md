@@ -626,7 +626,7 @@ The Phase 0 package is an empty buildable TypeScript module. `pnpm dev` runs its
 
 - [x] Step 3: Run all phase exit checks, then verify clean artifacts and development.
 
-Run the seven commands in Task 1 Step 6 after formatting the documentation. Remove only the eight known workspace `dist` directories and the repository `.turbo` cache created by this task, then run `pnpm typecheck`, `pnpm test`, and `pnpm build` from that clean build state. Expected: exit 0 with no preexisting artifacts required.
+Run the seven commands in Task 1 Step 6 after formatting the documentation. Remove only the eight known workspace `dist` directories and the repository `.turbo` cache created by this task, then run `pnpm exec turbo run typecheck test build --force` from that clean build state. The `--force` option bypasses existing cache reads, including Turbo's shared worktree cache; do not delete the shared cache. Expected: exit 0, all 24 workspace tasks execute with zero cache hits, and no preexisting artifacts required. The root boundary suite is verified separately by `pnpm test` in the phase checks above.
 
 Inspect every `dist/index.d.ts` and import every `dist/index.js` using Node.js. Expected: eight successful ESM imports and eight declaration files. Check the Turbo dependency graph structurally; all typecheck/test tasks wait for dependency builds once real dependencies are declared.
 
