@@ -634,7 +634,7 @@ Run `pnpm dev`, wait for all eight compiler watchers to report zero errors, send
 
 Run `git diff --check`. Commit with `ci: verify workspace foundation and document setup` only after all checks pass. Include exact verification evidence in the task report.
 
-- [ ] Step 4: Prepare a reviewable phase PR.
+- [x] Step 4: Prepare a reviewable phase PR.
 
 After task and whole-branch review, push only the feature branch and open a draft PR against `main`. Describe the buildable foundation and verified commands, and explicitly state that package product APIs are still empty. Do not merge, publish, or claim v0.1 is releasable.
 
