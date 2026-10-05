@@ -50,6 +50,9 @@ export const importBoundaries = {
       ImportExpression(node) {
         check(node.source);
       },
+      TSImportType(node) {
+        check(node.source);
+      },
       CallExpression(node) {
         if (node.callee.type === "Identifier" && node.callee.name === "require")
           check(node.arguments[0]);

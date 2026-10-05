@@ -80,6 +80,54 @@ const cases = [
     'import "../../cli/src/index.js";',
     1,
   ],
+  [
+    "public type imports follow allowed dependencies",
+    "packages/core/src/index.ts",
+    'export type Allowed = import("@tessera/registry").Allowed;',
+    0,
+  ],
+  [
+    "type imports reject forbidden packages",
+    "packages/core/src/index.ts",
+    'export type Forbidden = import("@tessera/cli").Forbidden;',
+    1,
+  ],
+  [
+    "type imports reject private package paths",
+    "packages/core/src/index.ts",
+    'export type Private = import("@tessera/registry/src/index.js").Private;',
+    1,
+  ],
+  [
+    "type imports reject relative escapes",
+    "packages/core/src/index.ts",
+    'export type Private = import("../../cli/src/index.js").Private;',
+    1,
+  ],
+  [
+    "local relative type imports remain allowed",
+    "packages/core/src/index.ts",
+    'export type Local = import("./utils.js").Local;',
+    0,
+  ],
+  [
+    "contract tests can consume public CLI types",
+    "packages/core/src/contract.test.ts",
+    'export type Contract = import("@tessera/cli").Contract;',
+    0,
+  ],
+  [
+    "contract type imports reject private package paths",
+    "packages/core/src/contract.test.ts",
+    'export type Private = import("@tessera/cli/src/index.js").Private;',
+    1,
+  ],
+  [
+    "contract type imports reject relative escapes",
+    "packages/core/src/contract.test.ts",
+    'export type Private = import("../../cli/src/index.js").Private;',
+    1,
+  ],
 ];
 describe("workspace import boundaries", () => {
   it.each(cases)("%s", async (_name, filePath, code, expectedErrors) => {
