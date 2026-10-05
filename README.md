@@ -12,7 +12,15 @@ A coding agent should search for good existing UI patterns first, choose compone
 
 ## Status
 
-This repository is an implementation-ready scaffold. The product is not implemented yet.
+The Phase 0 repository foundation is implemented. Product features begin with the canonical registry in Phase 1; retrieval, CLI, MCP, and application behavior are not implemented yet.
+
+## Local development
+
+Use Node.js 24 or newer. The repository pins pnpm 10.34.6 through `packageManager`. If Corepack is unavailable, install it with `npm install -g corepack` ([Corepack installation](https://github.com/nodejs/corepack#manual-installs)). With Corepack available, run `corepack enable`, then `pnpm install`.
+
+Run `pnpm format:check`, `pnpm lint`, `pnpm typecheck`, `pnpm test`, and `pnpm build` before submitting a change. Use `pnpm format` to format maintained files and `pnpm dev` for compiler watch mode in all eight workspaces.
+
+Library builds emit ESM JavaScript and declarations to `dist`. Applications are currently empty buildable modules; their web servers arrive in Phases 7 and 8. Product searches and installation commands are not available yet.
 
 Start with [`START_HERE.md`](./START_HERE.md), then read [`AGENTS.md`](./AGENTS.md).
 

@@ -6,7 +6,7 @@
 
 **Architecture:** Root configuration controls strict ESM builds, linting, formatting, and tests. Workspace packages retain the dependency direction in the approved spec; a local ESLint rule checks imports. Applications remain empty buildable modules until their assigned phases.
 
-**Tech Stack:** Node.js 24+, pnpm 10.34.6, Turborepo 2.11.7, TypeScript 5.9.3, ESLint 9.39.5, typescript-eslint 8.71.0, Prettier 3.9.9, Vitest 4.1.11.
+**Tech Stack:** Node.js 24+, pnpm 10.34.6, Turborepo 2.11.7, TypeScript 5.9.3, ESLint 10.12.0, typescript-eslint 8.71.0, Prettier 3.9.9, Vitest 4.1.11.
 
 ---
 
@@ -44,7 +44,7 @@
 
 **Files:** Modify `package.json`, `pnpm-workspace.yaml`, `tsconfig.base.json`, `turbo.json`, `.gitignore`, and the approved spec's status. Create `eslint.config.mjs`, `tooling/import-boundaries.mjs`, `prettier.config.mjs`, `.prettierignore`, `vitest.config.mjs`, `tests/import-boundaries.test.mjs`, and `pnpm-lock.yaml`. Create `package.json`, `tsconfig.json`, and `src/index.ts` in each of `packages/shared`, `packages/registry`, `packages/adapters`, `packages/core`, `packages/cli`, `packages/mcp`, `apps/web`, and `apps/docs`.
 
-- [ ] Step 1: Record the spec as approved and configure the root manifest.
+- [x] Step 1: Record the spec as approved and configure the root manifest.
 
 Set the spec status to `Status: written specification approved in conversation on 2026-10-05.` Use this root manifest:
 
@@ -91,7 +91,7 @@ onlyBuiltDependencies:
 
 Append `.superpowers/` to `.gitignore` for execution reports. Do not stage execution reports.
 
-- [ ] Step 2: Configure TypeScript, workspace manifests, and empty modules.
+- [x] Step 2: Configure TypeScript, workspace manifests, and empty modules.
 
 Use this `tsconfig.base.json`:
 
@@ -168,7 +168,7 @@ for (const [directory, name] of workspaces) {
 
 No internal dependencies are needed for empty modules. Add `workspace:*` dependencies only when later implementations actually import them.
 
-- [ ] Step 3: Configure Turbo and formatting.
+- [x] Step 3: Configure Turbo and formatting.
 
 Use this `turbo.json`:
 
@@ -221,7 +221,7 @@ pnpm-lock.yaml
 FILE_STRUCTURE.txt
 ```
 
-- [ ] Step 4: Add the boundary tests before implementing the rule.
+- [x] Step 4: Add the boundary tests before implementing the rule.
 
 Use this `vitest.config.mjs`:
 
@@ -387,7 +387,7 @@ describe("workspace import boundaries", () => {
 
 Install with `pnpm install`. Run `pnpm exec vitest run`. Expected: the forbidden-import cases fail until the rule is configured; permissive cases should not require actual imported packages to exist.
 
-- [ ] Step 5: Implement the import policy and flat lint configuration.
+- [x] Step 5: Implement the import policy and flat lint configuration.
 
 Create `tooling/import-boundaries.mjs`:
 
@@ -519,7 +519,7 @@ export default defineConfig(
 
 Run `pnpm exec vitest run`. Expected: all 21 import-policy cases pass. Verify that forbidden package exports, relative escapes, dynamic imports, and reexports produce boundary diagnostics.
 
-- [ ] Step 6: Format and run the phase checks before committing.
+- [x] Step 6: Format and run the phase checks before committing.
 
 Run in order:
 
@@ -539,7 +539,7 @@ Expected: exit 0 for each; root tooling tests pass; eight unimplemented workspac
 
 **Files:** Create `.github/workflows/ci.yml`. Modify `README.md`, `CONTRIBUTING.md`, `docs/testing.md`, `packages/shared/README.md`, `packages/registry/README.md`, `packages/adapters/README.md`, `packages/core/README.md`, `packages/cli/README.md`, `packages/mcp/README.md`, `apps/web/README.md`, and `apps/docs/README.md`.
 
-- [ ] Step 1: Add CI for the pinned runtime and package manager.
+- [x] Step 1: Add CI for the pinned runtime and package manager.
 
 Create `.github/workflows/ci.yml`:
 
@@ -570,7 +570,7 @@ jobs:
 
 Verify action versions and syntax against primary documentation before committing. Do not add deployment or publishing jobs.
 
-- [ ] Step 2: Document current setup and foundation status.
+- [x] Step 2: Document current setup and foundation status.
 
 Replace the scaffold-only status text in `README.md` with:
 
@@ -624,7 +624,7 @@ Preserve the app READMEs' assigned-phase instructions and append:
 The Phase 0 package is an empty buildable TypeScript module. `pnpm dev` runs its compiler watcher; no application server or user-facing pages exist yet.
 ```
 
-- [ ] Step 3: Run all phase exit checks, then verify clean artifacts and development.
+- [x] Step 3: Run all phase exit checks, then verify clean artifacts and development.
 
 Run the seven commands in Task 1 Step 6 after formatting the documentation. Remove only the eight known workspace `dist` directories and the repository `.turbo` cache created by this task, then run `pnpm typecheck`, `pnpm test`, and `pnpm build` from that clean build state. Expected: exit 0 with no preexisting artifacts required.
 

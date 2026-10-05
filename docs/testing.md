@@ -54,3 +54,11 @@ Explicitly test:
 - unsupported framework,
 - empty registry,
 - invalid schema version.
+
+## Phase 0 test infrastructure
+
+Vitest runs in Node.js. The root suite tests lint enforcement of allowed dependencies, rejected private paths and relative escapes, dynamic imports, and contract-test exceptions.
+
+Unimplemented workspaces explicitly permit no test files during foundation work. This is not evidence of product behavior. Remove that allowance from each workspace as its implementation gains meaningful tests, starting with the registry in Phase 1. Root tests do not use the allowance.
+
+Use `pnpm test` for the root suite and workspace suites. Package tests resolve the shared configuration with their own working directory as the root. CI runs all checks from a fresh checkout, and dependent typechecking and tests wait for the dependency build artifacts they consume.
