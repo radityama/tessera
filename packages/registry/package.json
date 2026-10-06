@@ -23,7 +23,7 @@
     "eslint": "^9.23.0",
     "prettier": "^3.5.3",
     "typescript": "~5.9.2",
-    "vitest": "^3.2.4"
+    "vitest": "^5.0.3"
   },
   "description": "Canonical schemas, validation and loading for the Tessera component registry, including the bundled snapshot that ships with the package.",
   "license": "MIT",
