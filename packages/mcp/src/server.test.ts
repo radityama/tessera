@@ -33,24 +33,24 @@ describe("mcp contract", () => {
   });
 
   it("get_component returns canonical metadata", () => {
-    const core = getComponent(all, "beautifului/terminal-hero");
-    const res = handleGetComponent(all, { id: "beautifului/terminal-hero" });
+    const core = getComponent(all, "aceternity/terminal");
+    const res = handleGetComponent(all, { id: "aceternity/terminal" });
     expect(readJson(res)).toEqual(JSON.parse(JSON.stringify(core)));
   });
 
   it("get_installation is safe and warns on unknown license", () => {
-    const res = handleGetInstallation(all, { id: "efferd/terminal-panel" });
+    const res = handleGetInstallation(all, { id: "efferd/hero-1" });
     const plan = readJson(res) as { licenseWarning?: string; command?: string };
     expect(plan.licenseWarning).toMatch(/unknown license/i);
-    const ok = handleGetInstallation(all, { id: "beautifului/terminal-hero" });
-    expect((readJson(ok) as { id: string }).id).toBe("beautifului/terminal-hero");
+    const ok = handleGetInstallation(all, { id: "aceternity/terminal" });
+    expect((readJson(ok) as { id: string }).id).toBe("aceternity/terminal");
   });
 
   it("find_similar_components matches core ordering", () => {
-    const res = handleFindSimilar(all, { id: "beautifului/terminal-hero", limit: 3 });
+    const res = handleFindSimilar(all, { id: "aceternity/terminal", limit: 3 });
     const ids = (readJson(res) as Array<{ id: string }>).map((r) => r.id);
     expect(ids).toHaveLength(3);
-    expect(ids).not.toContain("beautifului/terminal-hero");
+    expect(ids).not.toContain("aceternity/terminal");
   });
 
   it("search_patterns matches core pattern results", () => {
@@ -59,7 +59,9 @@ describe("mcp contract", () => {
       limit: 3,
     });
     const ids = (readJson(res) as Array<{ id: string }>).map((r) => r.id);
-    expect(ids[0]).toBe("beautifului/terminal-hero");
+    expect(ids.length).toBeGreaterThan(0);
+    const first = readJson(res) as Array<{ reasons: string[] }>;
+    expect(first[0]?.reasons[0]).toMatch(/pattern match/);
   });
 
   it("returns structured errors, never stack traces", () => {

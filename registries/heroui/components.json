@@ -1,113 +1,722 @@
 [
   {
-    "schemaVersion": 1,
-    "id": "heroui/hero-centered",
+    "schemaVersion": 2,
+    "id": "heroui/button",
     "source": "heroui",
-    "slug": "hero-centered",
-    "name": "Centered Hero",
-    "description": "Centered minimal SaaS hero with badge, headline and dual CTAs.",
-    "category": "hero",
-    "secondaryCategories": ["cta"],
+    "slug": "button",
+    "name": "Button",
+    "description": "Interactive button primitive with variants, sizes and loading state.",
+    "category": "other",
+    "secondaryCategories": [],
     "frameworks": ["react"],
-    "compatibility": { "nextjs": true, "typescript": true },
+    "compatibility": {
+      "nextjs": true,
+      "typescript": true
+    },
     "visual": {
-      "aesthetics": ["minimal", "saas", "clean", "light"],
-      "tags": ["hero", "centered", "saas", "minimal", "clean", "startup"],
-      "motion": "none",
-      "density": "spacious",
+      "aesthetics": ["minimal", "clean"],
+      "tags": ["button", "action", "control", "interactive"],
+      "motion": "low",
+      "density": "normal",
       "radius": "medium",
       "surface": ["flat"]
     },
-    "dependencies": [{ "name": "@heroui/react", "kind": "runtime", "required": true }],
+    "dependencies": [
+      {
+        "name": "@heroui/react",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
     "installation": {
       "kind": "package",
       "command": "npm install @heroui/react",
-      "instructions": "Install HeroUI, then compose the centered hero from Button and layout primitives."
+      "instructions": "Install @heroui/react, then compose the Button primitive into your page and adapt it to your design tokens."
+    },
+    "retrieval": {
+      "kind": "npm-package",
+      "package": "@heroui/react",
+      "importHint": "import { Button, Card } from '@heroui/react'"
     },
     "links": {
       "homepage": "https://www.heroui.com/",
-      "docs": "https://www.heroui.com/docs"
+      "docs": "https://www.heroui.com/docs/components/button"
     },
-    "license": { "status": "known", "identifier": "MIT", "source": "https://github.com/heroui-inc/heroui/blob/canary/LICENSE" },
-    "provenance": { "adapter": "heroui", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://registry.npmjs.org/@heroui/react",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "The published npm package declares MIT. The repository's default branch carries an Apache-2.0 LICENSE file, so the repository and the shipped artifact disagree; the npm metadata is recorded here because it governs the artifact users actually install."
+    },
+    "provenance": {
+      "adapter": "heroui-curated",
+      "upstreamName": "button",
+      "retrievedAt": "2026-10-06T05:40:13.886Z",
+      "sourceVersion": "@heroui/react",
+      "derivedFields": []
+    }
   },
   {
-    "schemaVersion": 1,
-    "id": "heroui/pricing-tiers",
+    "schemaVersion": 2,
+    "id": "heroui/card",
     "source": "heroui",
-    "slug": "pricing-tiers",
-    "name": "Pricing Tiers",
-    "description": "Three-tier SaaS pricing layout with monthly toggle and minimal cards.",
-    "category": "pricing",
-    "secondaryCategories": ["card"],
+    "slug": "card",
+    "name": "Card",
+    "description": "Container primitive for grouped content with header, body and footer slots.",
+    "category": "card",
+    "secondaryCategories": [],
     "frameworks": ["react"],
-    "compatibility": { "nextjs": true, "typescript": true },
-    "visual": {
-      "aesthetics": ["minimal", "saas", "clean"],
-      "tags": ["pricing", "tiers", "saas", "minimal", "cards", "plans"],
-      "motion": "none",
-      "density": "normal",
-      "radius": "large",
-      "surface": ["outlined", "elevated"]
+    "compatibility": {
+      "nextjs": true,
+      "typescript": true
     },
-    "dependencies": [{ "name": "@heroui/react", "kind": "runtime", "required": true }],
+    "visual": {
+      "aesthetics": ["minimal", "clean"],
+      "tags": ["card", "container", "surface", "content"],
+      "motion": "low",
+      "density": "normal",
+      "radius": "medium",
+      "surface": ["flat"]
+    },
+    "dependencies": [
+      {
+        "name": "@heroui/react",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
     "installation": {
       "kind": "package",
       "command": "npm install @heroui/react",
-      "instructions": "Install HeroUI, then copy the pricing tiers example."
+      "instructions": "Install @heroui/react, then compose the Card primitive into your page and adapt it to your design tokens."
     },
-    "links": { "homepage": "https://www.heroui.com/" },
-    "license": { "status": "known", "identifier": "MIT", "source": "https://github.com/heroui-inc/heroui/blob/canary/LICENSE" },
-    "provenance": { "adapter": "heroui", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+    "retrieval": {
+      "kind": "npm-package",
+      "package": "@heroui/react",
+      "importHint": "import { Button, Card } from '@heroui/react'"
+    },
+    "links": {
+      "homepage": "https://www.heroui.com/",
+      "docs": "https://www.heroui.com/docs/components/card"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://registry.npmjs.org/@heroui/react",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "The published npm package declares MIT. The repository's default branch carries an Apache-2.0 LICENSE file, so the repository and the shipped artifact disagree; the npm metadata is recorded here because it governs the artifact users actually install."
+    },
+    "provenance": {
+      "adapter": "heroui-curated",
+      "upstreamName": "card",
+      "retrievedAt": "2026-10-06T05:40:13.886Z",
+      "sourceVersion": "@heroui/react",
+      "derivedFields": []
+    }
   },
   {
-    "schemaVersion": 1,
-    "id": "heroui/testimonial-wall",
+    "schemaVersion": 2,
+    "id": "heroui/navbar",
     "source": "heroui",
-    "slug": "testimonial-wall",
-    "name": "Testimonial Wall",
-    "description": "Masonry testimonial wall for social proof on SaaS landing pages.",
-    "category": "testimonial",
-    "secondaryCategories": ["card"],
+    "slug": "navbar",
+    "name": "Navbar",
+    "description": "Responsive navigation bar with menu, brand and toggle slots.",
+    "category": "navbar",
+    "secondaryCategories": [],
     "frameworks": ["react"],
-    "compatibility": { "nextjs": true, "typescript": true },
-    "visual": {
-      "aesthetics": ["minimal", "saas"],
-      "tags": ["testimonial", "wall", "social", "proof", "saas", "masonry"],
-      "motion": "none",
-      "density": "normal",
-      "radius": "large",
-      "surface": ["outlined"]
+    "compatibility": {
+      "nextjs": true,
+      "typescript": true
     },
-    "dependencies": [{ "name": "@heroui/react", "kind": "runtime", "required": true }],
-    "installation": { "kind": "package", "command": "npm install @heroui/react" },
-    "links": { "homepage": "https://www.heroui.com/" },
-    "license": { "status": "known", "identifier": "MIT", "source": "https://github.com/heroui-inc/heroui/blob/canary/LICENSE" },
-    "provenance": { "adapter": "heroui", "retrievedAt": "2026-09-01T00:00:00.000Z" }
-  },
-  {
-    "schemaVersion": 1,
-    "id": "heroui/login-form",
-    "source": "heroui",
-    "slug": "login-form",
-    "name": "Login Form",
-    "description": "Accessible login form with validation states built from HeroUI inputs.",
-    "category": "form",
-    "secondaryCategories": ["card"],
-    "frameworks": ["react"],
-    "compatibility": { "nextjs": true, "clientComponent": true, "typescript": true },
     "visual": {
       "aesthetics": ["minimal", "clean"],
-      "tags": ["form", "login", "auth", "input", "accessible"],
-      "motion": "none",
-      "density": "compact",
+      "tags": ["navbar", "navigation", "header", "responsive"],
+      "motion": "low",
+      "density": "normal",
       "radius": "medium",
-      "surface": ["outlined"]
+      "surface": ["flat"]
     },
-    "dependencies": [{ "name": "@heroui/react", "kind": "runtime", "required": true }],
-    "installation": { "kind": "package", "command": "npm install @heroui/react" },
-    "links": { "homepage": "https://www.heroui.com/" },
-    "license": { "status": "known", "identifier": "MIT", "source": "https://github.com/heroui-inc/heroui/blob/canary/LICENSE" },
-    "provenance": { "adapter": "heroui", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+    "dependencies": [
+      {
+        "name": "@heroui/react",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "package",
+      "command": "npm install @heroui/react",
+      "instructions": "Install @heroui/react, then compose the Navbar primitive into your page and adapt it to your design tokens."
+    },
+    "retrieval": {
+      "kind": "npm-package",
+      "package": "@heroui/react",
+      "importHint": "import { Button, Card } from '@heroui/react'"
+    },
+    "links": {
+      "homepage": "https://www.heroui.com/",
+      "docs": "https://www.heroui.com/docs/components/navbar"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://registry.npmjs.org/@heroui/react",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "The published npm package declares MIT. The repository's default branch carries an Apache-2.0 LICENSE file, so the repository and the shipped artifact disagree; the npm metadata is recorded here because it governs the artifact users actually install."
+    },
+    "provenance": {
+      "adapter": "heroui-curated",
+      "upstreamName": "navbar",
+      "retrievedAt": "2026-10-06T05:40:13.886Z",
+      "sourceVersion": "@heroui/react",
+      "derivedFields": []
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "heroui/form",
+    "source": "heroui",
+    "slug": "form",
+    "name": "Form",
+    "description": "Form primitive with validation state, labels and submission handling.",
+    "category": "form",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["minimal", "clean"],
+      "tags": ["form", "validation", "input", "accessible"],
+      "motion": "low",
+      "density": "normal",
+      "radius": "medium",
+      "surface": ["flat"]
+    },
+    "dependencies": [
+      {
+        "name": "@heroui/react",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "package",
+      "command": "npm install @heroui/react",
+      "instructions": "Install @heroui/react, then compose the Form primitive into your page and adapt it to your design tokens."
+    },
+    "retrieval": {
+      "kind": "npm-package",
+      "package": "@heroui/react",
+      "importHint": "import { Button, Card } from '@heroui/react'"
+    },
+    "links": {
+      "homepage": "https://www.heroui.com/",
+      "docs": "https://www.heroui.com/docs/components/form"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://registry.npmjs.org/@heroui/react",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "The published npm package declares MIT. The repository's default branch carries an Apache-2.0 LICENSE file, so the repository and the shipped artifact disagree; the npm metadata is recorded here because it governs the artifact users actually install."
+    },
+    "provenance": {
+      "adapter": "heroui-curated",
+      "upstreamName": "form",
+      "retrievedAt": "2026-10-06T05:40:13.886Z",
+      "sourceVersion": "@heroui/react",
+      "derivedFields": []
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "heroui/input",
+    "source": "heroui",
+    "slug": "input",
+    "name": "Input",
+    "description": "Text input primitive with label, description and error messaging.",
+    "category": "form",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["minimal", "clean"],
+      "tags": ["input", "field", "text", "form", "accessible"],
+      "motion": "low",
+      "density": "normal",
+      "radius": "medium",
+      "surface": ["flat"]
+    },
+    "dependencies": [
+      {
+        "name": "@heroui/react",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "package",
+      "command": "npm install @heroui/react",
+      "instructions": "Install @heroui/react, then compose the Input primitive into your page and adapt it to your design tokens."
+    },
+    "retrieval": {
+      "kind": "npm-package",
+      "package": "@heroui/react",
+      "importHint": "import { Button, Card } from '@heroui/react'"
+    },
+    "links": {
+      "homepage": "https://www.heroui.com/",
+      "docs": "https://www.heroui.com/docs/components/input"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://registry.npmjs.org/@heroui/react",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "The published npm package declares MIT. The repository's default branch carries an Apache-2.0 LICENSE file, so the repository and the shipped artifact disagree; the npm metadata is recorded here because it governs the artifact users actually install."
+    },
+    "provenance": {
+      "adapter": "heroui-curated",
+      "upstreamName": "input",
+      "retrievedAt": "2026-10-06T05:40:13.886Z",
+      "sourceVersion": "@heroui/react",
+      "derivedFields": []
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "heroui/table",
+    "source": "heroui",
+    "slug": "table",
+    "name": "Table",
+    "description": "Data table primitive with sorting, selection and pagination support.",
+    "category": "table",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["minimal", "clean"],
+      "tags": ["table", "data", "rows", "sorting"],
+      "motion": "low",
+      "density": "normal",
+      "radius": "medium",
+      "surface": ["flat"]
+    },
+    "dependencies": [
+      {
+        "name": "@heroui/react",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "package",
+      "command": "npm install @heroui/react",
+      "instructions": "Install @heroui/react, then compose the Table primitive into your page and adapt it to your design tokens."
+    },
+    "retrieval": {
+      "kind": "npm-package",
+      "package": "@heroui/react",
+      "importHint": "import { Button, Card } from '@heroui/react'"
+    },
+    "links": {
+      "homepage": "https://www.heroui.com/",
+      "docs": "https://www.heroui.com/docs/components/table"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://registry.npmjs.org/@heroui/react",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "The published npm package declares MIT. The repository's default branch carries an Apache-2.0 LICENSE file, so the repository and the shipped artifact disagree; the npm metadata is recorded here because it governs the artifact users actually install."
+    },
+    "provenance": {
+      "adapter": "heroui-curated",
+      "upstreamName": "table",
+      "retrievedAt": "2026-10-06T05:40:13.886Z",
+      "sourceVersion": "@heroui/react",
+      "derivedFields": []
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "heroui/modal",
+    "source": "heroui",
+    "slug": "modal",
+    "name": "Modal",
+    "description": "Accessible dialog primitive with focus management and backdrop.",
+    "category": "other",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["minimal", "clean"],
+      "tags": ["modal", "dialog", "overlay", "accessible", "keyboard"],
+      "motion": "low",
+      "density": "normal",
+      "radius": "medium",
+      "surface": ["flat"]
+    },
+    "dependencies": [
+      {
+        "name": "@heroui/react",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "package",
+      "command": "npm install @heroui/react",
+      "instructions": "Install @heroui/react, then compose the Modal primitive into your page and adapt it to your design tokens."
+    },
+    "retrieval": {
+      "kind": "npm-package",
+      "package": "@heroui/react",
+      "importHint": "import { Button, Card } from '@heroui/react'"
+    },
+    "links": {
+      "homepage": "https://www.heroui.com/",
+      "docs": "https://www.heroui.com/docs/components/modal"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://registry.npmjs.org/@heroui/react",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "The published npm package declares MIT. The repository's default branch carries an Apache-2.0 LICENSE file, so the repository and the shipped artifact disagree; the npm metadata is recorded here because it governs the artifact users actually install."
+    },
+    "provenance": {
+      "adapter": "heroui-curated",
+      "upstreamName": "modal",
+      "retrievedAt": "2026-10-06T05:40:13.886Z",
+      "sourceVersion": "@heroui/react",
+      "derivedFields": []
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "heroui/tabs",
+    "source": "heroui",
+    "slug": "tabs",
+    "name": "Tabs",
+    "description": "Tabbed panel primitive with keyboard navigation.",
+    "category": "navigation",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["minimal", "clean"],
+      "tags": ["tabs", "navigation", "keyboard", "panels"],
+      "motion": "low",
+      "density": "normal",
+      "radius": "medium",
+      "surface": ["flat"]
+    },
+    "dependencies": [
+      {
+        "name": "@heroui/react",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "package",
+      "command": "npm install @heroui/react",
+      "instructions": "Install @heroui/react, then compose the Tabs primitive into your page and adapt it to your design tokens."
+    },
+    "retrieval": {
+      "kind": "npm-package",
+      "package": "@heroui/react",
+      "importHint": "import { Button, Card } from '@heroui/react'"
+    },
+    "links": {
+      "homepage": "https://www.heroui.com/",
+      "docs": "https://www.heroui.com/docs/components/tabs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://registry.npmjs.org/@heroui/react",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "The published npm package declares MIT. The repository's default branch carries an Apache-2.0 LICENSE file, so the repository and the shipped artifact disagree; the npm metadata is recorded here because it governs the artifact users actually install."
+    },
+    "provenance": {
+      "adapter": "heroui-curated",
+      "upstreamName": "tabs",
+      "retrievedAt": "2026-10-06T05:40:13.886Z",
+      "sourceVersion": "@heroui/react",
+      "derivedFields": []
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "heroui/accordion",
+    "source": "heroui",
+    "slug": "accordion",
+    "name": "Accordion",
+    "description": "Collapsible disclosure primitive for grouped expandable content.",
+    "category": "other",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["minimal", "clean"],
+      "tags": ["accordion", "collapse", "disclosure", "expandable", "faq"],
+      "motion": "low",
+      "density": "normal",
+      "radius": "medium",
+      "surface": ["flat"]
+    },
+    "dependencies": [
+      {
+        "name": "@heroui/react",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "package",
+      "command": "npm install @heroui/react",
+      "instructions": "Install @heroui/react, then compose the Accordion primitive into your page and adapt it to your design tokens."
+    },
+    "retrieval": {
+      "kind": "npm-package",
+      "package": "@heroui/react",
+      "importHint": "import { Button, Card } from '@heroui/react'"
+    },
+    "links": {
+      "homepage": "https://www.heroui.com/",
+      "docs": "https://www.heroui.com/docs/components/accordion"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://registry.npmjs.org/@heroui/react",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "The published npm package declares MIT. The repository's default branch carries an Apache-2.0 LICENSE file, so the repository and the shipped artifact disagree; the npm metadata is recorded here because it governs the artifact users actually install."
+    },
+    "provenance": {
+      "adapter": "heroui-curated",
+      "upstreamName": "accordion",
+      "retrievedAt": "2026-10-06T05:40:13.886Z",
+      "sourceVersion": "@heroui/react",
+      "derivedFields": []
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "heroui/chip",
+    "source": "heroui",
+    "slug": "chip",
+    "name": "Chip",
+    "description": "Compact status or label primitive with color variants.",
+    "category": "other",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["minimal", "clean"],
+      "tags": ["chip", "badge", "label", "status", "tag"],
+      "motion": "low",
+      "density": "normal",
+      "radius": "medium",
+      "surface": ["flat"]
+    },
+    "dependencies": [
+      {
+        "name": "@heroui/react",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "package",
+      "command": "npm install @heroui/react",
+      "instructions": "Install @heroui/react, then compose the Chip primitive into your page and adapt it to your design tokens."
+    },
+    "retrieval": {
+      "kind": "npm-package",
+      "package": "@heroui/react",
+      "importHint": "import { Button, Card } from '@heroui/react'"
+    },
+    "links": {
+      "homepage": "https://www.heroui.com/",
+      "docs": "https://www.heroui.com/docs/components/chip"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://registry.npmjs.org/@heroui/react",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "The published npm package declares MIT. The repository's default branch carries an Apache-2.0 LICENSE file, so the repository and the shipped artifact disagree; the npm metadata is recorded here because it governs the artifact users actually install."
+    },
+    "provenance": {
+      "adapter": "heroui-curated",
+      "upstreamName": "chip",
+      "retrievedAt": "2026-10-06T05:40:13.886Z",
+      "sourceVersion": "@heroui/react",
+      "derivedFields": []
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "heroui/pagination",
+    "source": "heroui",
+    "slug": "pagination",
+    "name": "Pagination",
+    "description": "Page navigation primitive with sibling and boundary controls.",
+    "category": "navigation",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["minimal", "clean"],
+      "tags": ["pagination", "navigation", "pages", "list"],
+      "motion": "low",
+      "density": "normal",
+      "radius": "medium",
+      "surface": ["flat"]
+    },
+    "dependencies": [
+      {
+        "name": "@heroui/react",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "package",
+      "command": "npm install @heroui/react",
+      "instructions": "Install @heroui/react, then compose the Pagination primitive into your page and adapt it to your design tokens."
+    },
+    "retrieval": {
+      "kind": "npm-package",
+      "package": "@heroui/react",
+      "importHint": "import { Button, Card } from '@heroui/react'"
+    },
+    "links": {
+      "homepage": "https://www.heroui.com/",
+      "docs": "https://www.heroui.com/docs/components/pagination"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://registry.npmjs.org/@heroui/react",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "The published npm package declares MIT. The repository's default branch carries an Apache-2.0 LICENSE file, so the repository and the shipped artifact disagree; the npm metadata is recorded here because it governs the artifact users actually install."
+    },
+    "provenance": {
+      "adapter": "heroui-curated",
+      "upstreamName": "pagination",
+      "retrievedAt": "2026-10-06T05:40:13.886Z",
+      "sourceVersion": "@heroui/react",
+      "derivedFields": []
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "heroui/skeleton",
+    "source": "heroui",
+    "slug": "skeleton",
+    "name": "Skeleton",
+    "description": "Loading placeholder primitive for content that has not resolved yet.",
+    "category": "other",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["minimal", "clean"],
+      "tags": ["skeleton", "loading", "placeholder", "async"],
+      "motion": "low",
+      "density": "normal",
+      "radius": "medium",
+      "surface": ["flat"]
+    },
+    "dependencies": [
+      {
+        "name": "@heroui/react",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "package",
+      "command": "npm install @heroui/react",
+      "instructions": "Install @heroui/react, then compose the Skeleton primitive into your page and adapt it to your design tokens."
+    },
+    "retrieval": {
+      "kind": "npm-package",
+      "package": "@heroui/react",
+      "importHint": "import { Button, Card } from '@heroui/react'"
+    },
+    "links": {
+      "homepage": "https://www.heroui.com/",
+      "docs": "https://www.heroui.com/docs/components/skeleton"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://registry.npmjs.org/@heroui/react",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "The published npm package declares MIT. The repository's default branch carries an Apache-2.0 LICENSE file, so the repository and the shipped artifact disagree; the npm metadata is recorded here because it governs the artifact users actually install."
+    },
+    "provenance": {
+      "adapter": "heroui-curated",
+      "upstreamName": "skeleton",
+      "retrievedAt": "2026-10-06T05:40:13.886Z",
+      "sourceVersion": "@heroui/react",
+      "derivedFields": []
+    }
   }
 ]

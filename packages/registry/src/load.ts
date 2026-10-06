@@ -1,6 +1,6 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
-import { TesseraComponentSchema, type TesseraComponent } from "./schema.js";
+import { SCHEMA_VERSION, TesseraComponentSchema, type TesseraComponent } from "./schema.js";
 
 export class RegistryError extends Error {
   readonly code: string;
@@ -11,7 +11,34 @@ export class RegistryError extends Error {
   }
 }
 
+/**
+ * Reject unsupported schema versions explicitly instead of coercing them.
+ *
+ * v1 records have no `retrieval` field and no license evidence, so upgrading
+ * one would mean inventing answers to "where does this come from?" and "is
+ * this usable?". Refusing is the honest option.
+ */
+function assertSupportedSchemaVersion(raw: unknown): void {
+  const version =
+    typeof raw === "object" && raw !== null
+      ? (raw as { schemaVersion?: unknown }).schemaVersion
+      : undefined;
+  if (version === SCHEMA_VERSION) return;
+  if (version === 1) {
+    throw new RegistryError(
+      "unsupported-schema-version",
+      "schemaVersion 1 is no longer supported: v1 records cannot express retrieval provenance " +
+        "or license evidence. Regenerate snapshots with `pnpm registry:sync`.",
+    );
+  }
+  throw new RegistryError(
+    "unsupported-schema-version",
+    `unsupported schemaVersion ${JSON.stringify(version)}; this build supports ${SCHEMA_VERSION}`,
+  );
+}
+
 export function parseComponent(raw: unknown): TesseraComponent {
+  assertSupportedSchemaVersion(raw);
   const parsed = TesseraComponentSchema.safeParse(raw);
   if (!parsed.success) {
     throw new RegistryError("invalid-component", parsed.error.message);

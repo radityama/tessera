@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-10-06T05:40:13.886Z",
+  "generator": "packages/adapters/src/sync.ts",
+  "note": "Regenerate with `pnpm registry:sync`. Do not edit components.json by hand.",
+  "sources": [
+    {
+      "id": "aceternity",
+      "count": 8,
+      "skipped": 82
+    },
+    {
+      "id": "beui",
+      "count": 15,
+      "skipped": 0
+    },
+    {
+      "id": "efferd",
+      "count": 20,
+      "skipped": 43
+    },
+    {
+      "id": "magicui",
+      "count": 18,
+      "skipped": 0
+    },
+    {
+      "id": "heroui",
+      "count": 12,
+      "skipped": 0
+    }
+  ]
+}

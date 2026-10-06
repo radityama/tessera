@@ -8,10 +8,11 @@ const here = dirname(fileURLToPath(import.meta.url));
 const registriesDir = join(here, "..", "..", "..", "registries");
 const all = loadRegistryFiles(discoverRegistryFiles(registriesDir));
 
+/** Synthetic record; example.com is intentional and never shipped. */
 function entry(id: string, extra: Record<string, unknown> = {}) {
   const [source, slug] = id.split("/");
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     id,
     source,
     slug,
@@ -23,8 +24,9 @@ function entry(id: string, extra: Record<string, unknown> = {}) {
     visual: {},
     dependencies: [],
     installation: { kind: "copy" as const },
+    retrieval: { kind: "none" as const },
     links: {},
-    license: { status: "known" as const, identifier: "MIT" },
+    license: { status: "known" as const, identifier: "MIT", source: "https://example.com/L" },
     provenance: { adapter: source },
     ...extra,
   };
@@ -44,22 +46,29 @@ describe("hardening", () => {
   });
 
   it("never treats unknown license as safe to vendor", () => {
-    const unknown = getComponent(all, "efferd/terminal-panel");
+    const unknown = getComponent(all, "efferd/hero-1");
     expect(unknown.license.status).toBe("unknown");
     expect(unknown.license.identifier).toBeUndefined();
     const plan = buildInstallationPlan(unknown);
     expect(plan.licenseWarning).toMatch(/verify/i);
   });
 
-  it("resolves representative queries to stable top ids", () => {
-    expect(
-      searchRegistry(all, {
-        query: "technical dark hero for a developer CLI, subtle motion, terminal-oriented",
-        limit: 1,
-      })[0]?.component.id,
-    ).toBe("beautifului/terminal-hero");
-    expect(
-      searchRegistry(all, { query: "developer command menu", limit: 1 })[0]?.component.category,
-    ).toBe("command-menu");
+  it("flags licenses that permit use but forbid redistribution", () => {
+    const aceternity = getComponent(all, "aceternity/terminal");
+    expect(aceternity.license.osiApproved).toBe(false);
+    expect(aceternity.license.redistribution).toBe("restricted");
+    // The source may be fetched for a user, but Tessera must not vendor it.
+    expect(aceternity.retrieval.kind).toBe("shadcn-registry");
+  });
+
+  it("resolves representative queries to stable results", () => {
+    const command = searchRegistry(all, { query: "developer command menu", limit: 1 });
+    expect(command[0]?.component.category).toBe("command-menu");
+
+    const pricing = searchRegistry(all, { query: "minimal saas pricing cards", limit: 1 });
+    expect(pricing[0]?.component.category).toBe("pricing");
+
+    const grid = searchRegistry(all, { query: "animated grid background subtle", limit: 1 });
+    expect(grid[0]?.component.category).toBe("background");
   });
 });

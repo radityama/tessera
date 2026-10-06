@@ -23,14 +23,14 @@ describe("cli", () => {
   });
 
   it("inspects canonical metadata", () => {
-    const c = getComponent(all, "beautifului/terminal-hero");
+    const c = getComponent(all, "aceternity/terminal");
     const text = formatInspectHuman(c);
-    expect(text).toContain("beautifului/terminal-hero");
+    expect(text).toContain("aceternity/terminal");
     expect(text).toContain("installation:");
   });
 
   it("builds a dry-run add plan with license warning for unknown licenses", () => {
-    const unknown = getComponent(all, "efferd/terminal-panel");
+    const unknown = getComponent(all, "efferd/hero-1");
     const plan = buildInstallationPlan(unknown);
     expect(plan.licenseWarning).toMatch(/unknown license/i);
     expect(formatAddPlanHuman(plan)).toMatch(/dry-run/i);

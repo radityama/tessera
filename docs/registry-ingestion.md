@@ -1,75 +1,96 @@
-# Registry Ingestion
+# Registry ingestion
 
-## v0.1 strategy
+## How registry data is produced
 
-Start curated.
+```text
+provider registry endpoint
+        ↓
+pnpm registry:sync           (packages/adapters/src/sync.ts)
+        ↓
+verified, pinned snapshot    (registries/<source>/components.json)
+        ↓
+local deterministic search   (no network)
+```
 
-The initial registry should contain manually reviewed metadata for a limited number of components from each supported source.
+The sync is the **only** step that touches the network while the registry is built. Search,
+`inspect`, `similar`, `get_component` and every MCP tool read the pinned snapshot from disk.
 
-Target: approximately 20–60 total components before expanding.
+Regenerate with:
 
-Quality matters more than volume.
+```bash
+pnpm registry:sync
+```
 
-## Why not crawl everything immediately
+Do not hand-edit `registries/*/components.json`. The sync writes one `components.json` per
+source plus `registries/snapshot-meta.json`, which records the generation time and per-source
+counts.
 
-Large crawls introduce:
+## Verified ingestion, not curation by hand
 
-- unstable HTML parsing,
-- license ambiguity,
-- duplicate components,
-- noisy metadata,
-- brittle tests,
-- unnecessary infrastructure.
+An earlier version of this repository contained hand-written records for five libraries. Three
+problems made that untenable:
 
-Tessera should prove retrieval quality first.
+1. one of the libraries did not exist at all;
+2. several licenses were attributed without evidence, and at least two were simply wrong;
+3. component names were invented rather than read from upstream.
+
+The fix was structural. Records are now derived from each provider's own registry, so a
+component exists in Tessera only if the provider publishes it. Adapters normalize; they do not
+imagine.
 
 ## Adapter contract
 
-Each adapter receives source-specific input and returns canonical components.
-
-Conceptually:
-
 ```ts
-interface RegistryAdapter<Input> {
-  id: string
-  parse(input: Input): TesseraComponent[]
+interface RegistryAdapter<TInput> {
+  id: string;
+  parse(input: TInput): TesseraComponent[];
 }
 ```
 
-Adapter output must pass canonical schema validation before entering a registry snapshot.
+Adapter output must pass canonical schema validation before entering a snapshot —
+`toCanonical()` throws otherwise, so an adapter cannot emit an invalid record.
 
-## Source folders
+Adapters are the only place provider specifics are allowed to live. `@tessera/core` contains no
+provider conditionals.
 
-Each initial source may keep curated metadata under:
+## Selection
+
+Providers publish more than Tessera indexes. Candidates are ordered by how much of a page they
+represent — heroes and navbars first, then pricing, command menus and terminals, then
+dashboards and tables, then backgrounds, then generic cards — and capped per source. Demos and
+examples are excluded: a provider publishes `…-demo-1` to illustrate a component, not to be one.
+
+## Skipping non-public items
+
+Some providers list an item in a public index while keeping the item endpoint behind
+authentication. Those items are skipped, with a count reported:
 
 ```text
-registries/<source>/
-  components.json
-  README.md
+aceternity: 8 components (82 not public, skipped)
 ```
 
-or another simple machine-readable layout chosen during implementation.
+A component with no retrievable artifact does not belong in a catalogue that promises
+retrieval. Skipping is preferable to indexing a dead end.
 
-## Provenance
+## Licensing a mixed catalogue
 
-Every record must preserve where its metadata came from.
+A provider may mix free and paid content under one registry. Efferd's hosted catalogue holds
+231 items while its MIT repository holds 40.
 
-At minimum:
+Inheriting MIT from a sibling item would be exactly the invented provenance this project exists
+to avoid. `resolveItemLicense()` narrows the license **per item**: an item present in the
+open-source repository keeps MIT; anything else is recorded as `unknown`. Those items then rank
+lower and raise a warning rather than being silently reusable.
 
-- source library,
-- source URL when available,
-- adapter name,
-- optional upstream version or retrieval timestamp.
+## Determinism and failure behaviour
+
+- Output is sorted, so a re-run produces a reviewable diff rather than churn.
+- Transient CDN failures (401/403/5xx from edge bot protection) are retried with backoff.
+- A definitive "not public" response is never retried.
+- A provider that changes shape **aborts** the sync instead of quietly emitting a smaller
+  catalogue.
 
 ## Refresh strategy
 
-v0.1 may update curated records manually.
-
-Later versions can add:
-
-- source-specific fetchers,
-- scheduled metadata refresh,
-- diff review,
-- registry snapshot publishing.
-
-Automated refresh must still produce reviewable normalized diffs.
+v0.1 refreshes manually via `pnpm registry:sync`, and every refresh is reviewed as a diff.
+Scheduled refresh and automated diff review are post-v0.1.

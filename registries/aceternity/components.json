@@ -1,143 +1,536 @@
 [
   {
-    "schemaVersion": 1,
-    "id": "aceternity/spotlight-hero",
+    "schemaVersion": 2,
+    "id": "aceternity/hero-highlight",
     "source": "aceternity",
-    "slug": "spotlight-hero",
-    "name": "Spotlight Hero",
-    "description": "Dark technical hero with a spotlight gradient and restrained headline layout for developer tools.",
+    "slug": "hero-highlight",
+    "name": "Hero Highlight",
     "category": "hero",
-    "secondaryCategories": ["background"],
+    "secondaryCategories": [],
     "frameworks": ["react"],
-    "compatibility": { "nextjs": true, "clientComponent": true, "typescript": true },
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
     "visual": {
-      "aesthetics": ["dark", "technical", "minimal"],
-      "tags": ["hero", "spotlight", "gradient", "dark", "technical", "developer", "subtle"],
-      "motion": "low",
-      "density": "spacious",
-      "radius": "medium",
-      "surface": ["flat", "gradient"]
-    },
-    "dependencies": [{ "name": "framer-motion", "kind": "runtime", "required": true }],
-    "installation": {
-      "kind": "copy",
-      "instructions": "Copy the Spotlight component from Aceternity UI docs into your project and adapt tokens."
-    },
-    "links": {
-      "homepage": "https://ui.aceternity.com/",
-      "docs": "https://ui.aceternity.com/components/spotlight",
-      "preview": "https://ui.aceternity.com/components/spotlight"
-    },
-    "license": { "status": "known", "identifier": "MIT", "source": "https://ui.aceternity.com/license" },
-    "provenance": { "adapter": "aceternity", "retrievedAt": "2026-09-01T00:00:00.000Z" }
-  },
-  {
-    "schemaVersion": 1,
-    "id": "aceternity/grid-background",
-    "source": "aceternity",
-    "slug": "grid-background",
-    "name": "Grid Background",
-    "description": "Subtle animated grid background with faded mask for technical landing pages.",
-    "category": "background",
-    "secondaryCategories": ["pattern"],
-    "frameworks": ["react"],
-    "compatibility": { "nextjs": true, "clientComponent": true, "typescript": true },
-    "visual": {
-      "aesthetics": ["dark", "technical", "minimal"],
-      "tags": ["background", "grid", "pattern", "subtle", "animated", "dark", "technical"],
-      "motion": "low",
-      "density": "normal",
-      "radius": "none",
-      "surface": ["flat"]
-    },
-    "dependencies": [],
-    "installation": {
-      "kind": "copy",
-      "instructions": "Copy the Grid Background snippet from Aceternity UI docs."
-    },
-    "links": {
-      "homepage": "https://ui.aceternity.com/",
-      "docs": "https://ui.aceternity.com/components/grid-background"
-    },
-    "license": { "status": "known", "identifier": "MIT", "source": "https://ui.aceternity.com/license" },
-    "provenance": { "adapter": "aceternity", "retrievedAt": "2026-09-01T00:00:00.000Z" }
-  },
-  {
-    "schemaVersion": 1,
-    "id": "aceternity/animated-card",
-    "source": "aceternity",
-    "slug": "animated-card",
-    "name": "Animated Card",
-    "description": "Hover-animated card with glow border for feature highlights.",
-    "category": "card",
-    "secondaryCategories": ["feature"],
-    "frameworks": ["react"],
-    "compatibility": { "nextjs": true, "clientComponent": true, "typescript": true },
-    "visual": {
-      "aesthetics": ["dark", "playful"],
-      "tags": ["card", "animated", "hover", "glow", "feature"],
+      "aesthetics": ["light"],
+      "tags": ["hero", "highlight"],
       "motion": "medium",
-      "density": "compact",
-      "radius": "large",
-      "surface": ["elevated", "gradient"]
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
     },
     "dependencies": [
-      { "name": "framer-motion", "kind": "runtime", "required": true },
-      { "name": "tailwindcss", "kind": "peer", "required": true }
+      {
+        "name": "mini-svg-data-uri",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      }
     ],
-    "installation": { "kind": "copy", "instructions": "Copy the Card component and install framer-motion." },
-    "links": { "homepage": "https://ui.aceternity.com/" },
-    "license": { "status": "known", "identifier": "MIT", "source": "https://ui.aceternity.com/license" },
-    "provenance": { "adapter": "aceternity", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add @aceternity/hero-highlight",
+      "instructions": "Add through the shadcn CLI using the @aceternity namespace, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://ui.aceternity.com/registry/hero-highlight.json",
+      "registryName": "@aceternity",
+      "installCommand": "npx shadcn@latest add @aceternity/hero-highlight"
+    },
+    "links": {
+      "homepage": "https://ui.aceternity.com/",
+      "docs": "https://ui.aceternity.com/components"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "LicenseRef-Aceternity",
+      "source": "https://ui.aceternity.com/licence",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": false,
+      "redistribution": "restricted",
+      "notes": "Aceternity's own license, not an OSI license. Free components may be used in personal and commercial projects, but redistributing their source files or reselling them is not permitted. Tessera fetches these on request and does not vendor them."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "hero-highlight",
+      "retrievedAt": "2026-10-06T05:40:14.484Z",
+      "sourceVersion": "https://ui.aceternity.com/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
   },
   {
-    "schemaVersion": 1,
+    "schemaVersion": 2,
+    "id": "aceternity/hero-parallax",
+    "source": "aceternity",
+    "slug": "hero-parallax",
+    "name": "Hero Parallax",
+    "category": "hero",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": ["hero", "parallax"],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add @aceternity/hero-parallax",
+      "instructions": "Add through the shadcn CLI using the @aceternity namespace, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://ui.aceternity.com/registry/hero-parallax.json",
+      "registryName": "@aceternity",
+      "installCommand": "npx shadcn@latest add @aceternity/hero-parallax"
+    },
+    "links": {
+      "homepage": "https://ui.aceternity.com/",
+      "docs": "https://ui.aceternity.com/components"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "LicenseRef-Aceternity",
+      "source": "https://ui.aceternity.com/licence",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": false,
+      "redistribution": "restricted",
+      "notes": "Aceternity's own license, not an OSI license. Free components may be used in personal and commercial projects, but redistributing their source files or reselling them is not permitted. Tessera fetches these on request and does not vendor them."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "hero-parallax",
+      "retrievedAt": "2026-10-06T05:40:14.484Z",
+      "sourceVersion": "https://ui.aceternity.com/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "aceternity/parallax-hero-images",
+    "source": "aceternity",
+    "slug": "parallax-hero-images",
+    "name": "Parallax Hero Images",
+    "category": "hero",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": ["parallax", "hero", "images"],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add @aceternity/parallax-hero-images",
+      "instructions": "Add through the shadcn CLI using the @aceternity namespace, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://ui.aceternity.com/registry/parallax-hero-images.json",
+      "registryName": "@aceternity",
+      "installCommand": "npx shadcn@latest add @aceternity/parallax-hero-images"
+    },
+    "links": {
+      "homepage": "https://ui.aceternity.com/",
+      "docs": "https://ui.aceternity.com/components"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "LicenseRef-Aceternity",
+      "source": "https://ui.aceternity.com/licence",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": false,
+      "redistribution": "restricted",
+      "notes": "Aceternity's own license, not an OSI license. Free components may be used in personal and commercial projects, but redistributing their source files or reselling them is not permitted. Tessera fetches these on request and does not vendor them."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "parallax-hero-images",
+      "retrievedAt": "2026-10-06T05:40:14.484Z",
+      "sourceVersion": "https://ui.aceternity.com/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
     "id": "aceternity/floating-navbar",
     "source": "aceternity",
     "slug": "floating-navbar",
     "name": "Floating Navbar",
-    "description": "Floating glass navigation bar that appears on scroll for marketing pages.",
     "category": "navbar",
-    "secondaryCategories": ["navigation"],
+    "secondaryCategories": [],
     "frameworks": ["react"],
-    "compatibility": { "nextjs": true, "clientComponent": true, "typescript": true },
-    "visual": {
-      "aesthetics": ["minimal", "glass"],
-      "tags": ["navbar", "navigation", "floating", "glass", "scroll"],
-      "motion": "low",
-      "density": "compact",
-      "radius": "large",
-      "surface": ["glass"]
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
     },
-    "dependencies": [{ "name": "framer-motion", "kind": "runtime", "required": true }],
-    "installation": { "kind": "copy", "instructions": "Copy the Floating Navbar component from the docs." },
-    "links": { "homepage": "https://ui.aceternity.com/" },
-    "license": { "status": "known", "identifier": "MIT", "source": "https://ui.aceternity.com/license" },
-    "provenance": { "adapter": "aceternity", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+    "visual": {
+      "aesthetics": [],
+      "tags": ["floating", "navbar"],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add @aceternity/floating-navbar",
+      "instructions": "Add through the shadcn CLI using the @aceternity namespace, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://ui.aceternity.com/registry/floating-navbar.json",
+      "registryName": "@aceternity",
+      "installCommand": "npx shadcn@latest add @aceternity/floating-navbar"
+    },
+    "links": {
+      "homepage": "https://ui.aceternity.com/",
+      "docs": "https://ui.aceternity.com/components"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "LicenseRef-Aceternity",
+      "source": "https://ui.aceternity.com/licence",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": false,
+      "redistribution": "restricted",
+      "notes": "Aceternity's own license, not an OSI license. Free components may be used in personal and commercial projects, but redistributing their source files or reselling them is not permitted. Tessera fetches these on request and does not vendor them."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "floating-navbar",
+      "retrievedAt": "2026-10-06T05:40:14.484Z",
+      "sourceVersion": "https://ui.aceternity.com/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
   },
   {
-    "schemaVersion": 1,
-    "id": "aceternity/text-generate",
+    "schemaVersion": 2,
+    "id": "aceternity/navbar-menu",
     "source": "aceternity",
-    "slug": "text-generate",
-    "name": "Text Generate Effect",
-    "description": "Word-by-word text reveal animation for hero headlines.",
-    "category": "animation",
-    "secondaryCategories": ["hero"],
+    "slug": "navbar-menu",
+    "name": "Navbar Menu",
+    "category": "navbar",
+    "secondaryCategories": [],
     "frameworks": ["react"],
-    "compatibility": { "nextjs": true, "clientComponent": true, "typescript": true },
-    "visual": {
-      "aesthetics": ["minimal", "technical"],
-      "tags": ["animation", "text", "reveal", "headline", "motion"],
-      "motion": "medium",
-      "density": "normal",
-      "radius": "none",
-      "surface": ["flat"]
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
     },
-    "dependencies": [{ "name": "framer-motion", "kind": "runtime", "required": true }],
-    "installation": { "kind": "copy", "instructions": "Copy the Text Generate Effect component." },
-    "links": { "homepage": "https://ui.aceternity.com/" },
-    "license": { "status": "known", "identifier": "MIT", "source": "https://ui.aceternity.com/license" },
-    "provenance": { "adapter": "aceternity", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+    "visual": {
+      "aesthetics": [],
+      "tags": ["navbar", "menu"],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add @aceternity/navbar-menu",
+      "instructions": "Add through the shadcn CLI using the @aceternity namespace, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://ui.aceternity.com/registry/navbar-menu.json",
+      "registryName": "@aceternity",
+      "installCommand": "npx shadcn@latest add @aceternity/navbar-menu"
+    },
+    "links": {
+      "homepage": "https://ui.aceternity.com/",
+      "docs": "https://ui.aceternity.com/components"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "LicenseRef-Aceternity",
+      "source": "https://ui.aceternity.com/licence",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": false,
+      "redistribution": "restricted",
+      "notes": "Aceternity's own license, not an OSI license. Free components may be used in personal and commercial projects, but redistributing their source files or reselling them is not permitted. Tessera fetches these on request and does not vendor them."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "navbar-menu",
+      "retrievedAt": "2026-10-06T05:40:14.484Z",
+      "sourceVersion": "https://ui.aceternity.com/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "aceternity/resizable-navbar",
+    "source": "aceternity",
+    "slug": "resizable-navbar",
+    "name": "Resizable Navbar",
+    "category": "navbar",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": ["resizable", "navbar"],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add @aceternity/resizable-navbar",
+      "instructions": "Add through the shadcn CLI using the @aceternity namespace, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://ui.aceternity.com/registry/resizable-navbar.json",
+      "registryName": "@aceternity",
+      "installCommand": "npx shadcn@latest add @aceternity/resizable-navbar"
+    },
+    "links": {
+      "homepage": "https://ui.aceternity.com/",
+      "docs": "https://ui.aceternity.com/components"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "LicenseRef-Aceternity",
+      "source": "https://ui.aceternity.com/licence",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": false,
+      "redistribution": "restricted",
+      "notes": "Aceternity's own license, not an OSI license. Free components may be used in personal and commercial projects, but redistributing their source files or reselling them is not permitted. Tessera fetches these on request and does not vendor them."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "resizable-navbar",
+      "retrievedAt": "2026-10-06T05:40:14.484Z",
+      "sourceVersion": "https://ui.aceternity.com/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "aceternity/terminal",
+    "source": "aceternity",
+    "slug": "terminal",
+    "name": "Terminal",
+    "category": "terminal",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["terminal"],
+      "tags": ["terminal"],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add @aceternity/terminal",
+      "instructions": "Add through the shadcn CLI using the @aceternity namespace, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://ui.aceternity.com/registry/terminal.json",
+      "registryName": "@aceternity",
+      "installCommand": "npx shadcn@latest add @aceternity/terminal"
+    },
+    "links": {
+      "homepage": "https://ui.aceternity.com/",
+      "docs": "https://ui.aceternity.com/components"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "LicenseRef-Aceternity",
+      "source": "https://ui.aceternity.com/licence",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": false,
+      "redistribution": "restricted",
+      "notes": "Aceternity's own license, not an OSI license. Free components may be used in personal and commercial projects, but redistributing their source files or reselling them is not permitted. Tessera fetches these on request and does not vendor them."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "terminal",
+      "retrievedAt": "2026-10-06T05:40:14.484Z",
+      "sourceVersion": "https://ui.aceternity.com/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "aceternity/animated-testimonials",
+    "source": "aceternity",
+    "slug": "animated-testimonials",
+    "name": "Animated Testimonials",
+    "category": "testimonial",
+    "secondaryCategories": ["animation"],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": ["animated", "testimonials"],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "@tabler/icons-react",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add @aceternity/animated-testimonials",
+      "instructions": "Add through the shadcn CLI using the @aceternity namespace, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://ui.aceternity.com/registry/animated-testimonials.json",
+      "registryName": "@aceternity",
+      "installCommand": "npx shadcn@latest add @aceternity/animated-testimonials"
+    },
+    "links": {
+      "homepage": "https://ui.aceternity.com/",
+      "docs": "https://ui.aceternity.com/components"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "LicenseRef-Aceternity",
+      "source": "https://ui.aceternity.com/licence",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": false,
+      "redistribution": "restricted",
+      "notes": "Aceternity's own license, not an OSI license. Free components may be used in personal and commercial projects, but redistributing their source files or reselling them is not permitted. Tessera fetches these on request and does not vendor them."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "animated-testimonials",
+      "retrievedAt": "2026-10-06T05:40:14.484Z",
+      "sourceVersion": "https://ui.aceternity.com/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
   }
 ]

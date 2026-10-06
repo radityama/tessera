@@ -9,7 +9,9 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
-    "test": "turbo run test"
+    "test": "turbo run test",
+    "format": "prettier --write .",
+    "registry:sync": "pnpm --filter @tessera/adapters build && pnpm --filter @tessera/adapters sync"
   },
   "devDependencies": {
     "@eslint/js": "^9.23.0",
