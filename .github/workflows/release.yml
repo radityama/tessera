@@ -56,6 +56,8 @@ jobs:
     name: publish
     needs: verify
     runs-on: ubuntu-latest
+    outputs:
+      published: ${{ steps.creds.outputs.can_publish }}
     permissions:
       contents: write # create the GitHub Release
       id-token: write # npm provenance / trusted publishing
@@ -154,8 +156,14 @@ jobs:
     name: post-publish verify
     needs: publish
     runs-on: ubuntu-latest
-    # Only meaningful when something was actually published.
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    # Only meaningful when something was actually published. Without the
+    # `published` condition this job runs on every tag push and fails trying to
+    # install a package that was never published — which is exactly what
+    # happened on the v0.1.0 tag.
+    if: >-
+      needs.publish.outputs.published == 'true' &&
+      github.event_name == 'push' &&
+      startsWith(github.ref, 'refs/tags/v')
     steps:
       - uses: actions/setup-node@v4
         with:

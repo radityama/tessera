@@ -18,6 +18,19 @@ updates:
         update-types: ["minor", "patch"]
     labels:
       - dependencies
+    ignore:
+      # Known-broken majors. Dependabot keeps re-opening these, and a
+      # permanently-red dependency PR train teaches people to ignore the bot.
+      # Each needs migration work, tracked in issue #17; remove the entry when
+      # its upgrade is done.
+      - dependency-name: "vitest"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "zod"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "commander"
+        update-types: ["version-update:semver-major"]
 
   # GitHub Actions. Kept separate so an action bump is obvious in review.
   - package-ecosystem: github-actions
@@ -31,3 +44,5 @@ updates:
     labels:
       - dependencies
       - ci
+    # Action majors are left enabled: they are green and low-risk, and the
+    # security workflow depends on them.
