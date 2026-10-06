@@ -12,7 +12,8 @@
     "test": "turbo run test",
     "format": "prettier --write .",
     "registry:sync": "pnpm --filter @tessera-dev/adapters build && pnpm --filter @tessera-dev/adapters sync",
-    "smoke:pack": "node scripts/smoke-pack.mjs"
+    "smoke:pack": "node scripts/smoke-pack.mjs",
+    "mcp:conformance": "node scripts/mcp-conformance.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^9.23.0",

@@ -43,4 +43,5 @@ jobs:
       - run: pnpm build
       # Packs the publishable packages, installs the tarballs into a throwaway
       # project outside the repository, and drives the real CLI and MCP server.
+      - run: pnpm mcp:conformance
       - run: pnpm smoke:pack

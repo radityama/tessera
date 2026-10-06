@@ -76,9 +76,13 @@ describe("core search", () => {
     );
   });
 
-  it("gets by id and throws on unknown", () => {
+  it("gets by id and throws a stable code on unknown", () => {
     expect(getComponent(all, "beui/table").id).toBe("beui/table");
-    expect(() => getComponent(all, "nope/nope")).toThrow();
+    // One code for one condition, shared with artifact retrieval: a caller must
+    // not have to special-case which tool produced the miss.
+    expect(() => getComponent(all, "nope/nope")).toThrow(
+      expect.objectContaining({ code: "component-not-found" }),
+    );
   });
 
   it("finds similar components", () => {
