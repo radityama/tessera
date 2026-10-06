@@ -14,7 +14,8 @@
     "registry:sync": "pnpm --filter @tessera-dev/adapters build && pnpm --filter @tessera-dev/adapters sync",
     "smoke:pack": "node scripts/smoke-pack.mjs",
     "mcp:conformance": "node scripts/mcp-conformance.mjs",
-    "release:check": "node scripts/release-check.mjs"
+    "release:check": "node scripts/release-check.mjs",
+    "dogfood": "node scripts/dogfood.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^9.23.0",

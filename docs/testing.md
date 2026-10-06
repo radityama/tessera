@@ -21,6 +21,7 @@ pnpm registry:sync  # network; only needed when refreshing snapshots
 | **Packaging**     | Tarball install into a clean project outside the repo                                               | `scripts/smoke-pack.mjs`                                          |
 | **Integration**   | MCP stdio lifecycle: handshake, tool discovery, every tool, errors, shutdown                        | `scripts/mcp-conformance.mjs`                                     |
 | **Live smoke**    | Real upstream endpoints, run manually                                                               | `pnpm registry:sync`                                              |
+| **Dogfood**       | Search, retrieve, adapt and _compile_ a real upstream component in a throwaway host project         | `scripts/dogfood.mjs`                                             |
 
 ## No test depends on a third party's uptime
 
@@ -44,12 +45,21 @@ preservation, and that a URL-shaped id never resolves.
 ## Testing against real upstreams
 
 ```bash
+pnpm dogfood     # full loop against live providers, then compile the result
 pnpm registry:sync
 ```
 
-Fetches every provider's registry, rewrites the snapshots, and reports what it skipped. Review the
-diff before committing: a shrinking catalogue usually means a provider changed shape, and the diff
-is where that becomes visible.
+`dogfood` searches for a component, inspects it, retrieves the real source, supplies the host
+utility the component imports, and type-checks the result inside a minimal React project. It is
+what proves the retrieved source is real code rather than text that merely resembles it, and it is
+how the registry-dependency and under-declared-import limitations were found.
+
+`registry:sync` fetches every provider's registry and rewrites the snapshots. Review the diff
+before committing: a shrinking catalogue usually means a provider changed shape, and the diff is
+where that becomes visible.
+
+Both need the network, so neither runs in normal CI. A third party's uptime must not decide
+whether this repository is green.
 
 ## Adding a test
 

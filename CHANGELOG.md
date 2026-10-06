@@ -32,8 +32,9 @@ real component, understand its dependencies and licence, and adapt it into a pro
   official documentation.
 - **Registry explorer** consuming the same search core as the CLI and MCP.
 - **Registry sync** (`pnpm registry:sync`) producing pinned, reviewable snapshots.
-- **Release gates**: `pnpm smoke:pack` (pack, install elsewhere, drive the real CLI and MCP) and
-  `pnpm mcp:conformance` (MCP protocol suite).
+- **Release gates**: `pnpm smoke:pack` (pack, install elsewhere, drive the real CLI and MCP),
+  `pnpm mcp:conformance` (MCP protocol suite) and `pnpm dogfood` (search, retrieve, adapt and
+  compile a real upstream component in a throwaway host project).
 
 ### Safety
 
@@ -55,6 +56,18 @@ real component, understand its dependencies and licence, and adapt it into a pro
 - Publishable packages moved to the `@tessera-dev` npm scope. The `@tessera` scope is owned by an
   unrelated account and the name `tessera` is taken. The binary is still `tessera`.
 - Removed the `shared` package, which was declared as a dependency but imported nowhere.
+
+### Known limitations
+
+The local loop works; the ecosystem coverage does not yet. Recorded here rather than left for
+users to discover:
+
+- `fetch` returns a component's own files and **does not resolve its registry dependencies**.
+  Components that declare them will be missing pieces until installed through the shadcn CLI.
+- Provider-declared dependencies can **under-report actual imports** — `magicui/terminal` imports
+  `motion`, which its registry entry does not list.
+- Five sources, React only. Ranking is lexical and does not weigh multi-intent queries.
+- `add` is dry-run only. Ten of eleven harness integrations are config-verified, not runtime-tested.
 
 ### Removed
 

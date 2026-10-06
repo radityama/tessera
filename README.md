@@ -12,6 +12,8 @@ before generating them from scratch.
 [![Node](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg)](./docs/installation.md)
 [![MCP](https://img.shields.io/badge/MCP-stdio-8a2be2.svg)](./docs/integrations/README.md)
 
+**v0.1.0 is available.** 73 components across five libraries, verified against live upstreams.
+
 </div>
 
 ---
@@ -232,6 +234,21 @@ lives in adapters, and ranking stays provider-neutral. The CLI, MCP and explorer
 
 See [`SECURITY.md`](./SECURITY.md) and [`docs/security-licensing.md`](./docs/security-licensing.md).
 
+## Known limitations
+
+v0.1 is a working local loop, not a finished product. The honest list:
+
+- **Five sources, React only.** Enough to prove the thesis, not to cover the ecosystem.
+- **`fetch` does not resolve registry dependencies.** A component that declares them returns its
+  own files only; the artifact reports them, and the shadcn CLI would install them transitively.
+- **Declared dependencies can under-report imports.** `magicui/terminal` imports `motion`, which
+  its registry entry does not declare.
+- **Lexical ranking.** Deterministic and explainable, but it does not understand that a query
+  naming several intents should prefer components satisfying more than one.
+- **`add` never mutates.** Dry-run only.
+- **Ten of eleven harnesses are config-verified, not runtime-tested.** The compatibility matrix
+  says which is which.
+
 ## Development
 
 ```bash
@@ -239,6 +256,7 @@ pnpm install
 pnpm build          # required before test: the registry bundle is built here
 pnpm test
 pnpm release:check  # the full gate
+pnpm dogfood        # end-to-end against live upstreams (network)
 ```
 
 See [`CONTRIBUTING.md`](./CONTRIBUTING.md). The one rule that matters most: **do not invent
