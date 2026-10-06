@@ -1,0 +1,30 @@
+{
+  "name": "@tessera/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "tessera": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "echo ok",
+    "lint": "eslint . && prettier --check src",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@tessera/core": "workspace:*",
+    "@tessera/registry": "workspace:*",
+    "commander": "^14.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "typescript": "~5.9.2",
+    "vitest": "^3.2.4",
+    "prettier": "^3.5.3",
+    "eslint": "^9.23.0"
+  }
+}

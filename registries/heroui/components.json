@@ -1,0 +1,113 @@
+[
+  {
+    "schemaVersion": 1,
+    "id": "heroui/hero-centered",
+    "source": "heroui",
+    "slug": "hero-centered",
+    "name": "Centered Hero",
+    "description": "Centered minimal SaaS hero with badge, headline and dual CTAs.",
+    "category": "hero",
+    "secondaryCategories": ["cta"],
+    "frameworks": ["react"],
+    "compatibility": { "nextjs": true, "typescript": true },
+    "visual": {
+      "aesthetics": ["minimal", "saas", "clean", "light"],
+      "tags": ["hero", "centered", "saas", "minimal", "clean", "startup"],
+      "motion": "none",
+      "density": "spacious",
+      "radius": "medium",
+      "surface": ["flat"]
+    },
+    "dependencies": [{ "name": "@heroui/react", "kind": "runtime", "required": true }],
+    "installation": {
+      "kind": "package",
+      "command": "npm install @heroui/react",
+      "instructions": "Install HeroUI, then compose the centered hero from Button and layout primitives."
+    },
+    "links": {
+      "homepage": "https://www.heroui.com/",
+      "docs": "https://www.heroui.com/docs"
+    },
+    "license": { "status": "known", "identifier": "MIT", "source": "https://github.com/heroui-inc/heroui/blob/canary/LICENSE" },
+    "provenance": { "adapter": "heroui", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "heroui/pricing-tiers",
+    "source": "heroui",
+    "slug": "pricing-tiers",
+    "name": "Pricing Tiers",
+    "description": "Three-tier SaaS pricing layout with monthly toggle and minimal cards.",
+    "category": "pricing",
+    "secondaryCategories": ["card"],
+    "frameworks": ["react"],
+    "compatibility": { "nextjs": true, "typescript": true },
+    "visual": {
+      "aesthetics": ["minimal", "saas", "clean"],
+      "tags": ["pricing", "tiers", "saas", "minimal", "cards", "plans"],
+      "motion": "none",
+      "density": "normal",
+      "radius": "large",
+      "surface": ["outlined", "elevated"]
+    },
+    "dependencies": [{ "name": "@heroui/react", "kind": "runtime", "required": true }],
+    "installation": {
+      "kind": "package",
+      "command": "npm install @heroui/react",
+      "instructions": "Install HeroUI, then copy the pricing tiers example."
+    },
+    "links": { "homepage": "https://www.heroui.com/" },
+    "license": { "status": "known", "identifier": "MIT", "source": "https://github.com/heroui-inc/heroui/blob/canary/LICENSE" },
+    "provenance": { "adapter": "heroui", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "heroui/testimonial-wall",
+    "source": "heroui",
+    "slug": "testimonial-wall",
+    "name": "Testimonial Wall",
+    "description": "Masonry testimonial wall for social proof on SaaS landing pages.",
+    "category": "testimonial",
+    "secondaryCategories": ["card"],
+    "frameworks": ["react"],
+    "compatibility": { "nextjs": true, "typescript": true },
+    "visual": {
+      "aesthetics": ["minimal", "saas"],
+      "tags": ["testimonial", "wall", "social", "proof", "saas", "masonry"],
+      "motion": "none",
+      "density": "normal",
+      "radius": "large",
+      "surface": ["outlined"]
+    },
+    "dependencies": [{ "name": "@heroui/react", "kind": "runtime", "required": true }],
+    "installation": { "kind": "package", "command": "npm install @heroui/react" },
+    "links": { "homepage": "https://www.heroui.com/" },
+    "license": { "status": "known", "identifier": "MIT", "source": "https://github.com/heroui-inc/heroui/blob/canary/LICENSE" },
+    "provenance": { "adapter": "heroui", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "heroui/login-form",
+    "source": "heroui",
+    "slug": "login-form",
+    "name": "Login Form",
+    "description": "Accessible login form with validation states built from HeroUI inputs.",
+    "category": "form",
+    "secondaryCategories": ["card"],
+    "frameworks": ["react"],
+    "compatibility": { "nextjs": true, "clientComponent": true, "typescript": true },
+    "visual": {
+      "aesthetics": ["minimal", "clean"],
+      "tags": ["form", "login", "auth", "input", "accessible"],
+      "motion": "none",
+      "density": "compact",
+      "radius": "medium",
+      "surface": ["outlined"]
+    },
+    "dependencies": [{ "name": "@heroui/react", "kind": "runtime", "required": true }],
+    "installation": { "kind": "package", "command": "npm install @heroui/react" },
+    "links": { "homepage": "https://www.heroui.com/" },
+    "license": { "status": "known", "identifier": "MIT", "source": "https://github.com/heroui-inc/heroui/blob/canary/LICENSE" },
+    "provenance": { "adapter": "heroui", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  }
+]

@@ -32,6 +32,13 @@ Use this baseline:
 
 The exact implementation can subdivide these dimensions, but changes must be documented and tested.
 
+Implemented tie-breakers (kept outside the capped relevance dimension so richer matches are not hidden by the 1.0 cap):
+
+- +0.05 when a query-mentioned category matches a secondary category (e.g. `terminal` matching `terminal-hero`'s secondary category),
+- +0.05 when the component motion level exactly matches the requested motion.
+
+Both are deterministic and covered by golden-query tests.
+
 ## Relevance
 
 Potential inputs:

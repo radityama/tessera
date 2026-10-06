@@ -1,0 +1,143 @@
+[
+  {
+    "schemaVersion": 1,
+    "id": "aceternity/spotlight-hero",
+    "source": "aceternity",
+    "slug": "spotlight-hero",
+    "name": "Spotlight Hero",
+    "description": "Dark technical hero with a spotlight gradient and restrained headline layout for developer tools.",
+    "category": "hero",
+    "secondaryCategories": ["background"],
+    "frameworks": ["react"],
+    "compatibility": { "nextjs": true, "clientComponent": true, "typescript": true },
+    "visual": {
+      "aesthetics": ["dark", "technical", "minimal"],
+      "tags": ["hero", "spotlight", "gradient", "dark", "technical", "developer", "subtle"],
+      "motion": "low",
+      "density": "spacious",
+      "radius": "medium",
+      "surface": ["flat", "gradient"]
+    },
+    "dependencies": [{ "name": "framer-motion", "kind": "runtime", "required": true }],
+    "installation": {
+      "kind": "copy",
+      "instructions": "Copy the Spotlight component from Aceternity UI docs into your project and adapt tokens."
+    },
+    "links": {
+      "homepage": "https://ui.aceternity.com/",
+      "docs": "https://ui.aceternity.com/components/spotlight",
+      "preview": "https://ui.aceternity.com/components/spotlight"
+    },
+    "license": { "status": "known", "identifier": "MIT", "source": "https://ui.aceternity.com/license" },
+    "provenance": { "adapter": "aceternity", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "aceternity/grid-background",
+    "source": "aceternity",
+    "slug": "grid-background",
+    "name": "Grid Background",
+    "description": "Subtle animated grid background with faded mask for technical landing pages.",
+    "category": "background",
+    "secondaryCategories": ["pattern"],
+    "frameworks": ["react"],
+    "compatibility": { "nextjs": true, "clientComponent": true, "typescript": true },
+    "visual": {
+      "aesthetics": ["dark", "technical", "minimal"],
+      "tags": ["background", "grid", "pattern", "subtle", "animated", "dark", "technical"],
+      "motion": "low",
+      "density": "normal",
+      "radius": "none",
+      "surface": ["flat"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "copy",
+      "instructions": "Copy the Grid Background snippet from Aceternity UI docs."
+    },
+    "links": {
+      "homepage": "https://ui.aceternity.com/",
+      "docs": "https://ui.aceternity.com/components/grid-background"
+    },
+    "license": { "status": "known", "identifier": "MIT", "source": "https://ui.aceternity.com/license" },
+    "provenance": { "adapter": "aceternity", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "aceternity/animated-card",
+    "source": "aceternity",
+    "slug": "animated-card",
+    "name": "Animated Card",
+    "description": "Hover-animated card with glow border for feature highlights.",
+    "category": "card",
+    "secondaryCategories": ["feature"],
+    "frameworks": ["react"],
+    "compatibility": { "nextjs": true, "clientComponent": true, "typescript": true },
+    "visual": {
+      "aesthetics": ["dark", "playful"],
+      "tags": ["card", "animated", "hover", "glow", "feature"],
+      "motion": "medium",
+      "density": "compact",
+      "radius": "large",
+      "surface": ["elevated", "gradient"]
+    },
+    "dependencies": [
+      { "name": "framer-motion", "kind": "runtime", "required": true },
+      { "name": "tailwindcss", "kind": "peer", "required": true }
+    ],
+    "installation": { "kind": "copy", "instructions": "Copy the Card component and install framer-motion." },
+    "links": { "homepage": "https://ui.aceternity.com/" },
+    "license": { "status": "known", "identifier": "MIT", "source": "https://ui.aceternity.com/license" },
+    "provenance": { "adapter": "aceternity", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "aceternity/floating-navbar",
+    "source": "aceternity",
+    "slug": "floating-navbar",
+    "name": "Floating Navbar",
+    "description": "Floating glass navigation bar that appears on scroll for marketing pages.",
+    "category": "navbar",
+    "secondaryCategories": ["navigation"],
+    "frameworks": ["react"],
+    "compatibility": { "nextjs": true, "clientComponent": true, "typescript": true },
+    "visual": {
+      "aesthetics": ["minimal", "glass"],
+      "tags": ["navbar", "navigation", "floating", "glass", "scroll"],
+      "motion": "low",
+      "density": "compact",
+      "radius": "large",
+      "surface": ["glass"]
+    },
+    "dependencies": [{ "name": "framer-motion", "kind": "runtime", "required": true }],
+    "installation": { "kind": "copy", "instructions": "Copy the Floating Navbar component from the docs." },
+    "links": { "homepage": "https://ui.aceternity.com/" },
+    "license": { "status": "known", "identifier": "MIT", "source": "https://ui.aceternity.com/license" },
+    "provenance": { "adapter": "aceternity", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "aceternity/text-generate",
+    "source": "aceternity",
+    "slug": "text-generate",
+    "name": "Text Generate Effect",
+    "description": "Word-by-word text reveal animation for hero headlines.",
+    "category": "animation",
+    "secondaryCategories": ["hero"],
+    "frameworks": ["react"],
+    "compatibility": { "nextjs": true, "clientComponent": true, "typescript": true },
+    "visual": {
+      "aesthetics": ["minimal", "technical"],
+      "tags": ["animation", "text", "reveal", "headline", "motion"],
+      "motion": "medium",
+      "density": "normal",
+      "radius": "none",
+      "surface": ["flat"]
+    },
+    "dependencies": [{ "name": "framer-motion", "kind": "runtime", "required": true }],
+    "installation": { "kind": "copy", "instructions": "Copy the Text Generate Effect component." },
+    "links": { "homepage": "https://ui.aceternity.com/" },
+    "license": { "status": "known", "identifier": "MIT", "source": "https://ui.aceternity.com/license" },
+    "provenance": { "adapter": "aceternity", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  }
+]

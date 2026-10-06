@@ -1,0 +1,23 @@
+{
+  "name": "@tessera/shared",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "echo ok",
+    "lint": "eslint . && prettier --check src",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run --passWithNoTests"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.2",
+    "vitest": "^3.2.4",
+    "prettier": "^3.5.3",
+    "eslint": "^9.23.0"
+  }
+}

@@ -1,0 +1,148 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`golden snapshots > snapshot: animated grid background subtle 1`] = `
+[
+  {
+    "id": "aceternity/grid-background",
+    "reasons": [
+      "exact category match: background",
+      "matches query terms in name/description/tags",
+      "motion level matches requested low motion",
+      "no required runtime dependencies",
+      "known license (MIT)",
+    ],
+    "score": 0.95,
+  },
+  {
+    "id": "beui/grid-hero",
+    "reasons": [
+      "exact category match: background",
+      "matches query terms in name/description/tags",
+      "static component fits requested subtle motion",
+      "no required runtime dependencies",
+      "secondary match: background",
+      "known license (Apache-2.0)",
+    ],
+    "score": 0.863,
+  },
+  {
+    "id": "aceternity/spotlight-hero",
+    "reasons": [
+      "exact category match: background",
+      "matches query terms in name/description/tags",
+      "motion level matches requested low motion",
+      "one required runtime dependency",
+      "secondary match: background",
+      "known license (MIT)",
+    ],
+    "score": 0.85,
+  },
+]
+`;
+
+exports[`golden snapshots > snapshot: developer command menu 1`] = `
+[
+  {
+    "id": "beautifului/command-palette",
+    "reasons": [
+      "exact category match: command-menu",
+      "matches query terms in name/description/tags",
+      "one required runtime dependency",
+      "known license (MIT)",
+    ],
+    "score": 0.805,
+  },
+  {
+    "id": "beui/dark-cta",
+    "reasons": [
+      "no required runtime dependencies",
+      "known license (Apache-2.0)",
+    ],
+    "score": 0.667,
+  },
+  {
+    "id": "beui/grid-hero",
+    "reasons": [
+      "no required runtime dependencies",
+      "known license (Apache-2.0)",
+    ],
+    "score": 0.667,
+  },
+]
+`;
+
+exports[`golden snapshots > snapshot: minimal saas pricing cards 1`] = `
+[
+  {
+    "id": "beautifului/pricing-cards",
+    "reasons": [
+      "exact category match: pricing",
+      "matches aesthetics: minimal, saas",
+      "no required runtime dependencies",
+      "secondary match: card",
+      "known license (MIT)",
+    ],
+    "score": 0.95,
+  },
+  {
+    "id": "heroui/pricing-tiers",
+    "reasons": [
+      "exact category match: pricing",
+      "matches aesthetics: minimal, saas",
+      "one required runtime dependency",
+      "secondary match: card",
+      "known license (MIT)",
+    ],
+    "score": 0.815,
+  },
+  {
+    "id": "beautifului/feature-bento",
+    "reasons": [
+      "matches aesthetics: minimal, saas",
+      "no required runtime dependencies",
+      "secondary match: card",
+      "known license (MIT)",
+    ],
+    "score": 0.81,
+  },
+]
+`;
+
+exports[`golden snapshots > snapshot: technical dark hero for a developer CLI, subtle motion, terminal-oriented 1`] = `
+[
+  {
+    "id": "beautifului/terminal-hero",
+    "reasons": [
+      "exact category match: hero",
+      "matches aesthetics: technical, dark",
+      "motion level matches requested low motion",
+      "one required runtime dependency",
+      "secondary match: terminal",
+      "known license (MIT)",
+    ],
+    "score": 0.91,
+  },
+  {
+    "id": "beui/grid-hero",
+    "reasons": [
+      "exact category match: hero",
+      "matches aesthetics: technical, dark",
+      "static component fits requested subtle motion",
+      "no required runtime dependencies",
+      "known license (Apache-2.0)",
+    ],
+    "score": 0.871,
+  },
+  {
+    "id": "aceternity/spotlight-hero",
+    "reasons": [
+      "exact category match: hero",
+      "matches aesthetics: technical, dark",
+      "motion level matches requested low motion",
+      "one required runtime dependency",
+      "known license (MIT)",
+    ],
+    "score": 0.82,
+  },
+]
+`;

@@ -1,8 +1,9 @@
 {
   "name": "tessera",
   "private": true,
-  "version": "0.0.0",
-  "packageManager": "pnpm@10",
+  "type": "module",
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.15.0",
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
@@ -10,5 +11,16 @@
     "typecheck": "turbo run typecheck",
     "test": "turbo run test"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@eslint/js": "^9.23.0",
+    "eslint": "^9.23.0",
+    "prettier": "^3.5.3",
+    "turbo": "^2.11.7",
+    "typescript": "~5.9.2",
+    "typescript-eslint": "^8.71.1",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=20"
+  }
 }

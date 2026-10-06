@@ -1,0 +1,102 @@
+[
+  {
+    "schemaVersion": 1,
+    "id": "efferd/terminal-panel",
+    "source": "efferd",
+    "slug": "terminal-panel",
+    "name": "Terminal Panel",
+    "description": "Compact terminal panel with tabs and copy button for CLI output demos.",
+    "category": "terminal",
+    "secondaryCategories": ["card"],
+    "frameworks": ["react", "html"],
+    "compatibility": { "nextjs": true, "typescript": true },
+    "visual": {
+      "aesthetics": ["dark", "technical"],
+      "tags": ["terminal", "panel", "cli", "developer", "dark", "technical", "output"],
+      "motion": "none",
+      "density": "compact",
+      "radius": "small",
+      "surface": ["flat", "outlined"]
+    },
+    "dependencies": [],
+    "installation": { "kind": "copy", "instructions": "Copy the terminal panel markup from Efferd." },
+    "links": { "homepage": "https://efferd.example.com/" },
+    "license": { "status": "unknown", "notes": "Upstream license not confirmed; do not vendor without checking." },
+    "provenance": { "adapter": "efferd", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "efferd/dashboard-stats",
+    "source": "efferd",
+    "slug": "dashboard-stats",
+    "name": "Dashboard Stats",
+    "description": "Compact stat cards row with deltas for admin dashboards.",
+    "category": "dashboard",
+    "secondaryCategories": ["card", "data-visualization"],
+    "frameworks": ["react"],
+    "compatibility": { "nextjs": true, "typescript": true },
+    "visual": {
+      "aesthetics": ["minimal", "technical"],
+      "tags": ["dashboard", "stats", "cards", "metrics", "admin"],
+      "motion": "none",
+      "density": "compact",
+      "radius": "medium",
+      "surface": ["outlined"]
+    },
+    "dependencies": [],
+    "installation": { "kind": "copy", "instructions": "Copy the stats row markup." },
+    "links": { "homepage": "https://efferd.example.com/" },
+    "license": { "status": "unknown", "notes": "Upstream license not confirmed; do not vendor without checking." },
+    "provenance": { "adapter": "efferd", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "efferd/aurora-background",
+    "source": "efferd",
+    "slug": "aurora-background",
+    "name": "Aurora Background",
+    "description": "Animated aurora gradient background with slow drifting blobs.",
+    "category": "background",
+    "secondaryCategories": ["animation"],
+    "frameworks": ["react"],
+    "compatibility": { "nextjs": true, "clientComponent": true, "typescript": true },
+    "visual": {
+      "aesthetics": ["gradient", "expressive"],
+      "tags": ["background", "aurora", "gradient", "animated", "blobs", "expressive"],
+      "motion": "medium",
+      "density": "normal",
+      "radius": "none",
+      "surface": ["gradient"]
+    },
+    "dependencies": [{ "name": "framer-motion", "kind": "runtime", "required": true }],
+    "installation": { "kind": "copy", "instructions": "Copy the aurora background component." },
+    "links": { "homepage": "https://efferd.example.com/" },
+    "license": { "status": "known", "identifier": "MIT", "source": "https://efferd.example.com/license" },
+    "provenance": { "adapter": "efferd", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "efferd/feature-list",
+    "source": "efferd",
+    "slug": "feature-list",
+    "name": "Feature List",
+    "description": "Technical feature list with mono labels and dividers for developer products.",
+    "category": "feature",
+    "secondaryCategories": ["other"],
+    "frameworks": ["react", "html"],
+    "compatibility": { "nextjs": true, "typescript": true },
+    "visual": {
+      "aesthetics": ["technical", "minimal", "dark"],
+      "tags": ["feature", "list", "technical", "mono", "developer", "dark"],
+      "motion": "none",
+      "density": "normal",
+      "radius": "small",
+      "surface": ["flat"]
+    },
+    "dependencies": [],
+    "installation": { "kind": "manual", "instructions": "Recreate the list layout using your own tokens." },
+    "links": { "homepage": "https://efferd.example.com/" },
+    "license": { "status": "known", "identifier": "MIT", "source": "https://efferd.example.com/license" },
+    "provenance": { "adapter": "efferd", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  }
+]

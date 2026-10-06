@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "scripts",
+    "declaration": false,
+    "sourceMap": false,
+    "types": ["node"],
+    "allowJs": true,
+    "checkJs": false,
+    "noEmit": true
+  },
+  "include": ["scripts"]
+}

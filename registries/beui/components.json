@@ -1,0 +1,106 @@
+[
+  {
+    "schemaVersion": 1,
+    "id": "beui/grid-hero",
+    "source": "beui",
+    "slug": "grid-hero",
+    "name": "Grid Hero",
+    "description": "Dark technical hero with background grid pattern and terminal-adjacent headline for CLI products.",
+    "category": "hero",
+    "secondaryCategories": ["background"],
+    "frameworks": ["react"],
+    "compatibility": { "nextjs": true, "clientComponent": false, "typescript": true },
+    "visual": {
+      "aesthetics": ["dark", "technical"],
+      "tags": ["hero", "grid", "dark", "technical", "developer", "cli", "terminal"],
+      "motion": "none",
+      "density": "spacious",
+      "radius": "small",
+      "surface": ["flat"]
+    },
+    "dependencies": [],
+    "installation": { "kind": "copy", "instructions": "Copy the Grid Hero section from BeUI docs." },
+    "links": { "homepage": "https://beui.example.com/" },
+    "license": { "status": "known", "identifier": "Apache-2.0", "source": "https://beui.example.com/license" },
+    "provenance": { "adapter": "beui", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "beui/dark-cta",
+    "source": "beui",
+    "slug": "dark-cta",
+    "name": "Dark CTA",
+    "description": "Minimal dark call-to-action panel with single headline and install command.",
+    "category": "cta",
+    "secondaryCategories": ["terminal"],
+    "frameworks": ["react", "html"],
+    "compatibility": { "nextjs": true, "typescript": true },
+    "visual": {
+      "aesthetics": ["dark", "minimal"],
+      "tags": ["cta", "dark", "minimal", "install", "cli"],
+      "motion": "none",
+      "density": "compact",
+      "radius": "medium",
+      "surface": ["flat", "outlined"]
+    },
+    "dependencies": [],
+    "installation": { "kind": "copy", "instructions": "Copy the CTA markup." },
+    "links": { "homepage": "https://beui.example.com/" },
+    "license": { "status": "known", "identifier": "Apache-2.0", "source": "https://beui.example.com/license" },
+    "provenance": { "adapter": "beui", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "beui/minimal-footer",
+    "source": "beui",
+    "slug": "minimal-footer",
+    "name": "Minimal Footer",
+    "description": "Compact footer with columns of links for developer tools.",
+    "category": "footer",
+    "secondaryCategories": ["navigation"],
+    "frameworks": ["react", "html"],
+    "compatibility": { "nextjs": true, "typescript": true },
+    "visual": {
+      "aesthetics": ["minimal", "technical"],
+      "tags": ["footer", "minimal", "links", "columns"],
+      "motion": "none",
+      "density": "compact",
+      "radius": "none",
+      "surface": ["flat"]
+    },
+    "dependencies": [],
+    "installation": { "kind": "copy", "instructions": "Copy the footer markup." },
+    "links": { "homepage": "https://beui.example.com/" },
+    "license": { "status": "known", "identifier": "Apache-2.0", "source": "https://beui.example.com/license" },
+    "provenance": { "adapter": "beui", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "beui/data-table",
+    "source": "beui",
+    "slug": "data-table",
+    "name": "Data Table",
+    "description": "Dense data table with sorting and compact rows for dashboards.",
+    "category": "table",
+    "secondaryCategories": ["dashboard"],
+    "frameworks": ["react"],
+    "compatibility": { "nextjs": true, "typescript": true },
+    "visual": {
+      "aesthetics": ["technical", "minimal"],
+      "tags": ["table", "data", "dashboard", "dense", "sorting"],
+      "motion": "none",
+      "density": "compact",
+      "radius": "small",
+      "surface": ["outlined"]
+    },
+    "dependencies": [{ "name": "@tanstack/react-table", "kind": "runtime", "required": true }],
+    "installation": {
+      "kind": "package",
+      "command": "npm install @tanstack/react-table",
+      "instructions": "Install the table library, then copy the Data Table example."
+    },
+    "links": { "homepage": "https://beui.example.com/" },
+    "license": { "status": "known", "identifier": "Apache-2.0", "source": "https://beui.example.com/license" },
+    "provenance": { "adapter": "beui", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  }
+]

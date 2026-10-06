@@ -1,0 +1,149 @@
+[
+  {
+    "schemaVersion": 1,
+    "id": "beautifului/terminal-hero",
+    "source": "beautifului",
+    "slug": "terminal-hero",
+    "name": "Terminal Hero",
+    "description": "Technical dark hero for a developer CLI with terminal window, subtle grid and restrained motion.",
+    "category": "hero",
+    "secondaryCategories": ["terminal"],
+    "frameworks": ["react"],
+    "compatibility": { "nextjs": true, "clientComponent": true, "typescript": true },
+    "visual": {
+      "aesthetics": ["dark", "technical", "minimal"],
+      "tags": [
+        "hero",
+        "terminal",
+        "cli",
+        "developer",
+        "dark",
+        "technical",
+        "subtle",
+        "motion",
+        "grid",
+        "tool"
+      ],
+      "motion": "low",
+      "density": "normal",
+      "radius": "small",
+      "surface": ["flat", "outlined"]
+    },
+    "dependencies": [{ "name": "framer-motion", "kind": "runtime", "required": true }],
+    "installation": {
+      "kind": "copy",
+      "instructions": "Copy the Terminal Hero block from Beautiful UI and adapt copy, colors and radius to your tokens."
+    },
+    "links": {
+      "homepage": "https://beautifului.example.com/",
+      "docs": "https://beautifului.example.com/blocks/terminal-hero",
+      "preview": "https://beautifului.example.com/blocks/terminal-hero"
+    },
+    "license": { "status": "known", "identifier": "MIT", "source": "https://beautifului.example.com/license" },
+    "provenance": { "adapter": "beautifului", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "beautifului/command-palette",
+    "source": "beautifului",
+    "slug": "command-palette",
+    "name": "Command Palette",
+    "description": "Developer command menu with fuzzy search, keyboard navigation and grouping.",
+    "category": "command-menu",
+    "secondaryCategories": ["navigation"],
+    "frameworks": ["react"],
+    "compatibility": { "nextjs": true, "clientComponent": true, "typescript": true },
+    "visual": {
+      "aesthetics": ["dark", "technical", "minimal"],
+      "tags": ["command", "menu", "developer", "keyboard", "palette", "search", "cli"],
+      "motion": "low",
+      "density": "compact",
+      "radius": "small",
+      "surface": ["elevated"]
+    },
+    "dependencies": [{ "name": "cmdk", "kind": "runtime", "required": true }],
+    "installation": {
+      "kind": "package",
+      "command": "npm install cmdk",
+      "instructions": "Install cmdk, then copy the Command Palette block."
+    },
+    "links": { "homepage": "https://beautifului.example.com/" },
+    "license": { "status": "known", "identifier": "MIT", "source": "https://beautifului.example.com/license" },
+    "provenance": { "adapter": "beautifului", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "beautifului/pricing-cards",
+    "source": "beautifului",
+    "slug": "pricing-cards",
+    "name": "Pricing Cards",
+    "description": "Minimal SaaS pricing cards with feature lists and a highlighted tier.",
+    "category": "pricing",
+    "secondaryCategories": ["card"],
+    "frameworks": ["react", "html"],
+    "compatibility": { "nextjs": true, "typescript": true },
+    "visual": {
+      "aesthetics": ["minimal", "saas", "clean"],
+      "tags": ["pricing", "cards", "saas", "minimal", "tiers", "plans"],
+      "motion": "none",
+      "density": "normal",
+      "radius": "medium",
+      "surface": ["outlined"]
+    },
+    "dependencies": [],
+    "installation": { "kind": "copy", "instructions": "Copy the Pricing Cards markup; no runtime dependencies." },
+    "links": { "homepage": "https://beautifului.example.com/" },
+    "license": { "status": "known", "identifier": "MIT", "source": "https://beautifului.example.com/license" },
+    "provenance": { "adapter": "beautifului", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "beautifului/feature-bento",
+    "source": "beautifului",
+    "slug": "feature-bento",
+    "name": "Feature Bento",
+    "description": "Bento feature grid with mixed card sizes for product capabilities.",
+    "category": "feature",
+    "secondaryCategories": ["card"],
+    "frameworks": ["react"],
+    "compatibility": { "nextjs": true, "typescript": true },
+    "visual": {
+      "aesthetics": ["minimal", "saas"],
+      "tags": ["feature", "bento", "grid", "saas", "capabilities"],
+      "motion": "low",
+      "density": "normal",
+      "radius": "medium",
+      "surface": ["outlined", "elevated"]
+    },
+    "dependencies": [],
+    "installation": { "kind": "copy", "instructions": "Copy the Bento grid block." },
+    "links": { "homepage": "https://beautifului.example.com/" },
+    "license": { "status": "known", "identifier": "MIT", "source": "https://beautifului.example.com/license" },
+    "provenance": { "adapter": "beautifului", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  },
+  {
+    "schemaVersion": 1,
+    "id": "beautifului/glass-navbar",
+    "source": "beautifului",
+    "slug": "glass-navbar",
+    "name": "Glass Navbar",
+    "description": "Sticky glass navigation bar with product links and CTA for docs sites.",
+    "category": "navigation",
+    "secondaryCategories": ["navbar"],
+    "frameworks": ["react", "html"],
+    "compatibility": { "nextjs": true, "typescript": true },
+    "visual": {
+      "aesthetics": ["minimal", "glass"],
+      "tags": ["navbar", "navigation", "glass", "sticky", "docs"],
+      "motion": "none",
+      "density": "compact",
+      "radius": "medium",
+      "surface": ["glass"]
+    },
+    "dependencies": [],
+    "installation": { "kind": "copy", "instructions": "Copy the navbar markup." },
+    "links": { "homepage": "https://beautifului.example.com/" },
+    "license": { "status": "known", "identifier": "MIT", "source": "https://beautifului.example.com/license" },
+    "provenance": { "adapter": "beautifului", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+  }
+]
