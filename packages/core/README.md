@@ -1,4 +1,4 @@
-# @tessera/core
+# @tessera-dev/core
 
 Implementation placeholder for this package.
 

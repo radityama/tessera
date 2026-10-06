@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { discoverRegistryFiles, loadRegistryFiles } from "@tessera/registry";
+import { discoverRegistryFiles, loadRegistryFiles } from "@tessera-dev/registry";
 import { findSimilar, getComponent, searchPatterns, searchRegistry } from "./search.js";
 import { inferQueryIntent } from "./query.js";
 import { scoreComponent } from "./score.js";

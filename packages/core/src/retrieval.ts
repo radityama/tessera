@@ -2,7 +2,7 @@ import {
   ComponentArtifactSchema,
   type ComponentArtifact,
   type TesseraComponent,
-} from "@tessera/registry";
+} from "@tessera-dev/registry";
 import { z } from "zod";
 
 /**

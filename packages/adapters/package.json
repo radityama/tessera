@@ -1,5 +1,5 @@
 {
-  "name": "@tessera/adapters",
+  "name": "@tessera-dev/adapters",
   "version": "0.1.0",
   "type": "module",
   "main": "./dist/index.js",
@@ -16,7 +16,7 @@
     "sync": "node dist/sync.js"
   },
   "dependencies": {
-    "@tessera/registry": "workspace:*",
+    "@tessera-dev/registry": "workspace:*",
     "zod": "^3.24.2"
   },
   "devDependencies": {
@@ -25,5 +25,7 @@
     "vitest": "^3.2.4",
     "prettier": "^3.5.3",
     "eslint": "^9.23.0"
-  }
+  },
+  "private": true,
+  "description": "Source adapters and the registry sync tool used to build Tessera snapshots. Development-only."
 }

@@ -1,4 +1,4 @@
-# @tessera/cli
+# @tessera-dev/cli
 
 Implementation placeholder for this package.
 

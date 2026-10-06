@@ -13,7 +13,7 @@
  * - Licensing is narrowed per item where a provider mixes free and paid
  *   content, never assumed from a sibling item.
  *
- * Usage: pnpm --filter @tessera/adapters sync
+ * Usage: pnpm --filter @tessera-dev/adapters sync
  */
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";

@@ -1,4 +1,4 @@
-import type { Framework, License } from "@tessera/registry";
+import type { Framework, License } from "@tessera-dev/registry";
 
 /**
  * Provider descriptors.

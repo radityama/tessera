@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { discoverRegistryFiles, loadRegistryFiles, validateRegistry } from "@tessera/registry";
+import { discoverRegistryFiles, loadRegistryFiles, validateRegistry } from "@tessera-dev/registry";
 import { buildInstallationPlan, getComponent, searchRegistry } from "./search.js";
 
 const here = dirname(fileURLToPath(import.meta.url));

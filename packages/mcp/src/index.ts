@@ -1,36 +1,25 @@
-import { existsSync } from "node:fs";
-import { dirname, join, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { discoverRegistryFiles, loadRegistryFiles } from "@tessera/registry";
+import { loadDefaultRegistry } from "@tessera-dev/registry";
 import { createServer } from "./server.js";
 
 export const MCP_VERSION = "0.1.0";
 export * from "./server.js";
 
-function resolveRegistriesDir(): string {
-  const env = process.env["TESSERA_REGISTRIES"];
-  if (env && existsSync(env)) return resolve(env);
-  const cwd = process.cwd();
-  for (let i = 0; i <= 5; i++) {
-    const candidate =
-      i === 0 ? join(cwd, "registries") : join(cwd, ...Array(i).fill(".."), "registries");
-    if (existsSync(candidate)) return resolve(candidate);
-  }
-  const here = dirname(fileURLToPath(import.meta.url));
-  return resolve(here, "..", "..", "..", "registries");
-}
-
+/**
+ * Start the MCP server over stdio.
+ *
+ * Registry resolution lives in `@tessera-dev/registry` so the CLI and this server
+ * cannot disagree about which snapshot is active.
+ */
 export async function runStdio(): Promise<void> {
-  const files = discoverRegistryFiles(resolveRegistriesDir());
-  const components = loadRegistryFiles(files);
+  const components = loadDefaultRegistry();
   const server = createServer(components);
   await server.connect(new StdioServerTransport());
 }
 
 const invokedAsServer =
   typeof process.argv[1] === "string" &&
-  (process.argv[1].endsWith("/index.js") || process.argv[1].endsWith("mcp"));
+  (process.argv[1].endsWith("/index.js") || process.argv[1].endsWith("tessera-mcp"));
 if (invokedAsServer && !process.env["VITEST"]) {
   runStdio().catch((err) => {
     console.error(JSON.stringify({ error: { code: "startup-error", message: String(err) } }));

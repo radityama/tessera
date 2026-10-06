@@ -8,7 +8,7 @@ import {
   getComponent,
   resolveComponentArtifact,
   searchRegistry,
-} from "@tessera/core";
+} from "@tessera-dev/core";
 import {
   formatAddPlanHuman,
   formatArtifactHuman,
@@ -16,6 +16,7 @@ import {
   formatSearchHuman,
   type FetchPlanEntry,
 } from "./format.js";
+import type { TesseraComponent } from "@tessera-dev/registry";
 import { loadDefaultRegistry } from "./registry.js";
 
 /**
@@ -238,6 +239,111 @@ export function buildProgram(): Command {
       } catch (err) {
         reportError(err);
       }
+    });
+
+  program
+    .command("mcp")
+    .description("start the Tessera MCP server over stdio")
+    .option("--registry <dir>", "registries directory")
+    .action(async (opts) => {
+      try {
+        const { runStdio } = await import("@tessera-dev/mcp");
+        if (opts.registry) process.env["TESSERA_REGISTRIES"] = String(opts.registry);
+        // stdout belongs to the protocol; diagnostics go to stderr.
+        await runStdio();
+      } catch (err) {
+        console.error(
+          JSON.stringify({
+            error: {
+              code: (err as { code?: string }).code ?? "mcp-startup-error",
+              message: err instanceof Error ? err.message : String(err),
+            },
+          }),
+        );
+        process.exit(1);
+      }
+    });
+
+  program
+    .command("doctor")
+    .description("check that this installation can search, inspect and serve MCP")
+    .option("--registry <dir>", "registries directory")
+    .option("--json", "emit the report as JSON")
+    .action(async (opts) => {
+      const { describeRegistrySource } = await import("./registry.js");
+      const checks: Array<{ name: string; ok: boolean; detail: string }> = [];
+      const nodeMajor = Number(process.versions.node.split(".")[0]);
+
+      checks.push({
+        name: "node-version",
+        ok: nodeMajor >= 20,
+        detail: `node ${process.versions.node} (requires >=20)`,
+      });
+
+      const source = describeRegistrySource(opts.registry);
+      checks.push({
+        name: "registry-source",
+        ok: source.kind !== "none",
+        detail:
+          source.kind === "none"
+            ? "no registry found"
+            : `${source.kind}${source.path ? ` (${source.path})` : ""}`,
+      });
+
+      let components: TesseraComponent[] = [];
+      try {
+        components = loadDefaultRegistry(opts.registry);
+        checks.push({
+          name: "registry-valid",
+          ok: components.length > 0,
+          detail: `${components.length} components across ${new Set(components.map((c) => c.source)).size} sources`,
+        });
+      } catch (err) {
+        checks.push({
+          name: "registry-valid",
+          ok: false,
+          detail: err instanceof Error ? err.message : String(err),
+        });
+      }
+
+      if (components.length > 0) {
+        const withoutRetrieval = components.filter((c) => !c.retrieval);
+        const unevidenced = components.filter(
+          (c) => c.license.status === "known" && !c.license.source,
+        );
+        checks.push({
+          name: "registry-integrity",
+          ok: withoutRetrieval.length === 0 && unevidenced.length === 0,
+          detail: `${withoutRetrieval.length} without retrieval, ${unevidenced.length} with unevidenced licenses`,
+        });
+
+        let mcpOk = false;
+        let mcpDetail = "";
+        try {
+          const { createServer } = await import("@tessera-dev/mcp");
+          const server = createServer(components);
+          const tools = Object.keys(
+            (server as unknown as { _registeredTools?: Record<string, unknown> })
+              ._registeredTools ?? {},
+          );
+          mcpOk = tools.length > 0;
+          mcpDetail = `${tools.length} tools registered`;
+        } catch (err) {
+          mcpDetail = err instanceof Error ? err.message : String(err);
+        }
+        checks.push({ name: "mcp-server", ok: mcpOk, detail: mcpDetail });
+      }
+
+      const failed = checks.filter((c) => !c.ok);
+      if (opts.json) {
+        console.log(JSON.stringify({ ok: failed.length === 0, checks }, null, 2));
+      } else {
+        for (const c of checks) console.log(`${c.ok ? "ok  " : "FAIL"}  ${c.name}: ${c.detail}`);
+        console.log(
+          failed.length === 0 ? "\nAll checks passed." : `\n${failed.length} check(s) failed.`,
+        );
+      }
+      if (failed.length > 0) process.exitCode = 1;
     });
 
   return program;

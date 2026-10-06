@@ -1,4 +1,4 @@
-# @tessera/mcp
+# @tessera-dev/mcp
 
 Implementation placeholder for this package.
 

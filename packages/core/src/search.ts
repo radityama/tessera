@@ -1,4 +1,4 @@
-import type { ComponentCategory, TesseraComponent } from "@tessera/registry";
+import type { ComponentCategory, TesseraComponent } from "@tessera-dev/registry";
 import { inferQueryIntent } from "./query.js";
 import { scoreComponent } from "./score.js";
 

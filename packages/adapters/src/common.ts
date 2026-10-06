@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { TesseraComponentSchema, type TesseraComponent } from "@tessera/registry";
+import { TesseraComponentSchema, type TesseraComponent } from "@tessera-dev/registry";
 
 export interface RegistryAdapter<TInput> {
   id: string;

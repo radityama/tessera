@@ -3,3 +3,5 @@ export * from "./schema.js";
 export * from "./ids.js";
 export * from "./load.js";
 export * from "./artifact.js";
+export * from "./bundled.js";
+export * from "./defaults.js";

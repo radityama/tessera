@@ -1,4 +1,4 @@
-import type { ComponentCategory, TesseraComponent } from "@tessera/registry";
+import type { ComponentCategory, TesseraComponent } from "@tessera-dev/registry";
 import { toCanonical } from "./common.js";
 import { getSource, type NpmSource } from "./sources.js";
 

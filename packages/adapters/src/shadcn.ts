@@ -1,5 +1,5 @@
 import { z } from "zod";
-import type { License, TesseraComponent } from "@tessera/registry";
+import type { License, TesseraComponent } from "@tessera-dev/registry";
 import { depList, npmPackageName, slugify, toCanonical } from "./common.js";
 import {
   DERIVED_FIELDS,
