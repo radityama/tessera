@@ -12,6 +12,13 @@ before generating them from scratch.
 [![Node](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg)](./docs/installation.md)
 [![MCP](https://img.shields.io/badge/MCP-stdio-8a2be2.svg)](./docs/integrations/README.md)
 
+**Version 0.1.0.** 73 components across five libraries, verified against live upstreams.
+
+> **npm publishing is pending.** This repository is at v0.1.0, but no package has been published to
+> the npm registry yet, so `npx @tessera-dev/cli` does not resolve and the release workflow has no
+> release to attach tarballs to. Install from source today — see [Install](#install). The release
+> artifacts appear here once the tag is pushed.
+
 </div>
 
 ---
@@ -65,18 +72,32 @@ files:
 Tessera wrote these files only because you asked. Nothing was installed or executed.
 ```
 
-## Quick start
+## Install
+
+Once npm publishing completes:
 
 ```bash
 npx -y @tessera-dev/cli search "dark technical terminal hero"
+npm install -g @tessera-dev/cli
 ```
 
-Install it if you want it around:
+**Until then**, run from source:
 
 ```bash
-npm install -g @tessera-dev/cli
-tessera doctor
+git clone https://github.com/radityama/tessera && cd tessera
+pnpm install && pnpm build
+node packages/cli/dist/cli.js doctor
 ```
+
+Or install the tarballs attached to the release, all four at once — the CLI depends on the other
+three and none are on the registry yet:
+
+```bash
+npm install -g ./tessera-dev-registry-0.1.0.tgz ./tessera-dev-core-0.1.0.tgz \
+               ./tessera-dev-mcp-0.1.0.tgz ./tessera-dev-cli-0.1.0.tgz
+```
+
+See [`docs/installation.md`](./docs/installation.md).
 
 `doctor` checks the runtime, which registry is loaded, that every component validates, that
 licences carry evidence, and that the MCP server starts.
@@ -124,6 +145,11 @@ Configure it once:
   }
 }
 ```
+
+**Not yet runnable as written** — that command needs the published package. Until publishing
+completes, use the binary you installed from the tarballs (`"command": "tessera"`), or the built
+source tree (`"command": "node"`, `"args": ["/path/to/tessera/packages/cli/dist/cli.js", "mcp"]`).
+Both were verified working.
 
 The key name differs per harness — `mcpServers`, `servers`, `mcp`, `context_servers`, or a TOML
 `[mcp_servers.x]` table. Each has a page in [`docs/integrations/`](./docs/integrations/README.md),
@@ -232,6 +258,21 @@ lives in adapters, and ranking stays provider-neutral. The CLI, MCP and explorer
 
 See [`SECURITY.md`](./SECURITY.md) and [`docs/security-licensing.md`](./docs/security-licensing.md).
 
+## Known limitations
+
+v0.1 is a working local loop, not a finished product. The honest list:
+
+- **Five sources, React only.** Enough to prove the thesis, not to cover the ecosystem.
+- **`fetch` does not resolve registry dependencies.** A component that declares them returns its
+  own files only; the artifact reports them, and the shadcn CLI would install them transitively.
+- **Declared dependencies can under-report imports.** `magicui/terminal` imports `motion`, which
+  its registry entry does not declare.
+- **Lexical ranking.** Deterministic and explainable, but it does not understand that a query
+  naming several intents should prefer components satisfying more than one.
+- **`add` never mutates.** Dry-run only.
+- **Ten of eleven harnesses are config-verified, not runtime-tested.** The compatibility matrix
+  says which is which.
+
 ## Development
 
 ```bash
@@ -239,6 +280,7 @@ pnpm install
 pnpm build          # required before test: the registry bundle is built here
 pnpm test
 pnpm release:check  # the full gate
+pnpm dogfood        # end-to-end against live upstreams (network)
 ```
 
 See [`CONTRIBUTING.md`](./CONTRIBUTING.md). The one rule that matters most: **do not invent

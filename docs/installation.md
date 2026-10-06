@@ -4,18 +4,34 @@ Tessera is a local tool. There is no account, no hosted service and no telemetry
 entirely offline against a snapshot bundled with the package; only `tessera fetch` reaches the
 network.
 
+> **npm publishing is pending.** The `@tessera-dev` scope is reserved and the release workflow
+> builds, checksums and smoke-tests the packages on every tag, but no package has been published
+> to the registry yet. Every `npx @tessera-dev/cli …` command in these docs and in
+> [`integrations/`](./integrations/README.md) describes the intended command and will work once
+> publishing completes. Until then, install from the release tarballs or run from source — both
+> are below.
+
 ## Requirements
 
 - Node.js **20 or later**
 - npm, pnpm or npx
 
-## Try it without installing
+## Install from a release tarball
+
+Download the four tarballs attached to the
+[latest release](https://github.com/radityama/tessera/releases) and install **all four together**:
 
 ```bash
-npx -y @tessera-dev/cli search "dark technical terminal hero"
+npm install -g ./tessera-dev-registry-0.1.0.tgz ./tessera-dev-core-0.1.0.tgz \
+               ./tessera-dev-mcp-0.1.0.tgz ./tessera-dev-cli-0.1.0.tgz
+tessera doctor
 ```
 
-## Install
+Installing only the CLI tarball does not work: it depends on the other three, and none of them are
+on the registry yet, so npm has nothing to resolve them from. Install them in one command so npm
+resolves the dependencies against the local files.
+
+## Install from npm (once published)
 
 ```bash
 npm install -g @tessera-dev/cli     # npm
@@ -26,6 +42,16 @@ Or as a project dependency, then use `npx tessera`:
 
 ```bash
 npm install --save-dev @tessera-dev/cli
+```
+
+## Run from source
+
+```bash
+git clone https://github.com/radityama/tessera
+cd tessera
+pnpm install
+pnpm build
+node packages/cli/dist/cli.js doctor
 ```
 
 ## Verify

@@ -1,10 +1,28 @@
+const HYPHEN = 45;
+
+/**
+ * Convert arbitrary text to a kebab-case slug.
+ *
+ * Input here can come from a third-party registry, so it is treated as
+ * untrusted. The obvious implementation uses `/^-+|-+$/` to strip edge dashes,
+ * which backtracks polynomially on a long run of `-`: a provider publishing an
+ * item named `--------------------------------…` would stall the sync. CodeQL
+ * flags it as `js/polynomial-redos`, and it is right.
+ *
+ * Scanning for the edges instead cannot backtrack. The `[^a-z0-9]+` collapse
+ * already guarantees single dashes internally, so the old `-{2,}` pass was
+ * redundant as well.
+ */
 export function slugify(input: string): string {
-  return input
+  const collapsed = input
     .toLowerCase()
     .trim()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .replace(/-{2,}/g, "-");
+    .replace(/[^a-z0-9]+/g, "-");
+  let start = 0;
+  let end = collapsed.length;
+  while (start < end && collapsed.charCodeAt(start) === HYPHEN) start += 1;
+  while (end > start && collapsed.charCodeAt(end - 1) === HYPHEN) end -= 1;
+  return collapsed.slice(start, end);
 }
 
 export function buildId(source: string, slug: string): string {

@@ -21,14 +21,14 @@ export function normList(value: unknown): string[] {
     .filter(Boolean);
 }
 
-export function slugify(input: string): string {
-  return input
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .replace(/-{2,}/g, "-");
-}
+/**
+ * Re-exported rather than reimplemented.
+ *
+ * This was a second copy of the same function, which meant the same ReDoS
+ * pattern had to be fixed twice and could drift apart. There is one slug
+ * implementation, in @tessera-dev/registry, and adapters use it.
+ */
+export { slugify } from "@tessera-dev/registry";
 
 /**
  * Reduce an npm specifier to its package name.
