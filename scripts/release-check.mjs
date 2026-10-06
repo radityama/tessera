@@ -87,6 +87,41 @@ for (const file of readdirSync(issueFormDir).filter((f) => f.endsWith(".yml"))) 
 if (badTypes.length === 0) ok("issue form element types are all supported by GitHub");
 else bad(`unsupported issue form types: ${badTypes.join(", ")}`);
 
+// -- Repository hygiene -------------------------------------------------------
+
+section("Repository hygiene");
+
+// Build artifacts must never be committed. One slipped in once, and nothing
+// caught it: a committed tarball goes stale silently the moment source changes.
+let trackedArtifacts = [];
+let hygieneState = "checked";
+try {
+  trackedArtifacts = execFileSync("git", ["ls-files", "*.tgz", "*.tar.gz", "dist-tarballs"], {
+    cwd: repoRoot,
+    encoding: "utf8",
+  })
+    .split("\n")
+    .filter(Boolean);
+} catch (err) {
+  const stderr = `${err.stderr ?? ""}${err.message ?? ""}`;
+  // Only "there is no repository here" justifies skipping. Any other failure —
+  // git missing, a permissions problem, a corrupt index — means the check did
+  // not run, and reporting that as passing is the same defect as a check that
+  // cannot fail. In a real checkout it must actually run.
+  if (/not a git repository|ENOENT/i.test(stderr) && !existsSync(join(repoRoot, ".git"))) {
+    hygieneState = "skipped";
+  } else {
+    hygieneState = "failed";
+    bad(`could not check for tracked artifacts: ${stderr.trim().split("\n")[0] || "git failed"}`);
+  }
+}
+if (hygieneState === "checked") {
+  if (trackedArtifacts.length === 0) ok("no build artifacts tracked in git");
+  else bad(`build artifacts are tracked and must be removed: ${trackedArtifacts.join(", ")}`);
+} else if (hygieneState === "skipped") {
+  ok("artifact check skipped: not a git checkout");
+}
+
 // -- Version consistency ------------------------------------------------------
 
 section("Version consistency");
