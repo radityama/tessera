@@ -12,7 +12,13 @@ before generating them from scratch.
 [![Node](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg)](./docs/installation.md)
 [![MCP](https://img.shields.io/badge/MCP-stdio-8a2be2.svg)](./docs/integrations/README.md)
 
-**v0.1.0 is available.** 73 components across five libraries, verified against live upstreams.
+**v0.1.0 is tagged and released.** 73 components across five libraries, verified against live
+upstreams.
+
+> **npm publishing is pending.** The `@tessera-dev` scope is reserved but no package has been
+> published yet, so `npx @tessera-dev/cli` does not resolve. Until then, install from the release
+> tarballs or run from source — see [Install](#install). This notice comes out when publishing
+> succeeds.
 
 </div>
 
@@ -67,18 +73,25 @@ files:
 Tessera wrote these files only because you asked. Nothing was installed or executed.
 ```
 
-## Quick start
+## Install
+
+Once npm publishing completes:
 
 ```bash
 npx -y @tessera-dev/cli search "dark technical terminal hero"
+npm install -g @tessera-dev/cli
 ```
 
-Install it if you want it around:
+**Today**, until then, either install the release tarballs attached to the
+[v0.1.0 release](https://github.com/radityama/tessera/releases), or run from source:
 
 ```bash
-npm install -g @tessera-dev/cli
-tessera doctor
+git clone https://github.com/radityama/tessera && cd tessera
+pnpm install && pnpm build
+node packages/cli/dist/cli.js doctor
 ```
+
+See [`docs/installation.md`](./docs/installation.md).
 
 `doctor` checks the runtime, which registry is loaded, that every component validates, that
 licences carry evidence, and that the MCP server starts.

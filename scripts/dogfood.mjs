@@ -15,15 +15,7 @@
  * Usage: node scripts/dogfood.mjs [<component-id>] [--keep]
  */
 import { execFileSync } from "node:child_process";
-import {
-  existsSync,
-  mkdirSync,
-  readFileSync,
-  rmSync,
-  writeFileSync,
-  readdirSync,
-  statSync,
-} from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -59,7 +51,10 @@ if (!existsSync(cli)) {
   process.exit(1);
 }
 
-const workdir = join(tmpdir(), `tessera-dogfood-${Date.now()}`);
+// mkdtempSync creates the directory with mode 0700 and an unpredictable name.
+// A Date.now()-derived path is guessable, and mkdirSync accepts an existing
+// directory, so a local attacker could pre-seed it and capture the writes.
+const workdir = mkdtempSync(join(tmpdir(), "tessera-dogfood-"));
 console.log(`dogfood: component ${componentId}`);
 console.log(`dogfood: workdir ${workdir}`);
 
@@ -107,7 +102,10 @@ try {
   step(3, "retrieve the real implementation from upstream");
   const fetchOut = run(
     process.execPath,
-    [cli, "fetch", chosen.id, "--output", join(workdir, "src", "components"), "--json"],
+    // Output root is `src`, not `src/components`: upstream paths already carry a
+    // `components/...` or `registry/...` prefix, so nesting would produce
+    // src/components/components/ui/... and break the @/* alias.
+    [cli, "fetch", chosen.id, "--output", join(workdir, "src"), "--json"],
     { cwd: workdir },
   );
   const fetchResult = JSON.parse(fetchOut);
@@ -147,8 +145,10 @@ try {
     for (const match of file.content.matchAll(/from\s+["']([^"'.][^"']*)["']/g)) {
       const spec = match[1];
       if (spec.startsWith("@/") || spec.startsWith(".")) continue;
+      // Scoped names contain "@", so splitting on it turns
+      // "@tanstack/react-virtual" into "". Take the scope plus the package.
       const pkg = spec.startsWith("@") ? spec.split("/").slice(0, 2).join("/") : spec.split("/")[0];
-      importedPackages.add(pkg);
+      if (pkg) importedPackages.add(pkg);
     }
   }
   const declared = new Set(artifact.dependencies.map((d) => d.split("@")[0]));
@@ -195,7 +195,14 @@ try {
           "react-dom": "^19.0.0",
           clsx: "^2.1.1",
           "tailwind-merge": "^2.5.4",
-          ...Object.fromEntries([...importedPackages].map((p) => [p, "latest"])),
+          // react and react-dom are pinned above; letting the spread overwrite
+          // them would desynchronise them from @types/react and turn a future
+          // React major into a spurious dogfood failure.
+          ...Object.fromEntries(
+            [...importedPackages]
+              .filter((p) => p !== "react" && p !== "react-dom")
+              .map((p) => [p, "latest"]),
+          ),
         },
         devDependencies: {
           typescript: "~5.9.2",
@@ -232,7 +239,11 @@ try {
   ok("wrote a minimal host project (react + typescript + the component's imports)");
 
   console.log("     ... installing dependencies (network)");
-  run("npm", ["install", "--no-audit", "--no-fund", "--loglevel", "error"], {
+  // --ignore-scripts: these packages are chosen from live registry metadata, and
+  // the install only needs their files for type-checking. Running arbitrary
+  // lifecycle scripts from them would make a compromised dependency able to
+  // execute code here, for no benefit.
+  run("npm", ["install", "--ignore-scripts", "--no-audit", "--no-fund", "--loglevel", "error"], {
     cwd: workdir,
     stdio: "pipe",
   });
