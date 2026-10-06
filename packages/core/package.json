@@ -22,7 +22,7 @@
     "typescript": "~5.9.2",
     "vitest": "^3.2.4",
     "prettier": "^3.5.3",
-    "eslint": "^9.23.0"
+    "eslint": "^10.12.0"
   },
   "description": "Search, ranking, score explanations and provider-neutral artifact retrieval for Tessera.",
   "license": "MIT",
