@@ -85,7 +85,7 @@ export function searchRegistry(
 export function getComponent(components: TesseraComponent[], id: string): TesseraComponent {
   const found = components.find((c) => c.id === id);
   if (!found) {
-    fail("not-found", `unknown component id "${id}"`);
+    fail("component-not-found", `unknown component id "${id}"`);
   }
   return found as TesseraComponent;
 }
