@@ -1,0 +1,90 @@
+name: Bug report
+description: Something is broken or behaves unexpectedly.
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. **Run `tessera doctor` first and paste its output** — it answers
+        most setup problems on its own.
+
+        For security issues, do not use this form: see SECURITY.md.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what happened, and what you expected instead.
+      placeholder: |
+        I ran `tessera fetch magicui/terminal --output ./vendor` and got ...
+        I expected ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: doctor
+    attributes:
+      label: Output of `tessera doctor`
+      render: text
+    validations:
+      required: true
+
+  - type: input
+    id: tessera-version
+    attributes:
+      label: Tessera version
+      description: Output of `tessera --version`.
+    validations:
+      required: true
+
+  - type: input
+    id: node-version
+    attributes:
+      label: Node version
+      description: Output of `node --version`.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Where did this happen?
+      options:
+        - CLI
+        - MCP server (used through a coding agent)
+        - Registry data (a component's metadata is wrong)
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: harness
+    attributes:
+      label: Coding agent, if MCP
+      description: Which harness, and its version.
+      placeholder: Claude Code 2.1.291
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant output
+      description: |
+        Errors print as JSON on stderr. Re-run with `TESSERA_DEBUG=1` for stack traces.
+        Remove anything you would not want public.
+      render: text
+    validations:
+      required: false

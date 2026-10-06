@@ -1,0 +1,33 @@
+version: 2
+updates:
+  # Workspace dependencies. Prefix keeps these separate from security updates
+  # so a routine bump does not look like an incident.
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps)"
+    groups:
+      # Patch and minor bumps of the toolchain in one PR. Major bumps stay
+      # individual so a breaking change is reviewed on its own.
+      dev-tooling:
+        patterns: ["typescript", "eslint*", "@eslint/*", "prettier", "turbo", "vitest", "@types/*"]
+        update-types: ["minor", "patch"]
+    labels:
+      - dependencies
+
+  # GitHub Actions. Kept separate so an action bump is obvious in review.
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: "chore(ci)"
+    labels:
+      - dependencies
+      - ci

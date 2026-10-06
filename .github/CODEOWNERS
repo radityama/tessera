@@ -1,0 +1,11 @@
+# Default owner for everything in this repository.
+# Registry data and licensing rules are the parts most worth a careful eye.
+*       @radityama
+
+# Generated registry snapshots. Changed only by `pnpm registry:sync`.
+/registries/                     @radityama
+/packages/registry/src/schema.ts @radityama
+/packages/registry/src/release-guard.test.ts @radityama
+
+# Integration docs assert what each harness supports. Keep them honest.
+/docs/integrations/              @radityama
