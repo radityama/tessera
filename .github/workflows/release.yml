@@ -1,0 +1,175 @@
+name: release
+
+# Triggered by pushing a version tag. The tag must point at a commit that already
+# passed CI on main; this workflow re-runs the full gate anyway, because a tag can
+# be pushed by hand and "the branch was green earlier" is not the same claim.
+on:
+  push:
+    tags:
+      - "v*"
+
+  # Allows a dry run from the Actions tab without publishing.
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: "Run every check but publish nothing"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: verify
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # The same gate contributors run locally: governance files, version
+      # consistency, lint, typecheck, build, tests, MCP conformance and the
+      # packaged-tarball smoke test.
+      - run: pnpm release:check
+
+      - name: Check the tag matches the package versions
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          pkg="$(node -p "require('./packages/cli/package.json').version")"
+          if [ "$tag" != "$pkg" ]; then
+            echo "::error::tag $GITHUB_REF_NAME does not match package version $pkg"
+            exit 1
+          fi
+          echo "tag $GITHUB_REF_NAME matches package version $pkg"
+
+  publish:
+    name: publish
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # create the GitHub Release
+      id-token: write # npm provenance / trusted publishing
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+
+      - name: Decide whether this run can publish
+        id: creds
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry-run }}" = "true" ]; then
+            echo "reason=manual dry run" >> "$GITHUB_OUTPUT"
+            echo "can_publish=false" >> "$GITHUB_OUTPUT"
+          elif [ -n "${NPM_TOKEN}" ]; then
+            echo "reason=NPM_TOKEN secret is present" >> "$GITHUB_OUTPUT"
+            echo "can_publish=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "reason=no npm credentials configured" >> "$GITHUB_OUTPUT"
+            echo "can_publish=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Everything below is credential-independent and always runs, so a release
+      # that cannot publish still produces verified artifacts.
+      - name: Pack publishable packages
+        run: |
+          mkdir -p dist-tarballs
+          for pkg in registry core mcp cli; do
+            pnpm --filter "@tessera-dev/$pkg" pack --pack-destination dist-tarballs
+          done
+          ls -la dist-tarballs
+
+      - name: Smoke test the tarballs
+        run: pnpm smoke:pack
+
+      - name: Checksums
+        run: |
+          cd dist-tarballs
+          sha256sum ./*.tgz > SHA256SUMS.txt
+          cat SHA256SUMS.txt
+
+      - name: Upload tarballs
+        uses: actions/upload-artifact@v4
+        with:
+          name: npm-tarballs
+          path: dist-tarballs/
+          retention-days: 30
+
+      - name: Publish to npm
+        if: steps.creds.outputs.can_publish == 'true'
+        run: |
+          for pkg in registry core mcp cli; do
+            pnpm --filter "@tessera-dev/$pkg" publish --access public --no-git-checks --provenance
+          done
+
+      - name: Explain a skipped publish
+        if: steps.creds.outputs.can_publish != 'true'
+        run: |
+          echo "::warning::npm publish was skipped (${{ steps.creds.outputs.reason }}). The tarballs above are built and smoke-tested but not published."
+          {
+            echo "### npm publish skipped"
+            echo
+            echo "Reason: ${{ steps.creds.outputs.reason }}"
+            echo
+            echo "Tarballs were built and smoke-tested, and are attached to this run."
+            echo "To publish, either configure npm trusted publishing for this repository,"
+            echo "or set an \`NPM_TOKEN\` repository secret, then re-run this workflow."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # The GitHub Release is not blocked by npm, so it is created either way.
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          notes_file="docs/releases/${GITHUB_REF_NAME}.md"
+          if [ -f "$notes_file" ]; then
+            gh release create "$GITHUB_REF_NAME" dist-tarballs/*.tgz \
+              --title "Tessera ${GITHUB_REF_NAME}" --notes-file "$notes_file"
+          else
+            gh release create "$GITHUB_REF_NAME" dist-tarballs/*.tgz \
+              --title "Tessera ${GITHUB_REF_NAME}" --generate-notes
+          fi
+
+  post-publish-verify:
+    name: post-publish verify
+    needs: publish
+    runs-on: ubuntu-latest
+    # Only meaningful when something was actually published.
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install from the public registry, outside any workspace
+        run: |
+          cd "$(mktemp -d)"
+          version="${GITHUB_REF_NAME#v}"
+          echo "waiting for npm to serve @tessera-dev/cli@$version"
+          for i in $(seq 1 30); do
+            if npx -y "@tessera-dev/cli@$version" --version 2>/dev/null; then break; fi
+            sleep 10
+          done
+          npx -y "@tessera-dev/cli@$version" --version
+          npx -y "@tessera-dev/cli@$version" doctor
+          npx -y "@tessera-dev/cli@$version" search "dark technical terminal hero" --limit 3

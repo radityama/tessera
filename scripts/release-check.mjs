@@ -60,8 +60,12 @@ const REQUIRED_FILES = [
   "skills/tessera/SKILL.md",
 ];
 
-const missing = REQUIRED_FILES.filter((f) => !existsSync(join(repoRoot, f)));
-if (missing.length === 0) ok(`all ${REQUIRED_FILES.length} required files present`);
+const version = JSON.parse(
+  readFileSync(join(repoRoot, "packages", "cli", "package.json"), "utf8"),
+).version;
+const notes = `docs/releases/v${version}.md`;
+const missing = [...REQUIRED_FILES, notes].filter((f) => !existsSync(join(repoRoot, f)));
+if (missing.length === 0) ok(`all ${REQUIRED_FILES.length + 1} required files present`);
 else bad(`missing: ${missing.join(", ")}`);
 
 /**
