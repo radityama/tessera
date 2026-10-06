@@ -22,7 +22,7 @@
     "@types/node": "^22.13.0",
     "eslint": "^9.23.0",
     "prettier": "^3.5.3",
-    "typescript": "~5.9.2",
+    "typescript": "~6.0.3",
     "vitest": "^3.2.4"
   },
   "description": "Canonical schemas, validation and loading for the Tessera component registry, including the bundled snapshot that ships with the package.",
