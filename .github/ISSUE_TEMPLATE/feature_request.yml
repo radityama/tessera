@@ -1,0 +1,57 @@
+name: Feature request
+description: Suggest a capability Tessera does not have yet.
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tessera's scope for now is deliberately small: a local retrieval loop for coding agents.
+        Some ideas (hosted index, embeddings, automatic installation) are intentionally out of
+        scope until the local loop is proven. See `docs/roadmap.md`.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you trying to solve?
+      description: Describe the situation, not the solution. What are you doing when this bites?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What do you do instead today?
+      description: Including any workaround, however rough.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of Tessera?
+      options:
+        - Search and ranking
+        - Registry sources and data
+        - Artifact retrieval
+        - CLI
+        - MCP server
+        - Agent Skill
+        - Registry explorer
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: anything-else
+    attributes:
+      label: Anything else
+    validations:
+      required: false

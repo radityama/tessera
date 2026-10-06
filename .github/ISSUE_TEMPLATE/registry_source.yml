@@ -1,0 +1,96 @@
+name: Registry source request
+description: Ask for a UI library to be indexed by Tessera.
+labels: ["registry", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A source is only added with verified evidence. If the fields below cannot be filled in
+        from official sources, the library is not ready to index — an unverifiable source is how
+        this project ended up with fabricated component data once already.
+
+  - type: input
+    id: project
+    attributes:
+      label: Official project
+      description: The library's own site or repository. Not a blog post, listicle, or marketplace listing.
+      placeholder: https://example.com
+    validations:
+      required: true
+
+  - type: input
+    id: registry
+    attributes:
+      label: Official registry or docs
+      description: |
+        Where components are documented or served. If the library exposes a machine-readable
+        registry, give the exact endpoint — do not give a guessed URL pattern.
+      placeholder: https://example.com/r/registry.json
+    validations:
+      required: true
+
+  - type: input
+    id: license
+    attributes:
+      label: License
+      description: The exact licence, with a URL to where it is stated (LICENSE file, licensing page).
+      placeholder: MIT — https://github.com/org/repo/blob/main/LICENSE
+    validations:
+      required: true
+
+  - type: dropdown
+    id: framework
+    attributes:
+      label: Framework
+      multiple: true
+      options:
+        - React
+        - Vue
+        - Svelte
+        - HTML / CSS
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: free
+    attributes:
+      label: Are the components free and publicly available?
+      options:
+        - All components are free
+        - Mixed free and paid
+        - Mostly or entirely paid
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: paid-details
+    attributes:
+      label: If mixed or paid, how can the free ones be told apart?
+      description: |
+        For example: "paid items are the ones under /blocks, the open-source repo only contains
+        the /components set". This determines whether components can be licensed correctly.
+    validations:
+      required: false
+
+  - type: textarea
+    id: retrieval
+    attributes:
+      label: How can a component's source be obtained?
+      description: |
+        shadcn registry endpoint, npm package, GitHub raw path, or copy-paste documentation only.
+        Give one concrete example you have actually fetched.
+      placeholder: |
+        shadcn registry: `npx shadcn@latest add @example/button`
+        Item endpoint: https://example.com/r/button.json (returns files[] with inline content)
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: What did you check yourself?
+      description: Confirm which of the above you verified directly, and note anything you could not.
+    validations:
+      required: true
