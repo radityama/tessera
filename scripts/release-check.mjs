@@ -87,6 +87,26 @@ for (const file of readdirSync(issueFormDir).filter((f) => f.endsWith(".yml"))) 
 if (badTypes.length === 0) ok("issue form element types are all supported by GitHub");
 else bad(`unsupported issue form types: ${badTypes.join(", ")}`);
 
+// -- Repository hygiene -------------------------------------------------------
+
+section("Repository hygiene");
+
+// Build artifacts must never be committed. One slipped in once, and nothing
+// caught it: a committed tarball goes stale silently the moment source changes.
+let trackedArtifacts = [];
+try {
+  trackedArtifacts = execFileSync("git", ["ls-files", "*.tgz", "*.tar.gz", "dist-tarballs"], {
+    cwd: repoRoot,
+    encoding: "utf8",
+  })
+    .split("\n")
+    .filter(Boolean);
+} catch {
+  // Not a git checkout (packed tarball, shallow export) — nothing to check.
+}
+if (trackedArtifacts.length === 0) ok("no build artifacts tracked in git");
+else bad(`build artifacts are tracked and must be removed: ${trackedArtifacts.join(", ")}`);
+
 // -- Version consistency ------------------------------------------------------
 
 section("Version consistency");

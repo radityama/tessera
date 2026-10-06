@@ -15,4 +15,4 @@ packages/registry/bundled-registry/
 
 # release artifacts: attached to GitHub Releases by the release workflow,
 # never committed
-/tarballs
+/dist-tarballs/
