@@ -1,41 +1,144 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`golden snapshots > snapshot: accessible login form 1`] = `
+[
+  {
+    "id": "heroui/form",
+    "reasons": [
+      "exact category match: form",
+      "matches query terms in name/description/tags",
+      "one required runtime dependency",
+      "known license (MIT)",
+    ],
+    "score": 0.776,
+  },
+  {
+    "id": "heroui/input",
+    "reasons": [
+      "exact category match: form",
+      "matches query terms in name/description/tags",
+      "one required runtime dependency",
+      "known license (MIT)",
+    ],
+    "score": 0.776,
+  },
+  {
+    "id": "efferd/auth-1",
+    "reasons": [
+      "exact category match: form",
+      "matches query terms in name/description/tags",
+      "no required runtime dependencies",
+      "known license (MIT)",
+    ],
+    "score": 0.749,
+  },
+]
+`;
+
+exports[`golden snapshots > snapshot: animated background restrained 1`] = `
+[
+  {
+    "id": "magicui/retro-grid",
+    "reasons": [
+      "exact category match: background",
+      "matches query terms in name/description/tags",
+      "no required runtime dependencies",
+      "known license (MIT)",
+    ],
+    "score": 0.826,
+  },
+  {
+    "id": "magicui/animated-beam",
+    "reasons": [
+      "exact category match: background",
+      "matches query terms in name/description/tags",
+      "one required runtime dependency",
+      "secondary match: animation",
+      "known license (MIT)",
+    ],
+    "score": 0.815,
+  },
+  {
+    "id": "magicui/animated-grid-pattern",
+    "reasons": [
+      "exact category match: background",
+      "matches query terms in name/description/tags",
+      "one required runtime dependency",
+      "secondary match: animation",
+      "known license (MIT)",
+    ],
+    "score": 0.815,
+  },
+]
+`;
+
 exports[`golden snapshots > snapshot: animated grid background subtle 1`] = `
 [
   {
-    "id": "aceternity/grid-background",
+    "id": "magicui/retro-grid",
     "reasons": [
       "exact category match: background",
       "matches query terms in name/description/tags",
-      "motion level matches requested low motion",
       "no required runtime dependencies",
       "known license (MIT)",
     ],
-    "score": 0.95,
+    "score": 0.855,
   },
   {
-    "id": "beui/grid-hero",
+    "id": "magicui/animated-grid-pattern",
     "reasons": [
       "exact category match: background",
       "matches query terms in name/description/tags",
-      "static component fits requested subtle motion",
-      "no required runtime dependencies",
-      "secondary match: background",
-      "known license (Apache-2.0)",
-    ],
-    "score": 0.863,
-  },
-  {
-    "id": "aceternity/spotlight-hero",
-    "reasons": [
-      "exact category match: background",
-      "matches query terms in name/description/tags",
-      "motion level matches requested low motion",
       "one required runtime dependency",
-      "secondary match: background",
+      "secondary match: animation",
       "known license (MIT)",
     ],
-    "score": 0.85,
+    "score": 0.815,
+  },
+  {
+    "id": "magicui/flickering-grid",
+    "reasons": [
+      "exact category match: background",
+      "matches query terms in name/description/tags",
+      "no required runtime dependencies",
+      "known license (MIT)",
+    ],
+    "score": 0.768,
+  },
+]
+`;
+
+exports[`golden snapshots > snapshot: dark developer CLI hero subtle motion 1`] = `
+[
+  {
+    "id": "efferd/hero-1",
+    "reasons": [
+      "exact category match: hero",
+      "matches query terms in name/description/tags",
+      "no required runtime dependencies",
+      "unknown license — verify before vendoring",
+    ],
+    "score": 0.611,
+  },
+  {
+    "id": "efferd/hero-2",
+    "reasons": [
+      "exact category match: hero",
+      "matches query terms in name/description/tags",
+      "no required runtime dependencies",
+      "unknown license — verify before vendoring",
+    ],
+    "score": 0.611,
+  },
+  {
+    "id": "efferd/hero-3",
+    "reasons": [
+      "exact category match: hero",
+      "matches query terms in name/description/tags",
+      "no required runtime dependencies",
+      "unknown license — verify before vendoring",
+    ],
+    "score": 0.611,
   },
 ]
 `;
@@ -43,30 +146,30 @@ exports[`golden snapshots > snapshot: animated grid background subtle 1`] = `
 exports[`golden snapshots > snapshot: developer command menu 1`] = `
 [
   {
-    "id": "beautifului/command-palette",
+    "id": "beui/command-palette",
     "reasons": [
       "exact category match: command-menu",
       "matches query terms in name/description/tags",
-      "one required runtime dependency",
+      "4 required runtime dependencies",
       "known license (MIT)",
     ],
-    "score": 0.805,
+    "score": 0.666,
   },
   {
-    "id": "beui/dark-cta",
+    "id": "efferd/auth-1",
     "reasons": [
       "no required runtime dependencies",
-      "known license (Apache-2.0)",
+      "known license (MIT)",
     ],
-    "score": 0.667,
+    "score": 0.545,
   },
   {
-    "id": "beui/grid-hero",
+    "id": "efferd/auth-2",
     "reasons": [
       "no required runtime dependencies",
-      "known license (Apache-2.0)",
+      "known license (MIT)",
     ],
-    "score": 0.667,
+    "score": 0.545,
   },
 ]
 `;
@@ -74,36 +177,34 @@ exports[`golden snapshots > snapshot: developer command menu 1`] = `
 exports[`golden snapshots > snapshot: minimal saas pricing cards 1`] = `
 [
   {
-    "id": "beautifului/pricing-cards",
+    "id": "efferd/pricing-1",
     "reasons": [
       "exact category match: pricing",
-      "matches aesthetics: minimal, saas",
+      "matches query terms in name/description/tags",
       "no required runtime dependencies",
-      "secondary match: card",
       "known license (MIT)",
     ],
-    "score": 0.95,
+    "score": 0.768,
   },
   {
-    "id": "heroui/pricing-tiers",
+    "id": "efferd/pricing-2",
     "reasons": [
       "exact category match: pricing",
-      "matches aesthetics: minimal, saas",
-      "one required runtime dependency",
-      "secondary match: card",
+      "matches query terms in name/description/tags",
+      "no required runtime dependencies",
       "known license (MIT)",
     ],
-    "score": 0.815,
+    "score": 0.68,
   },
   {
-    "id": "beautifului/feature-bento",
+    "id": "efferd/pricing-3",
     "reasons": [
-      "matches aesthetics: minimal, saas",
+      "exact category match: pricing",
+      "matches query terms in name/description/tags",
       "no required runtime dependencies",
-      "secondary match: card",
       "known license (MIT)",
     ],
-    "score": 0.81,
+    "score": 0.68,
   },
 ]
 `;
@@ -111,38 +212,64 @@ exports[`golden snapshots > snapshot: minimal saas pricing cards 1`] = `
 exports[`golden snapshots > snapshot: technical dark hero for a developer CLI, subtle motion, terminal-oriented 1`] = `
 [
   {
-    "id": "beautifului/terminal-hero",
+    "id": "efferd/hero-1",
     "reasons": [
       "exact category match: hero",
-      "matches aesthetics: technical, dark",
-      "motion level matches requested low motion",
-      "one required runtime dependency",
-      "secondary match: terminal",
-      "known license (MIT)",
-    ],
-    "score": 0.91,
-  },
-  {
-    "id": "beui/grid-hero",
-    "reasons": [
-      "exact category match: hero",
-      "matches aesthetics: technical, dark",
-      "static component fits requested subtle motion",
       "no required runtime dependencies",
-      "known license (Apache-2.0)",
+      "unknown license — verify before vendoring",
     ],
-    "score": 0.871,
+    "score": 0.591,
   },
   {
-    "id": "aceternity/spotlight-hero",
+    "id": "efferd/hero-2",
     "reasons": [
       "exact category match: hero",
-      "matches aesthetics: technical, dark",
-      "motion level matches requested low motion",
+      "no required runtime dependencies",
+      "unknown license — verify before vendoring",
+    ],
+    "score": 0.591,
+  },
+  {
+    "id": "efferd/hero-3",
+    "reasons": [
+      "exact category match: hero",
+      "no required runtime dependencies",
+      "unknown license — verify before vendoring",
+    ],
+    "score": 0.591,
+  },
+]
+`;
+
+exports[`golden snapshots > snapshot: technical dashboard table 1`] = `
+[
+  {
+    "id": "efferd/dashboard-2",
+    "reasons": [
+      "matches query terms in name/description/tags",
+      "no required runtime dependencies",
+      "unknown license — verify before vendoring",
+    ],
+    "score": 0.733,
+  },
+  {
+    "id": "heroui/table",
+    "reasons": [
+      "exact category match: table",
+      "matches query terms in name/description/tags",
       "one required runtime dependency",
       "known license (MIT)",
     ],
-    "score": 0.82,
+    "score": 0.619,
+  },
+  {
+    "id": "efferd/dashboard-3",
+    "reasons": [
+      "matches query terms in name/description/tags",
+      "no required runtime dependencies",
+      "unknown license — verify before vendoring",
+    ],
+    "score": 0.617,
   },
 ]
 `;

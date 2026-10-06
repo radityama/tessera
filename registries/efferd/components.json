@@ -1,102 +1,1396 @@
 [
   {
-    "schemaVersion": 1,
-    "id": "efferd/terminal-panel",
+    "schemaVersion": 2,
+    "id": "efferd/hero-1",
     "source": "efferd",
-    "slug": "terminal-panel",
-    "name": "Terminal Panel",
-    "description": "Compact terminal panel with tabs and copy button for CLI output demos.",
-    "category": "terminal",
-    "secondaryCategories": ["card"],
-    "frameworks": ["react", "html"],
-    "compatibility": { "nextjs": true, "typescript": true },
+    "slug": "hero-1",
+    "name": "hero-1",
+    "description": "Centered hero with radial gradient background and announcement badge",
+    "category": "hero",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
     "visual": {
-      "aesthetics": ["dark", "technical"],
-      "tags": ["terminal", "panel", "cli", "developer", "dark", "technical", "output"],
-      "motion": "none",
-      "density": "compact",
-      "radius": "small",
-      "surface": ["flat", "outlined"]
+      "aesthetics": ["gradient"],
+      "tags": [
+        "hero",
+        "centered",
+        "with",
+        "radial",
+        "gradient",
+        "background",
+        "and",
+        "announcement",
+        "badge"
+      ],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
     },
     "dependencies": [],
-    "installation": { "kind": "copy", "instructions": "Copy the terminal panel markup from Efferd." },
-    "links": { "homepage": "https://efferd.example.com/" },
-    "license": { "status": "unknown", "notes": "Upstream license not confirmed; do not vendor without checking." },
-    "provenance": { "adapter": "efferd", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://efferd.com/r/hero-1.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://efferd.com/r/hero-1.json",
+      "installCommand": "npx shadcn@latest add https://efferd.com/r/hero-1.json"
+    },
+    "links": {
+      "homepage": "https://efferd.com/",
+      "docs": "https://efferd.com/docs"
+    },
+    "license": {
+      "status": "unknown",
+      "redistribution": "unknown",
+      "notes": "This item is published by the provider's hosted registry but is not present in its open-source repository, so its license could not be attributed. Verify upstream terms before reuse."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "hero-1",
+      "retrievedAt": "2026-10-06T05:40:42.046Z",
+      "sourceVersion": "https://efferd.com/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
   },
   {
-    "schemaVersion": 1,
-    "id": "efferd/dashboard-stats",
+    "schemaVersion": 2,
+    "id": "efferd/hero-2",
     "source": "efferd",
-    "slug": "dashboard-stats",
-    "name": "Dashboard Stats",
-    "description": "Compact stat cards row with deltas for admin dashboards.",
-    "category": "dashboard",
-    "secondaryCategories": ["card", "data-visualization"],
+    "slug": "hero-2",
+    "name": "hero-2",
+    "description": "Hero with vertical border accents and gradient text effect",
+    "category": "hero",
+    "secondaryCategories": [],
     "frameworks": ["react"],
-    "compatibility": { "nextjs": true, "typescript": true },
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
     "visual": {
-      "aesthetics": ["minimal", "technical"],
-      "tags": ["dashboard", "stats", "cards", "metrics", "admin"],
-      "motion": "none",
-      "density": "compact",
-      "radius": "medium",
-      "surface": ["outlined"]
+      "aesthetics": ["gradient"],
+      "tags": [
+        "hero",
+        "with",
+        "vertical",
+        "border",
+        "accents",
+        "and",
+        "gradient",
+        "text",
+        "effect"
+      ],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
     },
     "dependencies": [],
-    "installation": { "kind": "copy", "instructions": "Copy the stats row markup." },
-    "links": { "homepage": "https://efferd.example.com/" },
-    "license": { "status": "unknown", "notes": "Upstream license not confirmed; do not vendor without checking." },
-    "provenance": { "adapter": "efferd", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://efferd.com/r/hero-2.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://efferd.com/r/hero-2.json",
+      "installCommand": "npx shadcn@latest add https://efferd.com/r/hero-2.json"
+    },
+    "links": {
+      "homepage": "https://efferd.com/",
+      "docs": "https://efferd.com/docs"
+    },
+    "license": {
+      "status": "unknown",
+      "redistribution": "unknown",
+      "notes": "This item is published by the provider's hosted registry but is not present in its open-source repository, so its license could not be attributed. Verify upstream terms before reuse."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "hero-2",
+      "retrievedAt": "2026-10-06T05:40:42.046Z",
+      "sourceVersion": "https://efferd.com/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
   },
   {
-    "schemaVersion": 1,
-    "id": "efferd/aurora-background",
+    "schemaVersion": 2,
+    "id": "efferd/hero-3",
     "source": "efferd",
-    "slug": "aurora-background",
-    "name": "Aurora Background",
-    "description": "Animated aurora gradient background with slow drifting blobs.",
-    "category": "background",
-    "secondaryCategories": ["animation"],
+    "slug": "hero-3",
+    "name": "hero-3",
+    "description": "Left-aligned hero with dashboard screenshot preview",
+    "category": "hero",
+    "secondaryCategories": [],
     "frameworks": ["react"],
-    "compatibility": { "nextjs": true, "clientComponent": true, "typescript": true },
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
     "visual": {
-      "aesthetics": ["gradient", "expressive"],
-      "tags": ["background", "aurora", "gradient", "animated", "blobs", "expressive"],
+      "aesthetics": [],
+      "tags": ["hero", "left", "aligned", "with", "dashboard", "screenshot", "preview"],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://efferd.com/r/hero-3.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://efferd.com/r/hero-3.json",
+      "installCommand": "npx shadcn@latest add https://efferd.com/r/hero-3.json"
+    },
+    "links": {
+      "homepage": "https://efferd.com/",
+      "docs": "https://efferd.com/docs"
+    },
+    "license": {
+      "status": "unknown",
+      "redistribution": "unknown",
+      "notes": "This item is published by the provider's hosted registry but is not present in its open-source repository, so its license could not be attributed. Verify upstream terms before reuse."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "hero-3",
+      "retrievedAt": "2026-10-06T05:40:42.046Z",
+      "sourceVersion": "https://efferd.com/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "efferd/pricing-1",
+    "source": "efferd",
+    "slug": "pricing-1",
+    "name": "pricing-1",
+    "description": "Side-by-side monthly and yearly pricing cards with discount badges.",
+    "category": "pricing",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "pricing",
+        "side",
+        "monthly",
+        "and",
+        "yearly",
+        "cards",
+        "with",
+        "discount",
+        "badges"
+      ],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://efferd.com/r/pricing-1.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://efferd.com/r/pricing-1.json",
+      "installCommand": "npx shadcn@latest add https://efferd.com/r/pricing-1.json"
+    },
+    "links": {
+      "homepage": "https://efferd.com/",
+      "docs": "https://efferd.com/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/shabanhr/efferd-ui/blob/main/LICENCE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "MIT applies to items published in the efferd-ui repository."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "pricing-1",
+      "retrievedAt": "2026-10-06T05:40:42.046Z",
+      "sourceVersion": "https://efferd.com/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "efferd/pricing-2",
+    "source": "efferd",
+    "slug": "pricing-2",
+    "name": "pricing-2",
+    "description": "Grid layout pricing with full-width dividers and feature lists.",
+    "category": "pricing",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "pricing",
+        "grid",
+        "layout",
+        "with",
+        "full",
+        "width",
+        "dividers",
+        "and",
+        "feature",
+        "lists"
+      ],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://efferd.com/r/pricing-2.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://efferd.com/r/pricing-2.json",
+      "installCommand": "npx shadcn@latest add https://efferd.com/r/pricing-2.json"
+    },
+    "links": {
+      "homepage": "https://efferd.com/",
+      "docs": "https://efferd.com/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/shabanhr/efferd-ui/blob/main/LICENCE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "MIT applies to items published in the efferd-ui repository."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "pricing-2",
+      "retrievedAt": "2026-10-06T05:40:42.046Z",
+      "sourceVersion": "https://efferd.com/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "efferd/pricing-3",
+    "source": "efferd",
+    "slug": "pricing-3",
+    "name": "pricing-3",
+    "description": "Three-card pricing with plan icons and feature comparison.",
+    "category": "pricing",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": ["pricing", "three", "card", "with", "plan", "icons", "and", "feature", "comparison"],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://efferd.com/r/pricing-3.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://efferd.com/r/pricing-3.json",
+      "installCommand": "npx shadcn@latest add https://efferd.com/r/pricing-3.json"
+    },
+    "links": {
+      "homepage": "https://efferd.com/",
+      "docs": "https://efferd.com/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/shabanhr/efferd-ui/blob/main/LICENCE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "MIT applies to items published in the efferd-ui repository."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "pricing-3",
+      "retrievedAt": "2026-10-06T05:40:42.046Z",
+      "sourceVersion": "https://efferd.com/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "efferd/pricing-4",
+    "source": "efferd",
+    "slug": "pricing-4",
+    "name": "pricing-4",
+    "description": "Interactive pricing with frequency toggle and numeric animations.",
+    "category": "pricing",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "pricing",
+        "interactive",
+        "with",
+        "frequency",
+        "toggle",
+        "and",
+        "numeric",
+        "animations"
+      ],
       "motion": "medium",
-      "density": "normal",
-      "radius": "none",
-      "surface": ["gradient"]
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
     },
-    "dependencies": [{ "name": "framer-motion", "kind": "runtime", "required": true }],
-    "installation": { "kind": "copy", "instructions": "Copy the aurora background component." },
-    "links": { "homepage": "https://efferd.example.com/" },
-    "license": { "status": "known", "identifier": "MIT", "source": "https://efferd.example.com/license" },
-    "provenance": { "adapter": "efferd", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+    "dependencies": [
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "@number-flow/react",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://efferd.com/r/pricing-4.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://efferd.com/r/pricing-4.json",
+      "installCommand": "npx shadcn@latest add https://efferd.com/r/pricing-4.json"
+    },
+    "links": {
+      "homepage": "https://efferd.com/",
+      "docs": "https://efferd.com/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/shabanhr/efferd-ui/blob/main/LICENCE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "MIT applies to items published in the efferd-ui repository."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "pricing-4",
+      "retrievedAt": "2026-10-06T05:40:42.046Z",
+      "sourceVersion": "https://efferd.com/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
   },
   {
-    "schemaVersion": 1,
-    "id": "efferd/feature-list",
+    "schemaVersion": 2,
+    "id": "efferd/app-shell-5",
     "source": "efferd",
-    "slug": "feature-list",
-    "name": "Feature List",
-    "description": "Technical feature list with mono labels and dividers for developer products.",
-    "category": "feature",
-    "secondaryCategories": ["other"],
-    "frameworks": ["react", "html"],
-    "compatibility": { "nextjs": true, "typescript": true },
+    "slug": "app-shell-5",
+    "name": "app-shell-5",
+    "description": "Sidebar workspace with command-style search, custom trigger and theme controls, navbar strip, and latest-change row.",
+    "category": "dashboard",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
     "visual": {
-      "aesthetics": ["technical", "minimal", "dark"],
-      "tags": ["feature", "list", "technical", "mono", "developer", "dark"],
-      "motion": "none",
-      "density": "normal",
-      "radius": "small",
-      "surface": ["flat"]
+      "aesthetics": [],
+      "tags": [
+        "app",
+        "shell",
+        "sidebar",
+        "workspace",
+        "with",
+        "command",
+        "style",
+        "search",
+        "custom",
+        "trigger",
+        "and",
+        "theme",
+        "controls",
+        "navbar",
+        "strip",
+        "latest",
+        "change",
+        "row"
+      ],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "next-themes",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://efferd.com/r/app-shell-5.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://efferd.com/r/app-shell-5.json",
+      "installCommand": "npx shadcn@latest add https://efferd.com/r/app-shell-5.json"
+    },
+    "links": {
+      "homepage": "https://efferd.com/",
+      "docs": "https://efferd.com/docs"
+    },
+    "license": {
+      "status": "unknown",
+      "redistribution": "unknown",
+      "notes": "This item is published by the provider's hosted registry but is not present in its open-source repository, so its license could not be attributed. Verify upstream terms before reuse."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "app-shell-5",
+      "retrievedAt": "2026-10-06T05:40:42.046Z",
+      "sourceVersion": "https://efferd.com/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "efferd/dashboard-2",
+    "source": "efferd",
+    "slug": "dashboard-2",
+    "name": "dashboard-2",
+    "description": "Dense KPI grid with net revenue, channel sales lines, invoices table, billing health, and activity feed.",
+    "category": "dashboard",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "dashboard",
+        "dense",
+        "kpi",
+        "grid",
+        "with",
+        "net",
+        "revenue",
+        "channel",
+        "sales",
+        "lines",
+        "invoices",
+        "table",
+        "billing",
+        "health",
+        "and",
+        "activity",
+        "feed"
+      ],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
     },
     "dependencies": [],
-    "installation": { "kind": "manual", "instructions": "Recreate the list layout using your own tokens." },
-    "links": { "homepage": "https://efferd.example.com/" },
-    "license": { "status": "known", "identifier": "MIT", "source": "https://efferd.example.com/license" },
-    "provenance": { "adapter": "efferd", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://efferd.com/r/dashboard-2.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://efferd.com/r/dashboard-2.json",
+      "installCommand": "npx shadcn@latest add https://efferd.com/r/dashboard-2.json"
+    },
+    "links": {
+      "homepage": "https://efferd.com/",
+      "docs": "https://efferd.com/docs"
+    },
+    "license": {
+      "status": "unknown",
+      "redistribution": "unknown",
+      "notes": "This item is published by the provider's hosted registry but is not present in its open-source repository, so its license could not be attributed. Verify upstream terms before reuse."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "dashboard-2",
+      "retrievedAt": "2026-10-06T05:40:42.046Z",
+      "sourceVersion": "https://efferd.com/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "efferd/dashboard-3",
+    "source": "efferd",
+    "slug": "dashboard-3",
+    "name": "dashboard-3",
+    "description": "Customer support dashboard with conversation charts, CSAT scores, on-duty team, and recent tickets.",
+    "category": "dashboard",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "dashboard",
+        "customer",
+        "support",
+        "with",
+        "conversation",
+        "charts",
+        "csat",
+        "scores",
+        "duty",
+        "team",
+        "and",
+        "recent",
+        "tickets"
+      ],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://efferd.com/r/dashboard-3.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://efferd.com/r/dashboard-3.json",
+      "installCommand": "npx shadcn@latest add https://efferd.com/r/dashboard-3.json"
+    },
+    "links": {
+      "homepage": "https://efferd.com/",
+      "docs": "https://efferd.com/docs"
+    },
+    "license": {
+      "status": "unknown",
+      "redistribution": "unknown",
+      "notes": "This item is published by the provider's hosted registry but is not present in its open-source repository, so its license could not be attributed. Verify upstream terms before reuse."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "dashboard-3",
+      "retrievedAt": "2026-10-06T05:40:42.046Z",
+      "sourceVersion": "https://efferd.com/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "efferd/dashboard-4",
+    "source": "efferd",
+    "slug": "dashboard-4",
+    "name": "dashboard-4",
+    "description": "Commerce dashboard with revenue trends, refund rates, category ranking pie, and quick action items.",
+    "category": "dashboard",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "dashboard",
+        "commerce",
+        "with",
+        "revenue",
+        "trends",
+        "refund",
+        "rates",
+        "category",
+        "ranking",
+        "pie",
+        "and",
+        "quick",
+        "action",
+        "items"
+      ],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://efferd.com/r/dashboard-4.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://efferd.com/r/dashboard-4.json",
+      "installCommand": "npx shadcn@latest add https://efferd.com/r/dashboard-4.json"
+    },
+    "links": {
+      "homepage": "https://efferd.com/",
+      "docs": "https://efferd.com/docs"
+    },
+    "license": {
+      "status": "unknown",
+      "redistribution": "unknown",
+      "notes": "This item is published by the provider's hosted registry but is not present in its open-source repository, so its license could not be attributed. Verify upstream terms before reuse."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "dashboard-4",
+      "retrievedAt": "2026-10-06T05:40:42.046Z",
+      "sourceVersion": "https://efferd.com/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "efferd/dashboard-5",
+    "source": "efferd",
+    "slug": "dashboard-5",
+    "name": "dashboard-5",
+    "description": "Web analytics dashboard with visitors chart, live users, top pages, traffic sources, and Core Web Vitals.",
+    "category": "dashboard",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "dashboard",
+        "web",
+        "analytics",
+        "with",
+        "visitors",
+        "chart",
+        "live",
+        "users",
+        "top",
+        "pages",
+        "traffic",
+        "sources",
+        "and",
+        "core",
+        "vitals"
+      ],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://efferd.com/r/dashboard-5.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://efferd.com/r/dashboard-5.json",
+      "installCommand": "npx shadcn@latest add https://efferd.com/r/dashboard-5.json"
+    },
+    "links": {
+      "homepage": "https://efferd.com/",
+      "docs": "https://efferd.com/docs"
+    },
+    "license": {
+      "status": "unknown",
+      "redistribution": "unknown",
+      "notes": "This item is published by the provider's hosted registry but is not present in its open-source repository, so its license could not be attributed. Verify upstream terms before reuse."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "dashboard-5",
+      "retrievedAt": "2026-10-06T05:40:42.046Z",
+      "sourceVersion": "https://efferd.com/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "efferd/auth-1",
+    "source": "efferd",
+    "slug": "auth-1",
+    "name": "auth-1",
+    "description": "Modern sign-in page with particle background and social buttons.",
+    "category": "form",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "auth",
+        "modern",
+        "sign",
+        "page",
+        "with",
+        "particle",
+        "background",
+        "and",
+        "social",
+        "buttons"
+      ],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://efferd.com/r/auth-1.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://efferd.com/r/auth-1.json",
+      "installCommand": "npx shadcn@latest add https://efferd.com/r/auth-1.json"
+    },
+    "links": {
+      "homepage": "https://efferd.com/",
+      "docs": "https://efferd.com/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/shabanhr/efferd-ui/blob/main/LICENCE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "MIT applies to items published in the efferd-ui repository."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "auth-1",
+      "retrievedAt": "2026-10-06T05:40:42.046Z",
+      "sourceVersion": "https://efferd.com/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "efferd/auth-2",
+    "source": "efferd",
+    "slug": "auth-2",
+    "name": "auth-2",
+    "description": "Split sign-in layout with social buttons and email form.",
+    "category": "form",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "auth",
+        "split",
+        "sign",
+        "layout",
+        "with",
+        "social",
+        "buttons",
+        "and",
+        "email",
+        "form"
+      ],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://efferd.com/r/auth-2.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://efferd.com/r/auth-2.json",
+      "installCommand": "npx shadcn@latest add https://efferd.com/r/auth-2.json"
+    },
+    "links": {
+      "homepage": "https://efferd.com/",
+      "docs": "https://efferd.com/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/shabanhr/efferd-ui/blob/main/LICENCE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "MIT applies to items published in the efferd-ui repository."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "auth-2",
+      "retrievedAt": "2026-10-06T05:40:42.046Z",
+      "sourceVersion": "https://efferd.com/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "efferd/auth-3",
+    "source": "efferd",
+    "slug": "auth-3",
+    "name": "auth-3",
+    "description": "Minimal sign-in page with logo header and focused form.",
+    "category": "form",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["minimal"],
+      "tags": [
+        "auth",
+        "minimal",
+        "sign",
+        "page",
+        "with",
+        "logo",
+        "header",
+        "and",
+        "focused",
+        "form"
+      ],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://efferd.com/r/auth-3.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://efferd.com/r/auth-3.json",
+      "installCommand": "npx shadcn@latest add https://efferd.com/r/auth-3.json"
+    },
+    "links": {
+      "homepage": "https://efferd.com/",
+      "docs": "https://efferd.com/docs"
+    },
+    "license": {
+      "status": "unknown",
+      "redistribution": "unknown",
+      "notes": "This item is published by the provider's hosted registry but is not present in its open-source repository, so its license could not be attributed. Verify upstream terms before reuse."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "auth-3",
+      "retrievedAt": "2026-10-06T05:40:42.046Z",
+      "sourceVersion": "https://efferd.com/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "efferd/auth-4",
+    "source": "efferd",
+    "slug": "auth-4",
+    "name": "auth-4",
+    "description": "Clean sign-in screen with full-width divider and social actions.",
+    "category": "form",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["clean"],
+      "tags": [
+        "auth",
+        "clean",
+        "sign",
+        "screen",
+        "with",
+        "full",
+        "width",
+        "divider",
+        "and",
+        "social",
+        "actions"
+      ],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://efferd.com/r/auth-4.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://efferd.com/r/auth-4.json",
+      "installCommand": "npx shadcn@latest add https://efferd.com/r/auth-4.json"
+    },
+    "links": {
+      "homepage": "https://efferd.com/",
+      "docs": "https://efferd.com/docs"
+    },
+    "license": {
+      "status": "unknown",
+      "redistribution": "unknown",
+      "notes": "This item is published by the provider's hosted registry but is not present in its open-source repository, so its license could not be attributed. Verify upstream terms before reuse."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "auth-4",
+      "retrievedAt": "2026-10-06T05:40:42.046Z",
+      "sourceVersion": "https://efferd.com/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "efferd/auth-5",
+    "source": "efferd",
+    "slug": "auth-5",
+    "name": "auth-5",
+    "description": "Modern signup page with testimonial sidebar and social sign-in.",
+    "category": "form",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "auth",
+        "modern",
+        "signup",
+        "page",
+        "with",
+        "testimonial",
+        "sidebar",
+        "and",
+        "social",
+        "sign"
+      ],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://efferd.com/r/auth-5.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://efferd.com/r/auth-5.json",
+      "installCommand": "npx shadcn@latest add https://efferd.com/r/auth-5.json"
+    },
+    "links": {
+      "homepage": "https://efferd.com/",
+      "docs": "https://efferd.com/docs"
+    },
+    "license": {
+      "status": "unknown",
+      "redistribution": "unknown",
+      "notes": "This item is published by the provider's hosted registry but is not present in its open-source repository, so its license could not be attributed. Verify upstream terms before reuse."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "auth-5",
+      "retrievedAt": "2026-10-06T05:40:42.046Z",
+      "sourceVersion": "https://efferd.com/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "efferd/auth-divider",
+    "source": "efferd",
+    "slug": "auth-divider",
+    "name": "auth-divider",
+    "description": "Auth divider component.",
+    "category": "form",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": ["auth", "divider", "component"],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://efferd.com/r/auth-divider.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://efferd.com/r/auth-divider.json",
+      "installCommand": "npx shadcn@latest add https://efferd.com/r/auth-divider.json"
+    },
+    "links": {
+      "homepage": "https://efferd.com/",
+      "docs": "https://efferd.com/docs"
+    },
+    "license": {
+      "status": "unknown",
+      "redistribution": "unknown",
+      "notes": "This item is published by the provider's hosted registry but is not present in its open-source repository, so its license could not be attributed. Verify upstream terms before reuse."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "auth-divider",
+      "retrievedAt": "2026-10-06T05:40:42.046Z",
+      "sourceVersion": "https://efferd.com/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "efferd/contact-1",
+    "source": "efferd",
+    "slug": "contact-1",
+    "name": "contact-1",
+    "description": "Compact contact strip with phone, email, and office details.",
+    "category": "form",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": ["contact", "compact", "strip", "with", "phone", "email", "and", "office", "details"],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://efferd.com/r/contact-1.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://efferd.com/r/contact-1.json",
+      "installCommand": "npx shadcn@latest add https://efferd.com/r/contact-1.json"
+    },
+    "links": {
+      "homepage": "https://efferd.com/",
+      "docs": "https://efferd.com/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/shabanhr/efferd-ui/blob/main/LICENCE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "MIT applies to items published in the efferd-ui repository."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "contact-1",
+      "retrievedAt": "2026-10-06T05:40:42.046Z",
+      "sourceVersion": "https://efferd.com/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "efferd/contact-2",
+    "source": "efferd",
+    "slug": "contact-2",
+    "name": "contact-2",
+    "description": "Three-card contact layout with email, community, and social links.",
+    "category": "form",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "contact",
+        "three",
+        "card",
+        "layout",
+        "with",
+        "email",
+        "community",
+        "and",
+        "social",
+        "links"
+      ],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://efferd.com/r/contact-2.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://efferd.com/r/contact-2.json",
+      "installCommand": "npx shadcn@latest add https://efferd.com/r/contact-2.json"
+    },
+    "links": {
+      "homepage": "https://efferd.com/",
+      "docs": "https://efferd.com/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/shabanhr/efferd-ui/blob/main/LICENCE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "MIT applies to items published in the efferd-ui repository."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "contact-2",
+      "retrievedAt": "2026-10-06T05:40:42.046Z",
+      "sourceVersion": "https://efferd.com/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
   }
 ]

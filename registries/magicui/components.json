@@ -1,0 +1,1285 @@
+[
+  {
+    "schemaVersion": 2,
+    "id": "magicui/hero-video-dialog",
+    "source": "magicui",
+    "slug": "hero-video-dialog",
+    "name": "Hero Video Dialog",
+    "description": "A hero video dialog component.",
+    "category": "hero",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": ["hero", "video", "dialog", "component"],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://magicui.design/r/hero-video-dialog.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://magicui.design/r/hero-video-dialog.json",
+      "installCommand": "npx shadcn@latest add https://magicui.design/r/hero-video-dialog.json"
+    },
+    "links": {
+      "homepage": "https://magicui.design/",
+      "docs": "https://magicui.design/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted"
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "hero-video-dialog",
+      "retrievedAt": "2026-10-06T05:40:56.987Z",
+      "sourceVersion": "https://magicui.design/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "magicui/terminal",
+    "source": "magicui",
+    "slug": "terminal",
+    "name": "Terminal",
+    "description": "A terminal component",
+    "category": "terminal",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["terminal"],
+      "tags": ["terminal", "component"],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://magicui.design/r/terminal.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://magicui.design/r/terminal.json",
+      "installCommand": "npx shadcn@latest add https://magicui.design/r/terminal.json"
+    },
+    "links": {
+      "homepage": "https://magicui.design/",
+      "docs": "https://magicui.design/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted"
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "terminal",
+      "retrievedAt": "2026-10-06T05:40:56.987Z",
+      "sourceVersion": "https://magicui.design/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "magicui/animated-beam",
+    "source": "magicui",
+    "slug": "animated-beam",
+    "name": "Animated Beam",
+    "description": "An animated beam of light which travels along a path. Useful for showcasing the integration features of a website.",
+    "category": "background",
+    "secondaryCategories": ["animation"],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["light"],
+      "tags": [
+        "animated",
+        "beam",
+        "light",
+        "which",
+        "travels",
+        "along",
+        "path",
+        "useful",
+        "for",
+        "showcasing",
+        "the",
+        "integration",
+        "features",
+        "website"
+      ],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://magicui.design/r/animated-beam.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://magicui.design/r/animated-beam.json",
+      "installCommand": "npx shadcn@latest add https://magicui.design/r/animated-beam.json"
+    },
+    "links": {
+      "homepage": "https://magicui.design/",
+      "docs": "https://magicui.design/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted"
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "animated-beam",
+      "retrievedAt": "2026-10-06T05:40:56.987Z",
+      "sourceVersion": "https://magicui.design/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "magicui/animated-grid-pattern",
+    "source": "magicui",
+    "slug": "animated-grid-pattern",
+    "name": "Animated Grid Pattern",
+    "description": "A animated background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+    "category": "background",
+    "secondaryCategories": ["animation"],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "animated",
+        "grid",
+        "pattern",
+        "background",
+        "made",
+        "with",
+        "svgs",
+        "fully",
+        "customizable",
+        "using",
+        "tailwind",
+        "css"
+      ],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://magicui.design/r/animated-grid-pattern.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://magicui.design/r/animated-grid-pattern.json",
+      "installCommand": "npx shadcn@latest add https://magicui.design/r/animated-grid-pattern.json"
+    },
+    "links": {
+      "homepage": "https://magicui.design/",
+      "docs": "https://magicui.design/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted"
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "animated-grid-pattern",
+      "retrievedAt": "2026-10-06T05:40:56.987Z",
+      "sourceVersion": "https://magicui.design/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "magicui/aurora-text",
+    "source": "magicui",
+    "slug": "aurora-text",
+    "name": "Aurora Text",
+    "description": "A beautiful aurora text effect",
+    "category": "background",
+    "secondaryCategories": ["animation"],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": ["aurora", "text", "beautiful", "effect"],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://magicui.design/r/aurora-text.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://magicui.design/r/aurora-text.json",
+      "installCommand": "npx shadcn@latest add https://magicui.design/r/aurora-text.json"
+    },
+    "links": {
+      "homepage": "https://magicui.design/",
+      "docs": "https://magicui.design/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted"
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "aurora-text",
+      "retrievedAt": "2026-10-06T05:40:56.987Z",
+      "sourceVersion": "https://magicui.design/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "magicui/bento-grid",
+    "source": "magicui",
+    "slug": "bento-grid",
+    "name": "Bento Grid",
+    "description": "Bento grid is a layout used to showcase the features of a product in a simple and elegant way.",
+    "category": "feature",
+    "secondaryCategories": ["background"],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["elegant"],
+      "tags": [
+        "bento",
+        "grid",
+        "layout",
+        "used",
+        "showcase",
+        "the",
+        "features",
+        "product",
+        "simple",
+        "and",
+        "elegant",
+        "way"
+      ],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "@radix-ui/react-icons",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://magicui.design/r/bento-grid.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://magicui.design/r/bento-grid.json",
+      "installCommand": "npx shadcn@latest add https://magicui.design/r/bento-grid.json"
+    },
+    "links": {
+      "homepage": "https://magicui.design/",
+      "docs": "https://magicui.design/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted"
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "bento-grid",
+      "retrievedAt": "2026-10-06T05:40:56.987Z",
+      "sourceVersion": "https://magicui.design/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "magicui/border-beam",
+    "source": "magicui",
+    "slug": "border-beam",
+    "name": "Border Beam",
+    "description": "An animated beam of light which travels along the border of its container.",
+    "category": "background",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["light"],
+      "tags": [
+        "border",
+        "beam",
+        "animated",
+        "light",
+        "which",
+        "travels",
+        "along",
+        "the",
+        "its",
+        "container"
+      ],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://magicui.design/r/border-beam.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://magicui.design/r/border-beam.json",
+      "installCommand": "npx shadcn@latest add https://magicui.design/r/border-beam.json"
+    },
+    "links": {
+      "homepage": "https://magicui.design/",
+      "docs": "https://magicui.design/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted"
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "border-beam",
+      "retrievedAt": "2026-10-06T05:40:56.987Z",
+      "sourceVersion": "https://magicui.design/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "magicui/flickering-grid",
+    "source": "magicui",
+    "slug": "flickering-grid",
+    "name": "Flickering Grid",
+    "description": "A flickering grid background made with SVGs, fully customizable using Tailwind CSS.",
+    "category": "background",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "flickering",
+        "grid",
+        "background",
+        "made",
+        "with",
+        "svgs",
+        "fully",
+        "customizable",
+        "using",
+        "tailwind",
+        "css"
+      ],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://magicui.design/r/flickering-grid.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://magicui.design/r/flickering-grid.json",
+      "installCommand": "npx shadcn@latest add https://magicui.design/r/flickering-grid.json"
+    },
+    "links": {
+      "homepage": "https://magicui.design/",
+      "docs": "https://magicui.design/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted"
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "flickering-grid",
+      "retrievedAt": "2026-10-06T05:40:56.987Z",
+      "sourceVersion": "https://magicui.design/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "magicui/grid-pattern",
+    "source": "magicui",
+    "slug": "grid-pattern",
+    "name": "Grid Pattern",
+    "description": "A background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+    "category": "background",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "grid",
+        "pattern",
+        "background",
+        "made",
+        "with",
+        "svgs",
+        "fully",
+        "customizable",
+        "using",
+        "tailwind",
+        "css"
+      ],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://magicui.design/r/grid-pattern.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://magicui.design/r/grid-pattern.json",
+      "installCommand": "npx shadcn@latest add https://magicui.design/r/grid-pattern.json"
+    },
+    "links": {
+      "homepage": "https://magicui.design/",
+      "docs": "https://magicui.design/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted"
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "grid-pattern",
+      "retrievedAt": "2026-10-06T05:40:56.987Z",
+      "sourceVersion": "https://magicui.design/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "magicui/interactive-grid-pattern",
+    "source": "magicui",
+    "slug": "interactive-grid-pattern",
+    "name": "Interactive Grid Pattern",
+    "description": "A interactive background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+    "category": "background",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "interactive",
+        "grid",
+        "pattern",
+        "background",
+        "made",
+        "with",
+        "svgs",
+        "fully",
+        "customizable",
+        "using",
+        "tailwind",
+        "css"
+      ],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://magicui.design/r/interactive-grid-pattern.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://magicui.design/r/interactive-grid-pattern.json",
+      "installCommand": "npx shadcn@latest add https://magicui.design/r/interactive-grid-pattern.json"
+    },
+    "links": {
+      "homepage": "https://magicui.design/",
+      "docs": "https://magicui.design/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted"
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "interactive-grid-pattern",
+      "retrievedAt": "2026-10-06T05:40:56.987Z",
+      "sourceVersion": "https://magicui.design/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "magicui/meteors",
+    "source": "magicui",
+    "slug": "meteors",
+    "name": "Meteors",
+    "description": "A meteor shower effect.",
+    "category": "background",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": ["meteors", "meteor", "shower", "effect"],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://magicui.design/r/meteors.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://magicui.design/r/meteors.json",
+      "installCommand": "npx shadcn@latest add https://magicui.design/r/meteors.json"
+    },
+    "links": {
+      "homepage": "https://magicui.design/",
+      "docs": "https://magicui.design/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted"
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "meteors",
+      "retrievedAt": "2026-10-06T05:40:56.987Z",
+      "sourceVersion": "https://magicui.design/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "magicui/retro-grid",
+    "source": "magicui",
+    "slug": "retro-grid",
+    "name": "Retro Grid",
+    "description": "An animated scrolling retro grid effect",
+    "category": "background",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["retro"],
+      "tags": ["retro", "grid", "animated", "scrolling", "effect"],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://magicui.design/r/retro-grid.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://magicui.design/r/retro-grid.json",
+      "installCommand": "npx shadcn@latest add https://magicui.design/r/retro-grid.json"
+    },
+    "links": {
+      "homepage": "https://magicui.design/",
+      "docs": "https://magicui.design/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted"
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "retro-grid",
+      "retrievedAt": "2026-10-06T05:40:56.987Z",
+      "sourceVersion": "https://magicui.design/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "magicui/warp-background",
+    "source": "magicui",
+    "slug": "warp-background",
+    "name": "Warp Background",
+    "description": "A card with a time warping background effect.",
+    "category": "background",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": ["warp", "background", "card", "with", "time", "warping", "effect"],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://magicui.design/r/warp-background.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://magicui.design/r/warp-background.json",
+      "installCommand": "npx shadcn@latest add https://magicui.design/r/warp-background.json"
+    },
+    "links": {
+      "homepage": "https://magicui.design/",
+      "docs": "https://magicui.design/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted"
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "warp-background",
+      "retrievedAt": "2026-10-06T05:40:56.987Z",
+      "sourceVersion": "https://magicui.design/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "magicui/client-tweet-card",
+    "source": "magicui",
+    "slug": "client-tweet-card",
+    "name": "Client Tweet Card",
+    "description": "A client-side version of the tweet card that displays a tweet with the author's name, handle, and profile picture.",
+    "category": "card",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "client",
+        "tweet",
+        "card",
+        "side",
+        "version",
+        "the",
+        "that",
+        "displays",
+        "with",
+        "author",
+        "name",
+        "handle",
+        "and",
+        "profile",
+        "picture"
+      ],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "react-tweet",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://magicui.design/r/client-tweet-card.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://magicui.design/r/client-tweet-card.json",
+      "installCommand": "npx shadcn@latest add https://magicui.design/r/client-tweet-card.json"
+    },
+    "links": {
+      "homepage": "https://magicui.design/",
+      "docs": "https://magicui.design/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted"
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "client-tweet-card",
+      "retrievedAt": "2026-10-06T05:40:56.987Z",
+      "sourceVersion": "https://magicui.design/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "magicui/magic-card",
+    "source": "magicui",
+    "slug": "magic-card",
+    "name": "Magic Card",
+    "description": "A spotlight effect that follows your mouse cursor and highlights borders on hover.",
+    "category": "card",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["light"],
+      "tags": [
+        "magic",
+        "card",
+        "spotlight",
+        "effect",
+        "that",
+        "follows",
+        "your",
+        "mouse",
+        "cursor",
+        "and",
+        "highlights",
+        "borders",
+        "hover"
+      ],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "next-themes",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://magicui.design/r/magic-card.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://magicui.design/r/magic-card.json",
+      "installCommand": "npx shadcn@latest add https://magicui.design/r/magic-card.json"
+    },
+    "links": {
+      "homepage": "https://magicui.design/",
+      "docs": "https://magicui.design/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted"
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "magic-card",
+      "retrievedAt": "2026-10-06T05:40:56.987Z",
+      "sourceVersion": "https://magicui.design/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "magicui/marquee",
+    "source": "magicui",
+    "slug": "marquee",
+    "name": "Marquee",
+    "description": "An infinite scrolling component that can be used to display text, images, or videos.",
+    "category": "animation",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "marquee",
+        "infinite",
+        "scrolling",
+        "component",
+        "that",
+        "can",
+        "used",
+        "display",
+        "text",
+        "images",
+        "videos"
+      ],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://magicui.design/r/marquee.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://magicui.design/r/marquee.json",
+      "installCommand": "npx shadcn@latest add https://magicui.design/r/marquee.json"
+    },
+    "links": {
+      "homepage": "https://magicui.design/",
+      "docs": "https://magicui.design/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted"
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "marquee",
+      "retrievedAt": "2026-10-06T05:40:56.987Z",
+      "sourceVersion": "https://magicui.design/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "magicui/neon-gradient-card",
+    "source": "magicui",
+    "slug": "neon-gradient-card",
+    "name": "Neon Gradient Card",
+    "description": "A beautiful neon card effect",
+    "category": "card",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["gradient", "neon"],
+      "tags": ["neon", "gradient", "card", "beautiful", "effect"],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://magicui.design/r/neon-gradient-card.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://magicui.design/r/neon-gradient-card.json",
+      "installCommand": "npx shadcn@latest add https://magicui.design/r/neon-gradient-card.json"
+    },
+    "links": {
+      "homepage": "https://magicui.design/",
+      "docs": "https://magicui.design/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted"
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "neon-gradient-card",
+      "retrievedAt": "2026-10-06T05:40:56.987Z",
+      "sourceVersion": "https://magicui.design/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "magicui/tweet-card",
+    "source": "magicui",
+    "slug": "tweet-card",
+    "name": "Tweet Card",
+    "description": "A card that displays a tweet with the author's name, handle, and profile picture.",
+    "category": "card",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "tweet",
+        "card",
+        "that",
+        "displays",
+        "with",
+        "the",
+        "author",
+        "name",
+        "handle",
+        "and",
+        "profile",
+        "picture"
+      ],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "react-tweet",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://magicui.design/r/tweet-card.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://magicui.design/r/tweet-card.json",
+      "installCommand": "npx shadcn@latest add https://magicui.design/r/tweet-card.json"
+    },
+    "links": {
+      "homepage": "https://magicui.design/",
+      "docs": "https://magicui.design/docs"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted"
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "tweet-card",
+      "retrievedAt": "2026-10-06T05:40:56.987Z",
+      "sourceVersion": "https://magicui.design/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  }
+]

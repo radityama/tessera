@@ -1,106 +1,1499 @@
 [
   {
-    "schemaVersion": 1,
-    "id": "beui/grid-hero",
+    "schemaVersion": 2,
+    "id": "beui/command-palette",
     "source": "beui",
-    "slug": "grid-hero",
-    "name": "Grid Hero",
-    "description": "Dark technical hero with background grid pattern and terminal-adjacent headline for CLI products.",
-    "category": "hero",
-    "secondaryCategories": ["background"],
+    "slug": "command-palette",
+    "name": "Command Palette",
+    "description": "⌘K palette with fuzzy filter, spring-animated active row and glass surface.",
+    "category": "command-menu",
+    "secondaryCategories": [],
     "frameworks": ["react"],
-    "compatibility": { "nextjs": true, "clientComponent": false, "typescript": true },
-    "visual": {
-      "aesthetics": ["dark", "technical"],
-      "tags": ["hero", "grid", "dark", "technical", "developer", "cli", "terminal"],
-      "motion": "none",
-      "density": "spacious",
-      "radius": "small",
-      "surface": ["flat"]
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
     },
-    "dependencies": [],
-    "installation": { "kind": "copy", "instructions": "Copy the Grid Hero section from BeUI docs." },
-    "links": { "homepage": "https://beui.example.com/" },
-    "license": { "status": "known", "identifier": "Apache-2.0", "source": "https://beui.example.com/license" },
-    "provenance": { "adapter": "beui", "retrievedAt": "2026-09-01T00:00:00.000Z" }
-  },
-  {
-    "schemaVersion": 1,
-    "id": "beui/dark-cta",
-    "source": "beui",
-    "slug": "dark-cta",
-    "name": "Dark CTA",
-    "description": "Minimal dark call-to-action panel with single headline and install command.",
-    "category": "cta",
-    "secondaryCategories": ["terminal"],
-    "frameworks": ["react", "html"],
-    "compatibility": { "nextjs": true, "typescript": true },
     "visual": {
-      "aesthetics": ["dark", "minimal"],
-      "tags": ["cta", "dark", "minimal", "install", "cli"],
-      "motion": "none",
-      "density": "compact",
-      "radius": "medium",
-      "surface": ["flat", "outlined"]
+      "aesthetics": ["glass"],
+      "tags": [
+        "command",
+        "palette",
+        "with",
+        "fuzzy",
+        "filter",
+        "spring",
+        "animated",
+        "active",
+        "row",
+        "and",
+        "glass",
+        "surface"
+      ],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
     },
-    "dependencies": [],
-    "installation": { "kind": "copy", "instructions": "Copy the CTA markup." },
-    "links": { "homepage": "https://beui.example.com/" },
-    "license": { "status": "known", "identifier": "Apache-2.0", "source": "https://beui.example.com/license" },
-    "provenance": { "adapter": "beui", "retrievedAt": "2026-09-01T00:00:00.000Z" }
-  },
-  {
-    "schemaVersion": 1,
-    "id": "beui/minimal-footer",
-    "source": "beui",
-    "slug": "minimal-footer",
-    "name": "Minimal Footer",
-    "description": "Compact footer with columns of links for developer tools.",
-    "category": "footer",
-    "secondaryCategories": ["navigation"],
-    "frameworks": ["react", "html"],
-    "compatibility": { "nextjs": true, "typescript": true },
-    "visual": {
-      "aesthetics": ["minimal", "technical"],
-      "tags": ["footer", "minimal", "links", "columns"],
-      "motion": "none",
-      "density": "compact",
-      "radius": "none",
-      "surface": ["flat"]
-    },
-    "dependencies": [],
-    "installation": { "kind": "copy", "instructions": "Copy the footer markup." },
-    "links": { "homepage": "https://beui.example.com/" },
-    "license": { "status": "known", "identifier": "Apache-2.0", "source": "https://beui.example.com/license" },
-    "provenance": { "adapter": "beui", "retrievedAt": "2026-09-01T00:00:00.000Z" }
-  },
-  {
-    "schemaVersion": 1,
-    "id": "beui/data-table",
-    "source": "beui",
-    "slug": "data-table",
-    "name": "Data Table",
-    "description": "Dense data table with sorting and compact rows for dashboards.",
-    "category": "table",
-    "secondaryCategories": ["dashboard"],
-    "frameworks": ["react"],
-    "compatibility": { "nextjs": true, "typescript": true },
-    "visual": {
-      "aesthetics": ["technical", "minimal"],
-      "tags": ["table", "data", "dashboard", "dense", "sorting"],
-      "motion": "none",
-      "density": "compact",
-      "radius": "small",
-      "surface": ["outlined"]
-    },
-    "dependencies": [{ "name": "@tanstack/react-table", "kind": "runtime", "required": true }],
+    "dependencies": [
+      {
+        "name": "clsx",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "lucide-react",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "tailwind-merge",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
     "installation": {
-      "kind": "package",
-      "command": "npm install @tanstack/react-table",
-      "instructions": "Install the table library, then copy the Data Table example."
+      "kind": "command",
+      "command": "npx shadcn@latest add https://beui.dev/r/command-palette.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
     },
-    "links": { "homepage": "https://beui.example.com/" },
-    "license": { "status": "known", "identifier": "Apache-2.0", "source": "https://beui.example.com/license" },
-    "provenance": { "adapter": "beui", "retrievedAt": "2026-09-01T00:00:00.000Z" }
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://beui.dev/r/command-palette.json",
+      "installCommand": "npx shadcn@latest add https://beui.dev/r/command-palette.json"
+    },
+    "links": {
+      "homepage": "https://beui.dev/",
+      "docs": "https://beui.dev/docs/theme"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/starc007/ui-components/blob/main/LICENSE",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "Free components are MIT. A separate paid tier exists at pro.beui.dev."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "command-palette",
+      "retrievedAt": "2026-10-06T05:40:41.098Z",
+      "sourceVersion": "https://beui.dev/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "beui/not-found-terminal",
+    "source": "beui",
+    "slug": "not-found-terminal",
+    "name": "404 / Not Found Terminal",
+    "description": "A terminal window that types a failed cd command and a 404 status, with a blinking caret.",
+    "category": "terminal",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["terminal"],
+      "tags": [
+        "not",
+        "found",
+        "terminal",
+        "404",
+        "window",
+        "that",
+        "types",
+        "failed",
+        "command",
+        "and",
+        "status",
+        "with",
+        "blinking",
+        "caret"
+      ],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "clsx",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "tailwind-merge",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://beui.dev/r/not-found-terminal.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://beui.dev/r/not-found-terminal.json",
+      "installCommand": "npx shadcn@latest add https://beui.dev/r/not-found-terminal.json"
+    },
+    "links": {
+      "homepage": "https://beui.dev/",
+      "docs": "https://beui.dev/docs/theme"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/starc007/ui-components/blob/main/LICENSE",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "Free components are MIT. A separate paid tier exists at pro.beui.dev."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "not-found-terminal",
+      "retrievedAt": "2026-10-06T05:40:41.098Z",
+      "sourceVersion": "https://beui.dev/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "beui/sortable-stack",
+    "source": "beui",
+    "slug": "sortable-stack",
+    "name": "Sortable List",
+    "description": "Composable sortable list with group, item, drag handle, content and undo parts, plus a shared state hook. Spring layout, keyboard reordering, accessible position announcements, and controlled or uncontrolled items.",
+    "category": "other",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "sortable",
+        "stack",
+        "list",
+        "composable",
+        "with",
+        "group",
+        "item",
+        "drag",
+        "handle",
+        "content",
+        "and",
+        "undo",
+        "parts",
+        "plus",
+        "shared",
+        "state",
+        "hook",
+        "spring",
+        "layout",
+        "keyboard",
+        "reordering",
+        "accessible",
+        "position",
+        "announcements"
+      ],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "clsx",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "lucide-react",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "tailwind-merge",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://beui.dev/r/sortable-stack.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://beui.dev/r/sortable-stack.json",
+      "installCommand": "npx shadcn@latest add https://beui.dev/r/sortable-stack.json"
+    },
+    "links": {
+      "homepage": "https://beui.dev/",
+      "docs": "https://beui.dev/docs/theme"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/starc007/ui-components/blob/main/LICENSE",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "Free components are MIT. A separate paid tier exists at pro.beui.dev."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "sortable-stack",
+      "retrievedAt": "2026-10-06T05:40:41.098Z",
+      "sourceVersion": "https://beui.dev/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "beui/table",
+    "source": "beui",
+    "slug": "table",
+    "name": "Table Data Table",
+    "description": "10k virtualized rows with sortable headers, row selection, column resize and reorder.",
+    "category": "table",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "table",
+        "data",
+        "10k",
+        "virtualized",
+        "rows",
+        "with",
+        "sortable",
+        "headers",
+        "row",
+        "selection",
+        "column",
+        "resize",
+        "and",
+        "reorder"
+      ],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "@tanstack/react-virtual",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "clsx",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "lucide-react",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "tailwind-merge",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://beui.dev/r/table.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://beui.dev/r/table.json",
+      "installCommand": "npx shadcn@latest add https://beui.dev/r/table.json"
+    },
+    "links": {
+      "homepage": "https://beui.dev/",
+      "docs": "https://beui.dev/docs/theme"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/starc007/ui-components/blob/main/LICENSE",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "Free components are MIT. A separate paid tier exists at pro.beui.dev."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "table",
+      "retrievedAt": "2026-10-06T05:40:41.098Z",
+      "sourceVersion": "https://beui.dev/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "beui/table-async",
+    "source": "beui",
+    "slug": "table-async",
+    "name": "Table Async Table",
+    "description": "Loads pages on demand — skeleton rows on first load, then infinite scroll via onEndReached as the virtualized list nears the bottom.",
+    "category": "table",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "table",
+        "async",
+        "loads",
+        "pages",
+        "demand",
+        "skeleton",
+        "rows",
+        "first",
+        "load",
+        "then",
+        "infinite",
+        "scroll",
+        "via",
+        "onendreached",
+        "the",
+        "virtualized",
+        "list",
+        "nears",
+        "bottom"
+      ],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "@tanstack/react-virtual",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "clsx",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "lucide-react",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "tailwind-merge",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://beui.dev/r/table-async.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://beui.dev/r/table-async.json",
+      "installCommand": "npx shadcn@latest add https://beui.dev/r/table-async.json"
+    },
+    "links": {
+      "homepage": "https://beui.dev/",
+      "docs": "https://beui.dev/docs/theme"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/starc007/ui-components/blob/main/LICENSE",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "Free components are MIT. A separate paid tier exists at pro.beui.dev."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "table-async",
+      "retrievedAt": "2026-10-06T05:40:41.098Z",
+      "sourceVersion": "https://beui.dev/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "beui/table-editable",
+    "source": "beui",
+    "slug": "table-editable",
+    "name": "Table Editable Table",
+    "description": "Edit cells inline and insert or delete rows and columns via border handles; the table re-renders from the updated data and column defs.",
+    "category": "table",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "table",
+        "editable",
+        "edit",
+        "cells",
+        "inline",
+        "and",
+        "insert",
+        "delete",
+        "rows",
+        "columns",
+        "via",
+        "border",
+        "handles",
+        "the",
+        "renders",
+        "from",
+        "updated",
+        "data",
+        "column",
+        "defs"
+      ],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "@tanstack/react-virtual",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "clsx",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "lucide-react",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "tailwind-merge",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://beui.dev/r/table-editable.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://beui.dev/r/table-editable.json",
+      "installCommand": "npx shadcn@latest add https://beui.dev/r/table-editable.json"
+    },
+    "links": {
+      "homepage": "https://beui.dev/",
+      "docs": "https://beui.dev/docs/theme"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/starc007/ui-components/blob/main/LICENSE",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "Free components are MIT. A separate paid tier exists at pro.beui.dev."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "table-editable",
+      "retrievedAt": "2026-10-06T05:40:41.098Z",
+      "sourceVersion": "https://beui.dev/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "beui/signup-form",
+    "source": "beui",
+    "slug": "signup-form",
+    "name": "Sign Up Form",
+    "description": "Composed sign-up form that flags a field only once it is left, then clears the moment it is fixed, with a length-weighted strength meter, password reveal and an animated submit lifecycle.",
+    "category": "form",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "signup",
+        "form",
+        "sign",
+        "composed",
+        "that",
+        "flags",
+        "field",
+        "only",
+        "once",
+        "left",
+        "then",
+        "clears",
+        "the",
+        "moment",
+        "fixed",
+        "with",
+        "length",
+        "weighted",
+        "strength",
+        "meter",
+        "password",
+        "reveal",
+        "and",
+        "animated"
+      ],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "clsx",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "lucide-react",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "tailwind-merge",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://beui.dev/r/signup-form.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://beui.dev/r/signup-form.json",
+      "installCommand": "npx shadcn@latest add https://beui.dev/r/signup-form.json"
+    },
+    "links": {
+      "homepage": "https://beui.dev/",
+      "docs": "https://beui.dev/docs/theme"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/starc007/ui-components/blob/main/LICENSE",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "Free components are MIT. A separate paid tier exists at pro.beui.dev."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "signup-form",
+      "retrievedAt": "2026-10-06T05:40:41.098Z",
+      "sourceVersion": "https://beui.dev/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "beui/not-found-spotlight",
+    "source": "beui",
+    "slug": "not-found-spotlight",
+    "name": "404 / Not Found Spotlight",
+    "description": "A dark panel where a cursor-tracked spotlight reveals the bright code from a dim base.",
+    "category": "background",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["dark", "light"],
+      "tags": [
+        "not",
+        "found",
+        "spotlight",
+        "404",
+        "dark",
+        "panel",
+        "where",
+        "cursor",
+        "tracked",
+        "reveals",
+        "the",
+        "bright",
+        "code",
+        "from",
+        "dim",
+        "base"
+      ],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "clsx",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "tailwind-merge",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://beui.dev/r/not-found-spotlight.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://beui.dev/r/not-found-spotlight.json",
+      "installCommand": "npx shadcn@latest add https://beui.dev/r/not-found-spotlight.json"
+    },
+    "links": {
+      "homepage": "https://beui.dev/",
+      "docs": "https://beui.dev/docs/theme"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/starc007/ui-components/blob/main/LICENSE",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "Free components are MIT. A separate paid tier exists at pro.beui.dev."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "not-found-spotlight",
+      "retrievedAt": "2026-10-06T05:40:41.098Z",
+      "sourceVersion": "https://beui.dev/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "beui/shader-background",
+    "source": "beui",
+    "slug": "shader-background",
+    "name": "Shader Background",
+    "description": "Canvas shader backgrounds (mesh gradient, grain, warp, waves, voronoi, dot orbit and more) with a single typed variant prop. Reduced-motion freezes animated variants.",
+    "category": "background",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": ["gradient"],
+      "tags": [
+        "shader",
+        "background",
+        "canvas",
+        "backgrounds",
+        "mesh",
+        "gradient",
+        "grain",
+        "warp",
+        "waves",
+        "voronoi",
+        "dot",
+        "orbit",
+        "and",
+        "more",
+        "with",
+        "single",
+        "typed",
+        "variant",
+        "prop",
+        "reduced",
+        "motion",
+        "freezes",
+        "animated",
+        "variants"
+      ],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "@paper-design/shaders-react",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "clsx",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "tailwind-merge",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://beui.dev/r/shader-background.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://beui.dev/r/shader-background.json",
+      "installCommand": "npx shadcn@latest add https://beui.dev/r/shader-background.json"
+    },
+    "links": {
+      "homepage": "https://beui.dev/",
+      "docs": "https://beui.dev/docs/theme"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/starc007/ui-components/blob/main/LICENSE",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "Free components are MIT. A separate paid tier exists at pro.beui.dev."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "shader-background",
+      "retrievedAt": "2026-10-06T05:40:41.098Z",
+      "sourceVersion": "https://beui.dev/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "beui/approval-card",
+    "source": "beui",
+    "slug": "approval-card",
+    "name": "Approval Card",
+    "description": "A human-in-the-loop decision surface for approvals, single or multiple-choice questions, custom responses, and multi-step review flows.",
+    "category": "card",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "approval",
+        "card",
+        "human",
+        "the",
+        "loop",
+        "decision",
+        "surface",
+        "for",
+        "approvals",
+        "single",
+        "multiple",
+        "choice",
+        "questions",
+        "custom",
+        "responses",
+        "and",
+        "multi",
+        "step",
+        "review",
+        "flows"
+      ],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "clsx",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "lucide-react",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "tailwind-merge",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://beui.dev/r/approval-card.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://beui.dev/r/approval-card.json",
+      "installCommand": "npx shadcn@latest add https://beui.dev/r/approval-card.json"
+    },
+    "links": {
+      "homepage": "https://beui.dev/",
+      "docs": "https://beui.dev/docs/theme"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/starc007/ui-components/blob/main/LICENSE",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "Free components are MIT. A separate paid tier exists at pro.beui.dev."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "approval-card",
+      "retrievedAt": "2026-10-06T05:40:41.098Z",
+      "sourceVersion": "https://beui.dev/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "beui/card-folder",
+    "source": "beui",
+    "slug": "card-folder",
+    "name": "Card Folder",
+    "description": "A landscape card tucked into a stitched purse pocket that lifts forward as the purse compresses into its bottom seam, with controlled open and card-detail visibility plus a separate overflow action.",
+    "category": "card",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "card",
+        "folder",
+        "landscape",
+        "tucked",
+        "into",
+        "stitched",
+        "purse",
+        "pocket",
+        "that",
+        "lifts",
+        "forward",
+        "the",
+        "compresses",
+        "its",
+        "bottom",
+        "seam",
+        "with",
+        "controlled",
+        "open",
+        "and",
+        "detail",
+        "visibility",
+        "plus",
+        "separate"
+      ],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "clsx",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "lucide-react",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "tailwind-merge",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://beui.dev/r/card-folder.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://beui.dev/r/card-folder.json",
+      "installCommand": "npx shadcn@latest add https://beui.dev/r/card-folder.json"
+    },
+    "links": {
+      "homepage": "https://beui.dev/",
+      "docs": "https://beui.dev/docs/theme"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/starc007/ui-components/blob/main/LICENSE",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "Free components are MIT. A separate paid tier exists at pro.beui.dev."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "card-folder",
+      "retrievedAt": "2026-10-06T05:40:41.098Z",
+      "sourceVersion": "https://beui.dev/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "beui/marquee",
+    "source": "beui",
+    "slug": "marquee",
+    "name": "Marquee",
+    "description": "Infinite horizontal or vertical scroll with pause-on-hover.",
+    "category": "animation",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": ["marquee", "infinite", "horizontal", "vertical", "scroll", "with", "pause", "hover"],
+      "motion": "unknown",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "clsx",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "tailwind-merge",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://beui.dev/r/marquee.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://beui.dev/r/marquee.json",
+      "installCommand": "npx shadcn@latest add https://beui.dev/r/marquee.json"
+    },
+    "links": {
+      "homepage": "https://beui.dev/",
+      "docs": "https://beui.dev/docs/theme"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/starc007/ui-components/blob/main/LICENSE",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "Free components are MIT. A separate paid tier exists at pro.beui.dev."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "marquee",
+      "retrievedAt": "2026-10-06T05:40:41.098Z",
+      "sourceVersion": "https://beui.dev/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "beui/prediction-market-card",
+    "source": "beui",
+    "slug": "prediction-market-card",
+    "name": "Prediction Market Market Cards",
+    "description": "Compact market listings with consistent outcome rows, animated odds CTAs, payout multipliers and bookmarks. Odds CTAs use green/red backgrounds and roll into Yes/No labels on hover or keyboard focus. Use Update odds to preview animated price changes.",
+    "category": "card",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "prediction",
+        "market",
+        "card",
+        "cards",
+        "compact",
+        "listings",
+        "with",
+        "consistent",
+        "outcome",
+        "rows",
+        "animated",
+        "odds",
+        "ctas",
+        "payout",
+        "multipliers",
+        "and",
+        "bookmarks",
+        "use",
+        "green",
+        "red",
+        "backgrounds",
+        "roll",
+        "into",
+        "yes"
+      ],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "@floating-ui/dom",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "clsx",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "lucide-react",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "tailwind-merge",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://beui.dev/r/prediction-market-card.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://beui.dev/r/prediction-market-card.json",
+      "installCommand": "npx shadcn@latest add https://beui.dev/r/prediction-market-card.json"
+    },
+    "links": {
+      "homepage": "https://beui.dev/",
+      "docs": "https://beui.dev/docs/theme"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/starc007/ui-components/blob/main/LICENSE",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "Free components are MIT. A separate paid tier exists at pro.beui.dev."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "prediction-market-card",
+      "retrievedAt": "2026-10-06T05:40:41.098Z",
+      "sourceVersion": "https://beui.dev/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "beui/tilt-card",
+    "source": "beui",
+    "slug": "tilt-card",
+    "name": "Tilt Card",
+    "description": "3D perspective tilt on hover with cursor-tracked glare.",
+    "category": "card",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": ["tilt", "card", "perspective", "hover", "with", "cursor", "tracked", "glare"],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "clsx",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "tailwind-merge",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://beui.dev/r/tilt-card.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://beui.dev/r/tilt-card.json",
+      "installCommand": "npx shadcn@latest add https://beui.dev/r/tilt-card.json"
+    },
+    "links": {
+      "homepage": "https://beui.dev/",
+      "docs": "https://beui.dev/docs/theme"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/starc007/ui-components/blob/main/LICENSE",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "Free components are MIT. A separate paid tier exists at pro.beui.dev."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "tilt-card",
+      "retrievedAt": "2026-10-06T05:40:41.098Z",
+      "sourceVersion": "https://beui.dev/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
+  },
+  {
+    "schemaVersion": 2,
+    "id": "beui/wallet-card",
+    "source": "beui",
+    "slug": "wallet-card",
+    "name": "Wallet Card",
+    "description": "Wallet overview card with an account switcher and search that morph open from their triggers, a cascading balance with a live change pill and privacy toggle, copy-address, and Send / Deposit / Swap / Buy actions.",
+    "category": "card",
+    "secondaryCategories": [],
+    "frameworks": ["react"],
+    "compatibility": {
+      "nextjs": true,
+      "clientComponent": true,
+      "typescript": true
+    },
+    "visual": {
+      "aesthetics": [],
+      "tags": [
+        "wallet",
+        "card",
+        "overview",
+        "with",
+        "account",
+        "switcher",
+        "and",
+        "search",
+        "that",
+        "morph",
+        "open",
+        "from",
+        "their",
+        "triggers",
+        "cascading",
+        "balance",
+        "live",
+        "change",
+        "pill",
+        "privacy",
+        "toggle",
+        "copy",
+        "address",
+        "send"
+      ],
+      "motion": "medium",
+      "density": "unknown",
+      "radius": "unknown",
+      "surface": ["unknown"]
+    },
+    "dependencies": [
+      {
+        "name": "clsx",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "lucide-react",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "motion",
+        "kind": "runtime",
+        "required": true
+      },
+      {
+        "name": "tailwind-merge",
+        "kind": "runtime",
+        "required": true
+      }
+    ],
+    "installation": {
+      "kind": "command",
+      "command": "npx shadcn@latest add https://beui.dev/r/wallet-card.json",
+      "instructions": "Add through the shadcn CLI from the upstream registry URL, then adapt the copied source to your design tokens."
+    },
+    "retrieval": {
+      "kind": "shadcn-registry",
+      "itemUrl": "https://beui.dev/r/wallet-card.json",
+      "installCommand": "npx shadcn@latest add https://beui.dev/r/wallet-card.json"
+    },
+    "links": {
+      "homepage": "https://beui.dev/",
+      "docs": "https://beui.dev/docs/theme"
+    },
+    "license": {
+      "status": "known",
+      "identifier": "MIT",
+      "source": "https://github.com/starc007/ui-components/blob/main/LICENSE",
+      "verifiedAt": "2026-10-06T00:00:00.000Z",
+      "osiApproved": true,
+      "redistribution": "permitted",
+      "notes": "Free components are MIT. A separate paid tier exists at pro.beui.dev."
+    },
+    "provenance": {
+      "adapter": "shadcn-registry",
+      "upstreamName": "wallet-card",
+      "retrievedAt": "2026-10-06T05:40:41.098Z",
+      "sourceVersion": "https://beui.dev/r/registry.json",
+      "derivedFields": [
+        "category",
+        "secondaryCategories",
+        "visual.aesthetics",
+        "visual.tags",
+        "visual.motion"
+      ]
+    }
   }
 ]

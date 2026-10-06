@@ -8,17 +8,19 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.build.json",
     "dev": "echo ok",
     "lint": "eslint . && prettier --check src",
     "typecheck": "tsc --noEmit -p tsconfig.json",
-    "test": "vitest run --passWithNoTests"
+    "test": "vitest run --passWithNoTests",
+    "sync": "node dist/sync.js"
   },
   "dependencies": {
     "@tessera/registry": "workspace:*",
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@types/node": "^22.13.0",
     "typescript": "~5.9.2",
     "vitest": "^3.2.4",
     "prettier": "^3.5.3",
