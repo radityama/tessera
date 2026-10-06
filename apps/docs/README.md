@@ -1,5 +1,10 @@
 # Tessera Docs
 
-Documentation application for publishing the Markdown documentation in this repository.
+Static site rendering the Markdown in `docs/`.
 
-See `TASKS.md` Phase 8.
+```bash
+pnpm --filter @tessera-dev/docs build     # writes apps/docs/dist
+```
+
+The documentation itself lives in [`docs/`](../../docs) and is the source of truth — this app only
+renders it. Edit the Markdown, not the generated output.

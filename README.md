@@ -1,116 +1,259 @@
+<div align="center">
+
 # Tessera
 
 **UI retrieval for coding agents.**
 
-Tessera helps coding agents discover, evaluate, fetch, adapt, and compose high-quality UI components from multiple component libraries instead of rebuilding every visually significant interface from scratch.
+Search, inspect, and reuse real interface components from existing UI libraries
+before generating them from scratch.
 
-The core idea is simple:
+[![CI](https://github.com/radityama/tessera/actions/workflows/ci.yml/badge.svg)](https://github.com/radityama/tessera/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+[![Node](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg)](./docs/installation.md)
+[![MCP](https://img.shields.io/badge/MCP-stdio-8a2be2.svg)](./docs/integrations/README.md)
 
-> Reuse composition, not identity.
+</div>
 
-A coding agent should search for good existing UI patterns first, choose components that fit the product's visual language, then adapt them to the local design system rather than copy-pasting a library demo unchanged.
+---
 
-## Status
+Coding agents write a lot of UI from scratch that already exists, and it shows. A pricing section,
+a terminal hero, a command palette — these are solved problems sitting in five different component
+libraries, each with its own docs site and its own copy-paste instructions.
 
-This repository is an implementation-ready scaffold. The product is not implemented yet.
+Tessera gives an agent a way to search those libraries, see _why_ a component ranked where it did,
+check the licence and dependencies, and pull the real source. One command, no account, no network
+call until you actually fetch something.
 
-Start with [`START_HERE.md`](./START_HERE.md), then read [`AGENTS.md`](./AGENTS.md).
+The rule the project is built around:
 
-## Product Shape
+> **Reuse composition, not identity.**
 
-Tessera is composed of four layers:
+Take the structure, drop the branding. A retrieved component gets adapted to your design language,
+never shipped as the library's demo.
 
-1. **Skill** — teaches an agent when to search for reusable UI and how to keep visual cohesion.
-2. **Registry** — normalizes component metadata from many UI libraries into one schema.
-3. **Core retrieval engine** — searches, filters, scores, and ranks component candidates.
-4. **MCP + CLI** — exposes retrieval and installation workflows to coding agents and humans.
+## Why
 
-```text
-User request
-   ↓
-Coding agent
-   ↓
-Tessera Skill
-   ↓
-UI decomposition + visual intent
-   ↓
-Tessera retrieval engine
-   ↓
-Unified registry
-   ├── Aceternity UI
-   ├── Beautiful UI
-   ├── BeUI
-   ├── HeroUI
-   ├── Efferd
-   └── future sources
-   ↓
-Ranked candidates
-   ↓
-Fetch source + installation metadata
-   ↓
-Adapt to project design system
-   ↓
-Cohesion / accessibility / responsive pass
-   ↓
-Production UI
+An agent asked to "build a dark developer-tool hero" will happily write one from nothing, badly,
+while `aceternity/terminal` and `magicui/terminal` sit two searches away. The gap is not that good
+components are missing — it is that nothing tells the agent they exist in a form it can act on.
+
+Tessera fills that gap without becoming a design system, a hosted service, or a build step. It is a
+local index with an honest licence record and a fetch command.
+
+## What it looks like
+
+```console
+$ tessera search "dark technical terminal hero"
+
+1. magicui/terminal — Terminal (0.612)
+   category: terminal | source: magicui | frameworks: react
+   motion: unknown | deps: 0 | license: MIT, OSI-approved, redistribution permitted
+   artifact: retrievable (shadcn-registry)
+   why: exact category match: terminal; matches aesthetics: terminal; no required runtime dependencies
+
+$ tessera fetch aceternity/terminal
+
+aceternity/terminal — 1 file(s) from aceternity
+upstream: https://ui.aceternity.com/registry/terminal.json
+license: LicenseRef-Aceternity, not OSI-approved, redistribution restricted
+files:
+  components/ui/terminal.tsx (13977 bytes)
+
+! This license permits use but restricts redistributing the source files.
+  Adapt it into your project; do not republish it as a component library.
+
+Tessera wrote these files only because you asked. Nothing was installed or executed.
 ```
 
-## Initial Scope
+## Quick start
 
-v0.1 should prove one thing:
-
-> When a coding agent is asked to build UI, Tessera can help it find a better existing component, understand how to use it, and adapt it into a cohesive final interface.
-
-Do not overbuild v0.1. No vector database, screenshot embeddings, crawler farm, hosted control plane, or AI model is required initially.
-
-Use curated registry data and deterministic ranking first.
-
-## Monorepo
-
-```text
-apps/
-  web/              Registry explorer and product site
-  docs/             Documentation site
-packages/
-  core/             Query parsing, filtering, scoring, ranking
-  registry/         Unified schema, loaders, validation
-  adapters/         Source-specific adapters
-  mcp/              MCP server
-  cli/              `tessera` CLI
-  shared/           Shared types and utilities
-skills/
-  tessera/          Agent skill instructions
-registries/         Curated source metadata for initial libraries
-docs/               Product and engineering documentation
-examples/           End-to-end usage examples
+```bash
+npx -y @tessera-dev/cli search "dark technical terminal hero"
 ```
 
-## Suggested Stack
+Install it if you want it around:
 
-- TypeScript
-- Node.js
-- pnpm workspaces
-- Turborepo
-- Zod for schemas
-- Vitest for unit/integration tests
-- Next.js for `apps/web`
-- A docs framework of the implementing agent's choice, preferably one that keeps Markdown/MDX portable
-- MCP TypeScript SDK for the server
-- Commander, Citty, or another lightweight CLI framework
+```bash
+npm install -g @tessera-dev/cli
+tessera doctor
+```
 
-Avoid introducing infrastructure that is not required by the current milestone.
+`doctor` checks the runtime, which registry is loaded, that every component validates, that
+licences carry evidence, and that the MCP server starts.
 
-## Non-goals
+## CLI
 
-Tessera is not:
+```bash
+tessera search "<query>"        # rank components; works offline
+tessera inspect <id>            # full metadata, licence and provenance
+tessera similar <id>            # alternatives
+tessera add <id> --dry-run      # what installing it would involve
+tessera fetch <id>              # retrieve the real source
+tessera mcp                     # start the MCP server
+tessera doctor                  # diagnose the installation
+```
 
-- a design-to-code model,
-- a replacement for component libraries,
-- a page generator that blindly stitches templates together,
-- a giant copy of third-party source code,
-- a design-system replacement,
-- a reason to add unnecessary dependencies to user projects.
+Only `fetch` and `mcp` reach the network, and only when you ask. See [`docs/cli.md`](./docs/cli.md).
+
+## MCP
+
+```bash
+npx -y @tessera-dev/cli mcp
+```
+
+Six tools, stable names:
+
+| Tool                      | Purpose                                                   |
+| ------------------------- | --------------------------------------------------------- |
+| `search_components`       | Rank components for a query, with score explanations.     |
+| `get_component`           | Full canonical metadata for one id.                       |
+| `get_component_artifact`  | Fetch the real upstream source, dependencies and licence. |
+| `get_installation`        | A safe installation plan.                                 |
+| `find_similar_components` | Alternatives by category, aesthetics, motion and stack.   |
+| `search_patterns`         | Higher-level UI patterns rather than exact names.         |
+
+Configure it once:
+
+```json
+{
+  "mcpServers": {
+    "tessera": {
+      "command": "npx",
+      "args": ["-y", "@tessera-dev/cli", "mcp"]
+    }
+  }
+}
+```
+
+The key name differs per harness — `mcpServers`, `servers`, `mcp`, `context_servers`, or a TOML
+`[mcp_servers.x]` table. Each has a page in [`docs/integrations/`](./docs/integrations/README.md),
+checked against that harness's own current documentation.
+
+## Agent Skill
+
+[`skills/tessera/SKILL.md`](./skills/tessera/SKILL.md) teaches an agent the workflow, not just the
+tools: decompose the page, decide the design language, search, read the score reasons, check the
+licence, retrieve, adapt, then run a cohesion pass. It explicitly tells the agent to **reject a
+highly ranked component that clashes with the page**, because "call `search_components` and paste
+rank #1" produces exactly the incoherent result Tessera exists to prevent.
+
+Install it where your harness looks for skills, or use the project-rule snippet for harnesses that
+have no skill support.
+
+## Example workflow
+
+```text
+"Build a dark developer-tool landing page with a technical hero and a terminal."
+
+  decompose → hero, feature grid, pricing, footer
+  design language → dark, 12px radius, hairline borders, low motion
+  search_components "dark technical hero terminal subtle motion"
+  → 5 candidates with scores and reasons
+  inspect aceternity/terminal → LicenseRef-Aceternity, redistribution restricted
+  get_component_artifact magicui/terminal → real files + deps + MIT
+  adapt → swap the palette for the project's tokens, drop the demo copy
+  cohesion pass → the top-ranked hero clashes on radius; take the second
+```
+
+## How retrieval works
+
+Search and retrieval are deliberately separate.
+
+```text
+provider registry  →  pnpm registry:sync  →  pinned snapshot  →  local search
+                                                               ↘
+                                                                 fetch on request
+```
+
+Search never touches the network, so it is deterministic and testable offline. `fetch` is the only
+network path: it resolves the upstream URL **from the registry, never from the caller**, validates
+every redirect against an allowlist of hosts the registry already advertises, caps the response
+size, and validates the payload before returning it. Retrieved code is never executed, written
+unprompted, or installed.
+
+See [`docs/retrieval.md`](./docs/retrieval.md).
+
+## Supported sources
+
+| Source        | Components | Retrieval       | Licence                                                     |
+| ------------- | ---------- | --------------- | ----------------------------------------------------------- |
+| Aceternity UI | 8          | shadcn registry | Bespoke `LicenseRef-Aceternity` — redistribution restricted |
+| beUI          | 15         | shadcn registry | MIT                                                         |
+| Efferd        | 20         | shadcn registry | MIT where in the open-source repo, otherwise unknown        |
+| Magic UI      | 18         | shadcn registry | MIT                                                         |
+| HeroUI        | 12         | npm package     | MIT                                                         |
+
+Every record traces to a real upstream item. Licences carry an evidence URL or are recorded as
+`unknown` — a `known` licence without evidence fails validation and the build. The registry has no
+hand-written entries; `pnpm registry:sync` generates it.
+
+Sources and their evidence: [`docs/sources.md`](./docs/sources.md).
+
+## Supported coding agents
+
+Claude Code is runtime-verified. Ten more are config-verified against their current official docs,
+and the compatibility matrix marks the difference rather than claiming universal support.
+
+[Claude Code](./docs/integrations/claude-code.md) ·
+[Codex](./docs/integrations/codex.md) ·
+[Cursor](./docs/integrations/cursor.md) ·
+[Windsurf](./docs/integrations/windsurf.md) ·
+[OpenCode](./docs/integrations/opencode.md) ·
+[Cline](./docs/integrations/cline.md) ·
+[Roo Code](./docs/integrations/roo-code.md) ·
+[VS Code Copilot](./docs/integrations/vscode-copilot.md) ·
+[Gemini CLI](./docs/integrations/gemini-cli.md) ·
+[Zed](./docs/integrations/zed.md) ·
+[Continue](./docs/integrations/continue.md) ·
+[any MCP client](./docs/integrations/generic-mcp.md)
+
+## Architecture
+
+```text
+registry ← adapters
+   ↑
+ core ──→ cli
+   │      mcp
+   └──→ web explorer
+```
+
+Dependency direction is one-way. `core` contains no provider-specific branches — provider behaviour
+lives in adapters, and ranking stays provider-neutral. The CLI, MCP and explorer all call the same
+`searchRegistry`; a parity test fails the build if the explorer's bundled copy ever diverges.
+
+## Safety and licensing
+
+- Tessera indexes metadata. **It does not store or redistribute component source.**
+- Every licence carries evidence or is marked `unknown`. Unknown licences rank lower and warn.
+- `status` and `redistribution` are separate, because a licence can be known and still forbid reuse.
+- `fetch` never overwrites a file silently, and rejects upstream paths that escape the output
+  directory.
+- No shell execution, no dependency installation, no telemetry.
+
+See [`SECURITY.md`](./SECURITY.md) and [`docs/security-licensing.md`](./docs/security-licensing.md).
+
+## Development
+
+```bash
+pnpm install
+pnpm build          # required before test: the registry bundle is built here
+pnpm test
+pnpm release:check  # the full gate
+```
+
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md). The one rule that matters most: **do not invent
+metadata.** Unknown is a correct answer; a plausible guess is not.
+
+## Roadmap
+
+v0.1 proves the local loop. Deliberately excluded: embeddings, vector search, a hosted index,
+automatic installation, screenshot similarity.
+
+See [`docs/roadmap.md`](./docs/roadmap.md).
 
 ## License
 
-No license has been selected in this scaffold. Choose one deliberately before public distribution.
+[MIT](./LICENSE).
+
+Tessera is not affiliated with any of the component libraries it indexes. Their names and links
+identify where metadata comes from, nothing more.
