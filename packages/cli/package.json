@@ -19,7 +19,7 @@
     "@tessera-dev/core": "workspace:*",
     "@tessera-dev/mcp": "workspace:*",
     "@tessera-dev/registry": "workspace:*",
-    "commander": "^14.0.0"
+    "commander": "^15.0.0"
   },
   "devDependencies": {
     "@types/node": "^22.13.0",
