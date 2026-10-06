@@ -122,6 +122,32 @@ if (hygieneState === "checked") {
   ok("artifact check skipped: not a git checkout");
 }
 
+// -- Post-publish docs guard ----------------------------------------------------
+
+// v0.1.0 is published on npm. These phrases described the pre-publish state and
+// must not reappear in user-facing docs. The patterns are deliberately narrow:
+// "does not resolve" alone would also match the unrelated `fetch` limitation
+// ("fetch does not resolve registry dependencies"), which is still true.
+section("Published docs");
+
+const STALE_DOC_PATTERNS = [
+  /npm publishing is pending/,
+  /no package has been published/,
+  /once publishing completes/i,
+  /until publishing completes/i,
+  /npx @tessera-dev\/cli.*does not resolve/,
+];
+const STALE_DOC_FILES = ["README.md", "docs/installation.md", "docs/releases/v0.1.0.md"];
+const staleHits = [];
+for (const file of STALE_DOC_FILES) {
+  const text = readFileSync(join(repoRoot, file), "utf8");
+  for (const pattern of STALE_DOC_PATTERNS) {
+    if (pattern.test(text)) staleHits.push(`${file}: ${pattern}`);
+  }
+}
+if (staleHits.length === 0) ok("no pre-publish wording in user-facing docs");
+else bad(`stale pre-publish wording: ${staleHits.join("; ")}`);
+
 // -- Version consistency ------------------------------------------------------
 
 section("Version consistency");

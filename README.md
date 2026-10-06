@@ -8,16 +8,12 @@ Search, inspect, and reuse real interface components from existing UI libraries
 before generating them from scratch.
 
 [![CI](https://github.com/radityama/tessera/actions/workflows/ci.yml/badge.svg)](https://github.com/radityama/tessera/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/@tessera-dev/cli.svg)](https://www.npmjs.com/package/@tessera-dev/cli)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg)](./docs/installation.md)
 [![MCP](https://img.shields.io/badge/MCP-stdio-8a2be2.svg)](./docs/integrations/README.md)
 
-**Version 0.1.0.** 73 components across five libraries, verified against live upstreams.
-
-> **npm publishing is pending.** This repository is at v0.1.0, but no package has been published to
-> the npm registry yet, so `npx @tessera-dev/cli` does not resolve and the release workflow has no
-> release to attach tarballs to. Install from source today — see [Install](#install). The release
-> artifacts appear here once the tag is pushed.
+**Tessera v0.1.0 is available on npm.** 73 components across five libraries, verified against live upstreams.
 
 </div>
 
@@ -74,14 +70,34 @@ Tessera wrote these files only because you asked. Nothing was installed or execu
 
 ## Install
 
-Once npm publishing completes:
+No clone required:
 
 ```bash
 npx -y @tessera-dev/cli search "dark technical terminal hero"
-npm install -g @tessera-dev/cli
 ```
 
-**Until then**, run from source:
+For repeated use, install globally:
+
+```bash
+npm install -g @tessera-dev/cli
+tessera doctor
+```
+
+`doctor` checks the runtime, which registry is loaded, that every component validates, that
+licences carry evidence, and that the MCP server starts.
+
+### Other ways to install
+
+**GitHub release tarballs**, for offline or manual installs. Download the four tarballs from
+the [release](https://github.com/radityama/tessera/releases) and install them together — the
+CLI depends on the other three packages:
+
+```bash
+npm install -g ./tessera-dev-registry-0.1.0.tgz ./tessera-dev-core-0.1.0.tgz \
+               ./tessera-dev-mcp-0.1.0.tgz ./tessera-dev-cli-0.1.0.tgz
+```
+
+**From source**, for contributors:
 
 ```bash
 git clone https://github.com/radityama/tessera && cd tessera
@@ -89,18 +105,7 @@ pnpm install && pnpm build
 node packages/cli/dist/cli.js doctor
 ```
 
-Or install the tarballs attached to the release, all four at once — the CLI depends on the other
-three and none are on the registry yet:
-
-```bash
-npm install -g ./tessera-dev-registry-0.1.0.tgz ./tessera-dev-core-0.1.0.tgz \
-               ./tessera-dev-mcp-0.1.0.tgz ./tessera-dev-cli-0.1.0.tgz
-```
-
 See [`docs/installation.md`](./docs/installation.md).
-
-`doctor` checks the runtime, which registry is loaded, that every component validates, that
-licences carry evidence, and that the MCP server starts.
 
 ## CLI
 
@@ -146,10 +151,10 @@ Configure it once:
 }
 ```
 
-**Not yet runnable as written** — that command needs the published package. Until publishing
-completes, use the binary you installed from the tarballs (`"command": "tessera"`), or the built
-source tree (`"command": "node"`, `"args": ["/path/to/tessera/packages/cli/dist/cli.js", "mcp"]`).
-Both were verified working.
+This runs the published package — no checkout needed. If your harness cannot find `npx`
+(GUI apps often get a minimal `PATH`), use an absolute path to `npx`, or point the config at
+an installed binary (`"command": "tessera"`) or a source checkout (`"command": "node"`,
+`"args": ["/path/to/tessera/packages/cli/dist/cli.js", "mcp"]`) as a fallback.
 
 The key name differs per harness — `mcpServers`, `servers`, `mcp`, `context_servers`, or a TOML
 `[mcp_servers.x]` table. Each has a page in [`docs/integrations/`](./docs/integrations/README.md),
