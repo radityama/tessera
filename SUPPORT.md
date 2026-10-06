@@ -6,10 +6,10 @@
 - **Connect a coding agent** — [`docs/integrations/`](./docs/integrations/README.md)
 - **Commands** — [`docs/cli.md`](./docs/cli.md)
 - **MCP tools** — [`docs/mcp.md`](./docs/mcp.md)
-- **Something is broken** — `tessera doctor`
+- **Something is broken** — `npx -y @tessera-dev/cli doctor` (or `tessera doctor` if installed globally)
 
 ```bash
-tessera doctor
+npx -y @tessera-dev/cli doctor
 ```
 
 `doctor` checks the Node version, which registry is in use, that every component validates, that

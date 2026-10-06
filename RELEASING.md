@@ -111,6 +111,17 @@ because it issues short-lived credentials per run and attaches provenance.
 
 Scoped packages require `publishConfig.access: "public"`, which every publishable package sets.
 
+## v0.1.0 bootstrap vs future releases
+
+v0.1.0 reached npm through a **manual bootstrap publish**: the tag workflow built and
+smoke-tested the tarballs but published nothing (no credentials were configured at the time),
+so the four packages were published by hand afterwards. That is a one-off, not the procedure.
+
+From v0.1.1 on, releases should publish through the tag workflow in
+`.github/workflows/release.yml`, which requires either Trusted Publishing or an `NPM_TOKEN`
+secret. Neither is claimed to be configured here — check the repository settings before
+assuming a tag push will publish.
+
 ## If something goes wrong
 
 - **Publishing failed part-way.** Some packages may be published and others not. Fix forward: cut
