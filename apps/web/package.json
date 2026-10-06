@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "dev": "node scripts/build.mjs",
-    "lint": "prettier --check scripts",
+    "lint": "prettier --check scripts src",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "vitest run --passWithNoTests"
   },
@@ -16,8 +16,9 @@
   },
   "devDependencies": {
     "@types/node": "^22.13.0",
+    "esbuild": "^0.28.2",
+    "prettier": "^3.5.3",
     "typescript": "~5.9.2",
-    "vitest": "^3.2.4",
-    "prettier": "^3.5.3"
+    "vitest": "^3.2.4"
   }
 }

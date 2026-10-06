@@ -24,7 +24,7 @@ npm publish:     never attempted; `tessera` name TAKEN (unrelated 0.15.5);
                  no npm auth on this machine
 ```
 
-## Phase audit vs TASKS.md
+## Phase audit vs the original task list
 
 | Phase               | Implemented? | Correct? | Production-ready? | Remaining work                                                                                                              | Evidence                                                                     |
 | ------------------- | ------------ | -------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |

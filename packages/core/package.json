@@ -53,6 +53,19 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
-    }
+    },
+    "./search": {
+      "types": "./dist/search.d.ts",
+      "import": "./dist/search.js"
+    },
+    "./query": {
+      "types": "./dist/query.d.ts",
+      "import": "./dist/query.js"
+    },
+    "./score": {
+      "types": "./dist/score.d.ts",
+      "import": "./dist/score.js"
+    },
+    "./package.json": "./package.json"
   }
 }

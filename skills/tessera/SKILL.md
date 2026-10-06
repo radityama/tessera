@@ -1,22 +1,25 @@
 ---
 name: tessera
-description: Search existing UI component registries before building visually significant frontend sections, then adapt candidates into one coherent page design language.
+description: Search existing UI component registries before building visually significant frontend sections, retrieve real implementations, and adapt them into one coherent page design language.
 version: 0.1.0
 ---
 
 # Tessera UI Composition Skill
 
-Use Tessera whenever you are asked to build or substantially redesign a frontend interface and visually significant reusable patterns may already exist.
+Use Tessera when you are asked to build or substantially redesign a frontend interface and visually
+significant reusable patterns may already exist.
 
 ## Goal
 
-Do not immediately generate every interface section from scratch.
+Do not generate every interface section from scratch. Find strong existing implementations, adapt
+them into one coherent product interface.
 
-Use Tessera to discover strong existing components, then adapt them into one coherent product interface.
+The point is not to use Tessera more. It is to avoid rebuilding the generic parts of a page badly,
+while keeping the page looking like one product rather than four demos.
 
-## When to use Tessera
+## When to search
 
-Search Tessera for a section when any of these is true:
+Search for a section when any of these is true:
 
 - animation is non-trivial,
 - the composition is visually distinctive,
@@ -24,42 +27,27 @@ Search Tessera for a section when any of these is true:
 - the section would otherwise take substantial bespoke styling,
 - accessibility or interaction details are easy to get wrong (menus, dialogs, forms, tables).
 
-Do not search for trivial wrappers, one-off dividers, or product-specific domain interactions. Build those directly.
+Do not search for trivial wrappers, one-off dividers, or product-specific domain interactions.
+Build those directly.
 
 ## Workflow
 
 ### 1. Understand the page
 
-Identify:
-
-- product type,
-- target audience,
-- visual tone,
-- information hierarchy,
-- interaction requirements,
-- target framework,
-- existing design system.
+Product type, audience, visual tone, information hierarchy, interaction requirements, target
+framework, and whether an existing design system applies.
 
 ### 2. Decompose the UI
 
-Break the page into meaningful sections such as:
+Break the page into sections: navbar, hero, social proof, feature section, product demo, comparison,
+pricing, testimonial, CTA, footer.
 
-- navbar,
-- hero,
-- social proof,
-- feature section,
-- product demo,
-- comparison,
-- pricing,
-- testimonial,
-- CTA,
-- footer.
+Mark product-specific sections — editors, domain visualizations, unique workflows — as
+`custom — do not search`.
 
-Also identify product-specific sections that should probably be custom-built (editors, domain visualizations, unique workflows). Mark those `custom — do not search`.
+### 3. Establish the design language first
 
-### 3. Establish the design language
-
-Before choosing components, infer or define:
+Before looking at any component, write down the language you are targeting:
 
 ```yaml
 typography: sans / serif / mono roles
@@ -72,152 +60,161 @@ surface: flat / glass / elevated / outlined
 layout: max width + grid logic
 ```
 
-Every candidate must be judged against this language, not in isolation.
+Every candidate is judged against this. A component that is excellent in the abstract is still
+wrong if it disagrees with this list.
 
-### 4. Search before building visually significant sections
+### 4. Search
 
-Prefer one targeted query per section. Include tone, product context, and motion intent:
+One targeted query per section. Include tone, product context and motion intent.
 
 ```bash
-tessera search "technical dark hero for a developer CLI, subtle motion, terminal-oriented" --limit 5
+tessera search "dark technical hero developer cli subtle motion terminal" --limit 5
 tessera search "minimal saas pricing cards" --category pricing --limit 5
 tessera search "animated grid background subtle" --category background --limit 5
-tessera search "developer command menu" --category command-menu --limit 5
 ```
 
-Inspect before choosing:
+Read the score reasons. Prefer candidates whose reasons cite category fit, aesthetic fit, motion
+fit and low dependency cost — not spectacle.
+
+### 5. Inspect before choosing
 
 ```bash
-tessera inspect beautifului/terminal-hero
-tessera similar beautifului/terminal-hero --limit 3
-tessera add beautifului/terminal-hero --dry-run
+tessera inspect magicui/terminal
+tessera similar magicui/terminal --limit 3
 ```
 
-Via MCP, the same capability is `search_components` → `get_component` → `get_installation` → `find_similar_components`. CLI JSON (`--json`) and MCP results represent the same canonical records and scores.
+Check four things, in this order:
 
-Read the score reasons. Prefer candidates whose reasons cite category fit, aesthetic fit, motion fit, and low dependency cost — not spectacle.
+1. **Licence.** `known` is not the same as reusable — check `redistribution` and `osiApproved` too.
+   `unknown` is blocked for vendoring until upstream terms are confirmed.
+2. **Retrievability.** `tessera search` reports `artifact: retrievable (…)` or `not retrievable (…)`.
+   A component that ships compiled through npm has no files to adapt.
+3. **Dependencies.** Two components with equal visual fit are not equal if one pulls in three
+   runtime packages.
+4. **Framework fit.** Reject incompatible candidates even when they look ideal.
 
-### 5. Evaluate candidates
+### 6. Retrieve the real source
 
-Prefer candidates that fit, in this order:
+Do not guess what a component looks like from its name.
+
+```bash
+tessera fetch magicui/terminal --output ./vendor --dry-run   # inspect first
+tessera fetch magicui/terminal --output ./vendor             # then write
+```
+
+Via MCP: `search_components` → `get_component` → `get_component_artifact`.
+
+The artifact gives you the actual files, the npm dependencies and the licence. Nothing is
+installed or executed — that decision is yours and the user's.
+
+If a component is not retrievable, either work from its documented API or build the section
+yourself. Do not approximate a component from its name.
+
+### 7. Evaluate candidates for fit
+
+Prefer, in order:
 
 1. visual intent,
 2. framework and runtime,
 3. dependency budget,
 4. adaptability,
 5. accessibility expectations,
-6. known licensing constraints.
+6. licence constraints.
 
 Rules:
 
 - Do not choose a component only because it looks flashy.
-- Treat `license: unknown` as blocked for vendoring until the upstream terms are confirmed.
-- Reject framework-incompatible candidates even when they look ideal.
+- Treat `license: unknown` as blocked for vendoring until upstream terms are confirmed.
 - Prefer fewer required dependencies when visual fit is otherwise similar.
-- Do not automatically reject a motion library when the user explicitly asked for animation.
+- Do not reject a motion library when the user explicitly asked for animation.
 
-### 6. Preserve cohesion
+### 8. Preserve cohesion
 
 Do not independently pick the most impressive component for each section.
 
-The page must feel like one design system.
+Reject candidates that introduce conflicting typography, radius, motion language, surface
+treatment, density, iconography or visual gimmicks.
 
-Reject candidates that introduce conflicting:
+If two strong candidates conflict — a glass navbar against a flat technical hero — keep the one
+closer to the page language and keep searching for the other section.
 
-- typography,
-- radius,
-- motion language,
-- surface treatment,
-- density,
-- iconography,
-- visual gimmicks.
+### 9. Adapt what you retrieved
 
-If two strong candidates conflict (for example a glass navbar with a flat technical hero), keep the one closer to the page language and keep searching for the other section.
+**Reuse composition, not identity.** Normalise content, copy, brand colours, typography, spacing,
+radius, borders, shadows, icons, motion timing, responsive behaviour and accessibility labels.
 
-### 7. Adapt selected components
+Never ship a library's demo branding, copy or colour system unchanged. If the result still looks
+like the library's landing page, you have not finished.
 
-Treat source components as implementation building blocks.
+### 10. Build custom UI when appropriate
 
-Normalize:
+Build from scratch when no candidate fits, adapting costs more than implementing, the UI is
+product-specific, the component drags in unnecessary dependencies, or the licence blocks reuse.
 
-- content and product copy,
-- brand colors,
-- typography,
-- spacing,
-- radius,
-- borders,
-- shadows,
-- icons,
-- motion timing,
-- responsive behavior,
-- accessibility labels.
+### 11. Final cohesion pass
 
-**Reuse composition, not identity.** Never ship third-party demo branding, copy, color systems, or product identity unchanged.
+Inspect the whole page for mismatched radii, inconsistent section spacing, too many gradients,
+inconsistent animation speeds, repeated visual tricks, typography drift, awkward responsive
+transitions, and inaccessible contrast or interaction.
 
-### 8. Build custom UI when appropriate
+## Worked example: rejecting a well-ranked candidate
 
-Build from scratch when:
-
-- no candidate fits,
-- adapting a candidate is more expensive than implementing it,
-- the UI is product-specific,
-- the component would introduce unnecessary dependencies,
-- license status blocks reuse.
-
-### 9. Final cohesion pass
-
-Before considering the page complete, inspect the full interface for:
-
-- mismatched radii,
-- inconsistent section spacing,
-- too many gradients,
-- inconsistent animation speeds,
-- repeated visual tricks,
-- typography drift,
-- awkward responsive transitions,
-- inaccessible contrast or interaction.
-
-## Worked example (good)
-
-User asks:
+This is the part that matters most, and the part most easily skipped.
 
 ```text
-Build a landing page for a developer CLI.
-Dark, technical, understated, with a terminal demo.
+Ask: "Build a landing page for a developer CLI. Dark, technical, understated, terminal demo."
+
+1. Design language, written down before searching:
+   dark · small radius (4px) · hairline borders · flat/outlined surfaces · restrained motion ·
+   mono for code only · comfortable density
+
+2. Search: tessera search "dark technical hero developer cli subtle motion terminal"
+
+   Results include:
+     1. efferd/hero-1          0.640  hero        license unknown
+     2. aceternity/hero-highlight 0.61  hero       redistribution restricted
+     3. magicui/terminal       0.612  terminal    MIT
+
+3. Reject #1 despite the rank: efferd/hero-1 has an unknown licence, and vendoring unknown
+   licence code is not something to do quietly. Rejected on licensing, not on looks.
+
+4. Inspect #2 and #3.
+      aceternity/hero-highlight — retrievable, but redistribution restricted, and its radius
+      and motion are larger than the page language allows.
+      magicui/terminal — MIT, retrievable, small dependency footprint.
+
+5. Retrieve: tessera fetch magicui/terminal --output ./vendor --dry-run
+
+6. Adapt: replace the palette with project tokens, swap the demo copy for the real product
+   copy, reduce the radius to 4px, drop the glow. It should no longer be recognisable as
+   Magic UI's component.
+
+7. Cohesion pass: one radius, one border weight, one motion speed across hero, features,
+   pricing and footer.
 ```
 
-Good process:
+Notice that two components were rejected — one for licensing, one for design-language conflict —
+even though both ranked well. **Rank is a starting point, not a decision.**
+
+## Anti-example
 
 ```text
-1. Define: technical / dark / subtle motion / small radius / restrained borders / flat+outlined surfaces.
-2. Decompose: navbar, hero, terminal demo, features, workflow (custom), CTA, footer.
-3. Search:
-   - tessera search "technical dark hero for a developer CLI, subtle motion, terminal-oriented"
-     → beautifului/terminal-hero (hero + terminal secondary, motion low, 1 dep, MIT)
-   - tessera inspect beautifului/terminal-hero (check install + license)
-   - tessera search "developer command menu" (only if a palette is needed)
-   - tessera search "animated grid background subtle" --category background
-4. Choose a compatible subset: terminal hero + grid background + feature list with the same
-   radius, borders, and restrained motion. Reject the expressive aurora background.
-5. Adapt everything to the same tokens and product copy.
-6. Build the unique install-and-run workflow section manually.
-7. Run the cohesion pass: one radius, one border style, one motion speed.
+1. Take rank #1 for every section without reading the reasons.
+2. Pick an expressive aurora hero from one library, a glass bento from another, a neon
+   pricing section from a third.
+3. Keep all original styling, copy and gradients.
+4. Ship a page that looks like four demos glued together, with triple the dependencies.
 ```
 
-## Anti-example (bad)
-
-```text
-1. Pick the flashiest hero from one library (expressive aurora, high motion).
-2. Pick a glass bento from another library.
-3. Pick a neon pricing section from another library.
-4. Keep all original styling, copy, and gradients.
-5. Ship a page that looks like four demos glued together.
-```
-
-Why it fails: each section is locally attractive but the radius systems, motion speeds, surfaces, and typography conflict; dependency cost triples; nothing was adapted to the product.
+Why it fails: each section is locally attractive, but the radius systems, motion speeds, surfaces
+and typography conflict; the dependency cost multiplies; nothing was adapted to the product; and
+a licence constraint may have been ignored entirely on the way.
 
 ## Safety notes
 
-- `tessera add --dry-run` only prints a plan. Nothing mutates the project in v0.1.
-- MCP tools never execute shell commands and never install dependencies automatically.
-- Unknown-license components must not be vendored silently; surface the warning to the user.
+- `tessera fetch` writes files only when you pass `--output`, never overwrites silently, and
+  rejects upstream paths that would escape the output directory.
+- `tessera add` is dry-run only in v0.1. Nothing mutates the project.
+- MCP tools never execute shell commands, never install dependencies, and never run retrieved code.
+- Surface licence warnings to the user rather than deciding on their behalf. A restricted
+  redistribution licence may still be fine for their use — that is their call, not yours.
