@@ -1,5 +1,5 @@
 {
-  "name": "@tessera/web",
+  "name": "@tessera-dev/web",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -11,8 +11,8 @@
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
-    "@tessera/core": "workspace:*",
-    "@tessera/registry": "workspace:*"
+    "@tessera-dev/core": "workspace:*",
+    "@tessera-dev/registry": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.13.0",

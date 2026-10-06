@@ -1,21 +1,21 @@
 {
-  "name": "@tessera/registry",
+  "name": "@tessera-dev/registry",
   "version": "0.1.0",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "bundled-registry"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "tsc -p tsconfig.build.json && node scripts/bundle-registry.mjs",
     "dev": "echo ok",
     "lint": "eslint . && prettier --check src",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
-    "@tessera/shared": "workspace:*",
     "zod": "^3.24.2"
   },
   "devDependencies": {
@@ -24,5 +24,36 @@
     "prettier": "^3.5.3",
     "typescript": "~5.9.2",
     "vitest": "^3.2.4"
+  },
+  "description": "Canonical schemas, validation and loading for the Tessera component registry, including the bundled snapshot that ships with the package.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radityama/tessera.git",
+    "directory": "packages/registry"
+  },
+  "homepage": "https://github.com/radityama/tessera#readme",
+  "bugs": {
+    "url": "https://github.com/radityama/tessera/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "component-registry",
+    "schema",
+    "zod",
+    "typescript"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
   }
 }

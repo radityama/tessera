@@ -50,7 +50,7 @@ check both. `packages/registry/src/release-guard.test.ts` fails the build if a c
 
 ## Retrieval safety
 
-`resolveComponentArtifact` in `@tessera/core`:
+`resolveComponentArtifact` in `@tessera-dev/core`:
 
 - derives the upstream URL from registry metadata — never from caller-supplied input;
 - rejects any URL whose origin is not in the allowlist built from the registry snapshot;

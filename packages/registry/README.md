@@ -1,4 +1,4 @@
-# @tessera/registry
+# @tessera-dev/registry
 
 Implementation placeholder for this package.
 

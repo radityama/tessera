@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { discoverRegistryFiles, loadRegistryFiles } from "@tessera/registry";
-import { buildInstallationPlan, getComponent, searchRegistry } from "@tessera/core";
+import { discoverRegistryFiles, loadRegistryFiles } from "@tessera-dev/registry";
+import { buildInstallationPlan, getComponent, searchRegistry } from "@tessera-dev/core";
 import { formatAddPlanHuman, formatInspectHuman, formatSearchHuman } from "./format.js";
 import { buildProgram, safeJoin } from "./cli.js";
 

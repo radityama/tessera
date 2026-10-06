@@ -50,7 +50,7 @@ interface RegistryAdapter<TInput> {
 Adapter output must pass canonical schema validation before entering a snapshot —
 `toCanonical()` throws otherwise, so an adapter cannot emit an invalid record.
 
-Adapters are the only place provider specifics are allowed to live. `@tessera/core` contains no
+Adapters are the only place provider specifics are allowed to live. `@tessera-dev/core` contains no
 provider conditionals.
 
 ## Selection

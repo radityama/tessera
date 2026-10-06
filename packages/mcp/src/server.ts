@@ -8,8 +8,8 @@ import {
   searchPatterns,
   searchRegistry,
   type RetrievalOptions,
-} from "@tessera/core";
-import type { TesseraComponent } from "@tessera/registry";
+} from "@tessera-dev/core";
+import type { TesseraComponent } from "@tessera-dev/registry";
 
 export const SearchComponentsInput = z.object({
   query: z.string().min(1),

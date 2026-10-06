@@ -11,7 +11,8 @@
     "typecheck": "turbo run typecheck",
     "test": "turbo run test",
     "format": "prettier --write .",
-    "registry:sync": "pnpm --filter @tessera/adapters build && pnpm --filter @tessera/adapters sync"
+    "registry:sync": "pnpm --filter @tessera-dev/adapters build && pnpm --filter @tessera-dev/adapters sync",
+    "smoke:pack": "node scripts/smoke-pack.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^9.23.0",

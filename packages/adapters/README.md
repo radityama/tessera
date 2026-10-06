@@ -1,4 +1,4 @@
-# @tessera/adapters
+# @tessera-dev/adapters
 
 Implementation placeholder for this package.
 

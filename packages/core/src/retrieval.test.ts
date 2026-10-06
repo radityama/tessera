@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import type { TesseraComponent } from "@tessera/registry";
+import type { TesseraComponent } from "@tessera-dev/registry";
 import {
   RetrievalError,
   allowedOrigins,

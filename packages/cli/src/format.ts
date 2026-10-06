@@ -1,5 +1,5 @@
-import type { RankedResult } from "@tessera/core";
-import type { ComponentArtifact, License, TesseraComponent } from "@tessera/registry";
+import type { RankedResult } from "@tessera-dev/core";
+import type { ComponentArtifact, License, TesseraComponent } from "@tessera-dev/registry";
 
 export function licenseLine(license: License): string {
   if (license.status === "unknown") {

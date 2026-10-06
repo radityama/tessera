@@ -4,7 +4,7 @@ import { ComponentIdSchema, LicenseSchema } from "./schema.js";
 /**
  * A concrete implementation retrieved from an upstream provider.
  *
- * Artifacts are produced on demand by `@tessera/core` and handed to the calling
+ * Artifacts are produced on demand by `@tessera-dev/core` and handed to the calling
  * agent. Tessera never executes them, never writes them into a project, and
  * never installs their dependencies — the host agent decides what to do with
  * the files.

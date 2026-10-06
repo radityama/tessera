@@ -1,4 +1,4 @@
-import type { ComponentCategory, TesseraComponent } from "@tessera/registry";
+import type { ComponentCategory, TesseraComponent } from "@tessera-dev/registry";
 import { CATEGORY_KEYWORDS, type QueryIntent } from "./query.js";
 
 export interface ScoreBreakdown {

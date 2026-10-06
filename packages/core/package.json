@@ -1,5 +1,5 @@
 {
-  "name": "@tessera/core",
+  "name": "@tessera-dev/core",
   "version": "0.1.0",
   "type": "module",
   "main": "./dist/index.js",
@@ -15,7 +15,7 @@
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
-    "@tessera/registry": "workspace:*",
+    "@tessera-dev/registry": "workspace:*",
     "zod": "^3.24.2"
   },
   "devDependencies": {
@@ -23,5 +23,36 @@
     "vitest": "^3.2.4",
     "prettier": "^3.5.3",
     "eslint": "^9.23.0"
+  },
+  "description": "Search, ranking, score explanations and provider-neutral artifact retrieval for Tessera.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radityama/tessera.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/radityama/tessera#readme",
+  "bugs": {
+    "url": "https://github.com/radityama/tessera/issues"
+  },
+  "keywords": [
+    "mcp",
+    "ui-components",
+    "search",
+    "ranking",
+    "retrieval",
+    "typescript"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
   }
 }

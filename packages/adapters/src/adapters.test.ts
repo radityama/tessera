@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { LicenseSchema, TesseraComponentSchema } from "@tessera/registry";
+import { LicenseSchema, TesseraComponentSchema } from "@tessera-dev/registry";
 import { npmPackageName, slugify } from "./common.js";
 import { inferCategory } from "./classify.js";
 import { normalizeShadcnItem, resolveItemLicense } from "./shadcn.js";

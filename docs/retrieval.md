@@ -19,7 +19,7 @@ deterministic and offline-testable.
 
 ## API
 
-`@tessera/core` exposes one provider-neutral entry point:
+`@tessera-dev/core` exposes one provider-neutral entry point:
 
 ```ts
 resolveComponentArtifact(registry: TesseraComponent[], id: string, options?): Promise<ComponentArtifact>

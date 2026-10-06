@@ -1,4 +1,4 @@
-import type { ComponentCategory } from "@tessera/registry";
+import type { ComponentCategory } from "@tessera-dev/registry";
 
 /**
  * Deterministic classification of upstream components.

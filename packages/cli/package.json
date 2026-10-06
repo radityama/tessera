@@ -1,5 +1,5 @@
 {
-  "name": "@tessera/cli",
+  "name": "@tessera-dev/cli",
   "version": "0.1.0",
   "type": "module",
   "bin": {
@@ -16,8 +16,9 @@
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
-    "@tessera/core": "workspace:*",
-    "@tessera/registry": "workspace:*",
+    "@tessera-dev/core": "workspace:*",
+    "@tessera-dev/mcp": "workspace:*",
+    "@tessera-dev/registry": "workspace:*",
     "commander": "^14.0.0"
   },
   "devDependencies": {
@@ -26,5 +27,30 @@
     "vitest": "^3.2.4",
     "prettier": "^3.5.3",
     "eslint": "^9.23.0"
+  },
+  "description": "Tessera command line: search, inspect and fetch real UI components, and start the MCP server.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radityama/tessera.git",
+    "directory": "packages/cli"
+  },
+  "homepage": "https://github.com/radityama/tessera#readme",
+  "bugs": {
+    "url": "https://github.com/radityama/tessera/issues"
+  },
+  "keywords": [
+    "cli",
+    "mcp",
+    "ui-components",
+    "shadcn",
+    "developer-tools",
+    "ai-agents"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
