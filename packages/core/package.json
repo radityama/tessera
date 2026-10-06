@@ -15,7 +15,8 @@
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
-    "@tessera/registry": "workspace:*"
+    "@tessera/registry": "workspace:*",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "typescript": "~5.9.2",
