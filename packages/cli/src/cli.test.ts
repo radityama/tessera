@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import { discoverRegistryFiles, loadRegistryFiles } from "@tessera/registry";
 import { buildInstallationPlan, getComponent, searchRegistry } from "@tessera/core";
 import { formatAddPlanHuman, formatInspectHuman, formatSearchHuman } from "./format.js";
-import { buildProgram } from "./cli.js";
+import { buildProgram, safeJoin } from "./cli.js";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const registriesDir = join(here, "..", "..", "..", "registries");
@@ -36,11 +36,33 @@ describe("cli", () => {
     expect(formatAddPlanHuman(plan)).toMatch(/dry-run/i);
   });
 
-  it("exposes search/inspect/similar/add commands", () => {
+  it("exposes search/inspect/similar/add/fetch commands", () => {
     const program = buildProgram();
     expect(program.commands.map((c) => c.name())).toEqual(
-      expect.arrayContaining(["search", "inspect", "similar", "add"]),
+      expect.arrayContaining(["search", "inspect", "similar", "add", "fetch"]),
     );
+  });
+
+  it("describes fetch as read-only unless an output directory is given", () => {
+    const program = buildProgram();
+    const fetch = program.commands.find((c) => c.name() === "fetch");
+    expect(fetch).toBeDefined();
+    expect(fetch?.description()).toMatch(/retrieve/i);
+    expect(fetch?.options.map((o) => o.long).sort()).toEqual(
+      ["--dry-run", "--force", "--json", "--output", "--registry"].sort(),
+    );
+  });
+
+  it("refuses artifact paths that would escape the output directory", () => {
+    const root = "/tmp/tessera-fetch-test";
+    expect(safeJoin(root, "components/ui/terminal.tsx")).toBe(
+      "/tmp/tessera-fetch-test/components/ui/terminal.tsx",
+    );
+    expect(safeJoin(root, "../../etc/passwd")).toBeUndefined();
+    expect(safeJoin(root, "/etc/passwd")).toBeUndefined();
+    expect(safeJoin(root, "a/../../b")).toBeUndefined();
+    expect(safeJoin(root, "..\\..\\windows\\system32")).toBeUndefined();
+    expect(safeJoin(root, "")).toBeUndefined();
   });
 
   it("cli json search matches core results", () => {
