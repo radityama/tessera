@@ -19,20 +19,17 @@ network.
 ## Install from a release tarball
 
 Download the four tarballs attached to the
-[latest release](https://github.com/radityama/tessera/releases), then:
-
-```bash
-npm install -g ./tessera-dev-cli-0.1.0.tgz
-tessera doctor
-```
-
-The CLI package depends on the other three, so install them together in one command if npm cannot
-resolve them locally:
+[latest release](https://github.com/radityama/tessera/releases) and install **all four together**:
 
 ```bash
 npm install -g ./tessera-dev-registry-0.1.0.tgz ./tessera-dev-core-0.1.0.tgz \
                ./tessera-dev-mcp-0.1.0.tgz ./tessera-dev-cli-0.1.0.tgz
+tessera doctor
 ```
+
+Installing only the CLI tarball does not work: it depends on the other three, and none of them are
+on the registry yet, so npm has nothing to resolve them from. Install them in one command so npm
+resolves the dependencies against the local files.
 
 ## Install from npm (once published)
 

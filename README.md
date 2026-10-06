@@ -12,13 +12,12 @@ before generating them from scratch.
 [![Node](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg)](./docs/installation.md)
 [![MCP](https://img.shields.io/badge/MCP-stdio-8a2be2.svg)](./docs/integrations/README.md)
 
-**v0.1.0 is tagged and released.** 73 components across five libraries, verified against live
-upstreams.
+**Version 0.1.0.** 73 components across five libraries, verified against live upstreams.
 
-> **npm publishing is pending.** The `@tessera-dev` scope is reserved but no package has been
-> published yet, so `npx @tessera-dev/cli` does not resolve. Until then, install from the release
-> tarballs or run from source — see [Install](#install). This notice comes out when publishing
-> succeeds.
+> **npm publishing is pending.** This repository is at v0.1.0, but no package has been published to
+> the npm registry yet, so `npx @tessera-dev/cli` does not resolve and the release workflow has no
+> release to attach tarballs to. Install from source today — see [Install](#install). The release
+> artifacts appear here once the tag is pushed.
 
 </div>
 
@@ -82,13 +81,20 @@ npx -y @tessera-dev/cli search "dark technical terminal hero"
 npm install -g @tessera-dev/cli
 ```
 
-**Today**, until then, either install the release tarballs attached to the
-[v0.1.0 release](https://github.com/radityama/tessera/releases), or run from source:
+**Until then**, run from source:
 
 ```bash
 git clone https://github.com/radityama/tessera && cd tessera
 pnpm install && pnpm build
 node packages/cli/dist/cli.js doctor
+```
+
+Or install the tarballs attached to the release, all four at once — the CLI depends on the other
+three and none are on the registry yet:
+
+```bash
+npm install -g ./tessera-dev-registry-0.1.0.tgz ./tessera-dev-core-0.1.0.tgz \
+               ./tessera-dev-mcp-0.1.0.tgz ./tessera-dev-cli-0.1.0.tgz
 ```
 
 See [`docs/installation.md`](./docs/installation.md).
@@ -139,6 +145,11 @@ Configure it once:
   }
 }
 ```
+
+**Not yet runnable as written** — that command needs the published package. Until publishing
+completes, use the binary you installed from the tarballs (`"command": "tessera"`), or the built
+source tree (`"command": "node"`, `"args": ["/path/to/tessera/packages/cli/dist/cli.js", "mcp"]`).
+Both were verified working.
 
 The key name differs per harness — `mcpServers`, `servers`, `mcp`, `context_servers`, or a TOML
 `[mcp_servers.x]` table. Each has a page in [`docs/integrations/`](./docs/integrations/README.md),
