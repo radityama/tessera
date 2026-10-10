@@ -11,7 +11,7 @@
     "test": "vitest run --passWithNoTests"
   },
   "devDependencies": {
-    "@types/node": "^22.13.0",
+    "@types/node": "^26.6.4",
     "typescript": "~5.9.2",
     "vitest": "^3.2.4",
     "prettier": "^3.5.3"
