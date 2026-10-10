@@ -24,7 +24,7 @@
     "typescript": "~5.9.2",
     "vitest": "^3.2.4",
     "prettier": "^3.5.3",
-    "eslint": "^9.23.0"
+    "eslint": "^10.12.0"
   },
   "private": true,
   "description": "Source adapters and the registry sync tool used to build Tessera snapshots. Development-only."
