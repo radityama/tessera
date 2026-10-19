@@ -24,7 +24,7 @@
     "@types/node": "^22.13.0",
     "typescript": "~5.9.2",
     "vitest": "^3.2.4",
-    "prettier": "^3.5.3",
+    "prettier": "^3.9.10",
     "eslint": "^9.23.0"
   },
   "description": "Tessera MCP server: search, inspect and retrieve real UI components from coding agents.",
