@@ -21,7 +21,7 @@
   "devDependencies": {
     "typescript": "~5.9.2",
     "vitest": "^3.2.4",
-    "prettier": "^3.5.3",
+    "prettier": "^3.9.10",
     "eslint": "^9.23.0"
   },
   "description": "Search, ranking, score explanations and provider-neutral artifact retrieval for Tessera.",
